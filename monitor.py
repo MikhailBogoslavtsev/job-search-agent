@@ -19,34 +19,36 @@ KEYWORDS = [
 ]
 
 COMPANIES = [
-    {"name": "Preply", "url": "https://preply.com/en/careers"},
-    {"name": "Squint", "url": "https://www.squint.ai/jobs"},
-    {"name": "Sword Health", "url": "https://jobs.lever.co/swordhealth"},
-    {"name": "Revolut", "url": "https://www.revolut.com/careers"},
-    {"name": "Sierra Platform", "url": "https://sierra.ai/careers"},
-    {"name": "Valon", "url": "https://www.valon.com/careers"},
-    {"name": "Engine", "url": "https://engine.com/careers"},
-    {"name": "Navan", "url": "https://navan.com/careers"},
-    {"name": "OpenSpace", "url": "https://www.openspace.ai/careers"},
-    {"name": "Trunk Tools", "url": "https://trunktools.com/careers"},
-    {"name": "PermitFlow", "url": "https://www.permitflow.com/careers"},
-    {"name": "Buildots", "url": "https://buildots.com/careers"},
-    {"name": "DroneDeploy", "url": "https://www.dronedeploy.com/company/careers"},
-    {"name": "Propeller Aerobotics", "url": "https://www.propelleraero.com/careers"},
-    {"name": "MaintainX", "url": "https://www.getmaintainx.com/careers"},
-    {"name": "Tulip Interfaces", "url": "https://tulip.co/careers"},
-    {"name": "Augury", "url": "https://www.augury.com/careers"},
-    {"name": "Cognite", "url": "https://www.cognite.com/en/careers"},
-    {"name": "CoLab", "url": "https://www.colabsoftware.com/careers"},
-    {"name": "HappyRobot", "url": "https://www.happyrobot.ai/careers"},
-    {"name": "Nominal", "url": "https://www.nominal.so/careers"},
-    {"name": "Greenlite", "url": "https://www.greenlite.ai/careers"},
-    {"name": "iFoodDS", "url": "https://www.ifoodds.com/about-us/careers"},
-    {"name": "SafetyChain", "url": "https://www.safetychain.com/company/careers"},
-    {"name": "MoonPay", "url": "https://jobs.lever.co/moonpay"},
-    {"name": "Linear", "url": "https://linear.app/careers"},
-    {"name": "Alto Pharmacy", "url": "https://alto.wd1.myworkdayjobs.com/en-US/FuzeHealthCareerSite"},
+    {"name": "Squint", "ats": "ashby", "slug": "squint"},
+    {"name": "Sierra Platform", "ats": "ashby", "slug": "sierra"},
+    {"name": "Greenlite", "ats": "ashby", "slug": "greenlite"},
+    {"name": "Valon", "ats": "greenhouse", "slug": "valon"},
+    {"name": "Engine", "ats": "greenhouse", "slug": "engine"},
+    {"name": "OpenSpace", "ats": "greenhouse", "slug": "openspace"},
+    {"name": "PermitFlow", "ats": "greenhouse", "slug": "permitflow"},
+    {"name": "MaintainX", "ats": "greenhouse", "slug": "maintainx"},
+    {"name": "MoonPay", "ats": "lever", "slug": "moonpay"},
+    {"name": "Preply", "ats": "html", "url": "https://preply.com/en/careers"},
+    {"name": "Sword Health", "ats": "html", "url": "https://jobs.lever.co/swordhealth"},
+    {"name": "Revolut", "ats": "html", "url": "https://www.revolut.com/careers"},
+    {"name": "Linear", "ats": "html", "url": "https://linear.app/careers"},
+    {"name": "Navan", "ats": "html", "url": "https://navan.com/careers"},
+    {"name": "Trunk Tools", "ats": "html", "url": "https://trunktools.com/careers"},
+    {"name": "Buildots", "ats": "html", "url": "https://buildots.com/careers"},
+    {"name": "DroneDeploy", "ats": "html", "url": "https://www.dronedeploy.com/company/careers"},
+    {"name": "Propeller Aerobotics", "ats": "html", "url": "https://www.propelleraero.com/careers"},
+    {"name": "Tulip Interfaces", "ats": "html", "url": "https://tulip.co/careers"},
+    {"name": "Augury", "ats": "html", "url": "https://www.augury.com/careers"},
+    {"name": "Cognite", "ats": "html", "url": "https://www.cognite.com/en/careers"},
+    {"name": "CoLab", "ats": "html", "url": "https://www.colabsoftware.com/careers"},
+    {"name": "HappyRobot", "ats": "html", "url": "https://www.happyrobot.ai/careers"},
+    {"name": "Nominal", "ats": "html", "url": "https://www.nominal.so/careers"},
+    {"name": "iFoodDS", "ats": "html", "url": "https://www.ifoodds.com/about-us/careers"},
+    {"name": "SafetyChain", "ats": "html", "url": "https://www.safetychain.com/company/careers"},
+    {"name": "Alto Pharmacy", "ats": "html", "url": "https://alto.wd1.myworkdayjobs.com/en-US/FuzeHealthCareerSite"},
 ]
+
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
 
 def load_state():
     if os.path.exists(STATE_FILE):
@@ -58,25 +60,57 @@ def save_state(state):
     with open(STATE_FILE, "w") as f:
         json.dump(state, f, indent=2)
 
-def fetch_page(url):
-    try:
-        headers = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
-        r = requests.get(url, headers=headers, timeout=15)
-        return r.text.lower()
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
-
-def find_matches(text, keywords):
-    return [kw for kw in keywords if kw in text]
-
 def make_hash(text):
     return hashlib.md5(text.encode()).hexdigest()
+
+def keywords_match(text):
+    text = text.lower()
+    return [kw for kw in KEYWORDS if kw in text]
+
+def fetch_ashby(slug):
+    url = f"https://api.ashbyhq.com/posting-api/job-board/{slug}"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        data = r.json()
+        jobs = data.get("jobPostings", [])
+        return [j["title"] for j in jobs if any(kw in j["title"].lower() for kw in KEYWORDS)]
+    except Exception as e:
+        print(f"  Ashby error: {e}")
+        return []
+
+def fetch_greenhouse(slug):
+    url = f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        data = r.json()
+        jobs = data.get("jobs", [])
+        return [j["title"] for j in jobs if any(kw in j["title"].lower() for kw in KEYWORDS)]
+    except Exception as e:
+        print(f"  Greenhouse error: {e}")
+        return []
+
+def fetch_lever(slug):
+    url = f"https://api.lever.co/v0/postings/{slug}?mode=json"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        jobs = r.json()
+        return [j["text"] for j in jobs if any(kw in j["text"].lower() for kw in KEYWORDS)]
+    except Exception as e:
+        print(f"  Lever error: {e}")
+        return []
+
+def fetch_html(url):
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        return keywords_match(r.text)
+    except Exception as e:
+        print(f"  HTML error: {e}")
+        return []
 
 def send_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     requests.post(url, json={
-        "chat_id": TELEGRAM_CHAT_ID,
+        "chat_id": int(TELEGRAM_CHAT_ID),
         "text": message,
         "parse_mode": "HTML",
         "disable_web_page_preview": False,
@@ -88,16 +122,20 @@ def main():
 
     for company in COMPANIES:
         name = company["name"]
-        url = company["url"]
-        print(f"Checking {name}...")
+        ats = company["ats"]
+        print(f"Checking {name} ({ats})...")
 
-        text = fetch_page(url)
-        if not text:
-            continue
+        if ats == "ashby":
+            matches = fetch_ashby(company["slug"])
+        elif ats == "greenhouse":
+            matches = fetch_greenhouse(company["slug"])
+        elif ats == "lever":
+            matches = fetch_lever(company["slug"])
+        else:
+            matches = fetch_html(company["url"])
 
-        matches = find_matches(text, KEYWORDS)
         if not matches:
-            print(f"  No PM roles found at {name}")
+            print(f"  No PM roles found")
             continue
 
         current_hash = make_hash(" ".join(matches))
@@ -107,12 +145,12 @@ def main():
             state[name] = current_hash
             new_findings.append({
                 "name": name,
-                "url": url,
-                "matches": matches
+                "url": company.get("url", ""),
+                "matches": matches,
             })
             print(f"  NEW or CHANGED: {matches}")
         else:
-            print(f"  No change at {name}")
+            print(f"  No change ({len(matches)} roles)")
 
     save_state(state)
 
@@ -120,14 +158,22 @@ def main():
         msg = "🔍 <b>Job Scout Alert</b>\n\n"
         for f in new_findings:
             msg += f"🏢 <b>{f['name']}</b>\n"
-            msg += f"🔗 {f['url']}\n"
-            roles = ", ".join(f['matches'])
-            msg += f"📌 Found: {roles}\n\n"
-        msg += f"<i>Checked: {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
+            if f["url"]:
+                msg += f"🔗 {f['url']}\n"
+            for role in f["matches"]:
+                msg += f"📌 {role}\n"
+            msg += "\n"
+        msg += f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
         send_telegram(msg)
         print("Telegram alert sent!")
     else:
-        print("No new findings. No message sent.")
+        msg = (
+            f"😴 <b>Ничего нового</b>\n\n"
+            f"Проверил {len(COMPANIES)} компаний — новых PM ролей не появилось.\n\n"
+            f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
+        )
+        send_telegram(msg)
+        print("No new findings.")
 
 if __name__ == "__main__":
     main()
