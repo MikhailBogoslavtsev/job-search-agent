@@ -73,7 +73,10 @@ def fetch_ashby(slug):
         r = requests.get(url, headers=HEADERS, timeout=15)
         data = r.json()
         jobs = data.get("jobPostings", [])
-        return [j["title"] for j in jobs if any(kw in j["title"].lower() for kw in KEYWORDS)]
+        return [
+            {"title": j["title"], "url": j.get("jobUrl", "")}
+            for j in jobs if any(kw in j["title"].lower() for kw in KEYWORDS)
+        ]
     except Exception as e:
         print(f"  Ashby error: {e}")
         return []
@@ -84,7 +87,10 @@ def fetch_greenhouse(slug):
         r = requests.get(url, headers=HEADERS, timeout=15)
         data = r.json()
         jobs = data.get("jobs", [])
-        return [j["title"] for j in jobs if any(kw in j["title"].lower() for kw in KEYWORDS)]
+        return [
+            {"title": j["title"], "url": j.get("absolute_url", "")}
+            for j in jobs if any(kw in j["title"].lower() for kw in KEYWORDS)
+        ]
     except Exception as e:
         print(f"  Greenhouse error: {e}")
         return []
@@ -94,7 +100,10 @@ def fetch_lever(slug):
     try:
         r = requests.get(url, headers=HEADERS, timeout=15)
         jobs = r.json()
-        return [j["text"] for j in jobs if any(kw in j["text"].lower() for kw in KEYWORDS)]
+        return [
+            {"title": j["text"], "url": j.get("hostedUrl", "")}
+            for j in jobs if any(kw in j["text"].lower() for kw in KEYWORDS)
+        ]
     except Exception as e:
         print(f"  Lever error: {e}")
         return []
@@ -102,7 +111,8 @@ def fetch_lever(slug):
 def fetch_html(url):
     try:
         r = requests.get(url, headers=HEADERS, timeout=15)
-        return keywords_match(r.text)
+        matches = keywords_match(r.text)
+        return [{"title": m, "url": url} for m in matches]
     except Exception as e:
         print(f"  HTML error: {e}")
         return []
@@ -138,17 +148,16 @@ def main():
             print(f"  No PM roles found")
             continue
 
-        current_hash = make_hash(" ".join(matches))
+        current_hash = make_hash(str(matches))
         previous_hash = state.get(name)
 
         if current_hash != previous_hash:
             state[name] = current_hash
             new_findings.append({
                 "name": name,
-                "url": company.get("url", ""),
                 "matches": matches,
             })
-            print(f"  NEW or CHANGED: {matches}")
+            print(f"  NEW or CHANGED: {[m['title'] for m in matches]}")
         else:
             print(f"  No change ({len(matches)} roles)")
 
@@ -158,10 +167,13 @@ def main():
         msg = "🔍 <b>Job Scout Alert</b>\n\n"
         for f in new_findings:
             msg += f"🏢 <b>{f['name']}</b>\n"
-            if f["url"]:
-                msg += f"🔗 {f['url']}\n"
             for role in f["matches"]:
-                msg += f"📌 {role}\n"
+                title = role["title"]
+                url = role["url"]
+                if url:
+                    msg += f"📌 <a href='{url}'>{title}</a>\n"
+                else:
+                    msg += f"📌 {title}\n"
             msg += "\n"
         msg += f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
         send_telegram(msg)
