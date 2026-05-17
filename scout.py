@@ -38,6 +38,16 @@ SEARCH_QUERIES = [
     "Wellfound senior product manager industrial tech remote Europe",
     "Otta lead PM construction manufacturing startup",
     "site:ycombinator.com/jobs product manager industrial construction",
+    "computer vision AI startup agriculture crop monitoring product manager 2026",
+    "drone analytics startup senior PM remote Europe 2026",
+    "aerial imagery AI platform product manager hiring 2026",
+    "precision agriculture computer vision SaaS product manager 2026",
+    "geospatial AI startup senior product manager 2026",
+    "remote sensing analytics startup PM Europe hiring 2026",
+    "AI inspection startup computer vision product manager 2026",
+    "infrastructure inspection drone AI startup hiring PM 2026",
+    "satellite imagery analytics startup senior PM remote 2026",
+    "site:wellfound.com senior product manager computer vision drone",
 ]
 
 def load_seen():
@@ -69,6 +79,15 @@ def send_telegram(message):
             "parse_mode": "HTML",
             "disable_web_page_preview": False,
         })
+
+def validate_url(url):
+    if not url:
+        return False
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10, allow_redirects=True)
+        return r.status_code < 400
+    except Exception:
+        return False
 
 def run_claude_scout(seen_companies):
     prompt = f"""
@@ -165,6 +184,15 @@ def main():
         send_telegram(msg)
         return
 
+    # Validate URLs
+    print("Validating URLs...")
+    for r in results:
+        if r.get("url"):
+            valid = validate_url(r["url"])
+            if not valid:
+                print(f"  Invalid URL for {r['company']}: {r['url']}")
+                r["url"] = ""
+
     # Update seen list
     new_companies = [r["company"] for r in results]
     seen.extend(new_companies)
@@ -178,8 +206,10 @@ def main():
         msg += f"🏭 {r['product']}\n"
         msg += f"✅ {r['why']}\n"
         msg += f"📍 {r['location']}\n"
-        if r.get('url'):
+        if r.get("url"):
             msg += f"🔗 {r['url']}\n"
+        else:
+            msg += f"🔍 <i>No verified link — search manually</i>\n"
         msg += "\n"
 
     msg += f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
