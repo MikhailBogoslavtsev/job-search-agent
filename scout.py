@@ -85,37 +85,25 @@ def validate_url(url):
 
 def run_claude_scout(seen_companies):
     prompt = f"""
-{PROFILE}
+You are a job scout. Search the web and find companies hiring Senior/Lead/Staff PM or Head of Product.
 
-Your task: Search the web for companies and PM roles that match this candidate's profile.
+Candidate: PM with TraceAir (construction drone SaaS) + 11 yrs industrial background (food, pulp/paper, manufacturing, mining). Based in Spain, remote. Open to EU companies or US via EOR.
 
-Use these search queries one by one:
-{chr(10).join(f'- {q}' for q in SEARCH_QUERIES)}
+Target: Series A-C startups in industrial tech, construction tech, IIoT, computer vision, drone/aerial analytics, food traceability, physical operations AI.
 
-For each company you find:
-1. Check if it matches the candidate profile
-2. Skip if company name contains any of these (already known): {', '.join(seen_companies[:30]) if seen_companies else 'none yet'}
-3. For matching companies return:
-   - Company name
-   - Role title
-   - Why it fits (1 sentence, specific)
-   - Product description (3-5 words)
-   - Job URL if found
-   - Remote/location info
+Search using these queries:
+{chr(10).join(f'- {q}' for q in SEARCH_QUERIES[:10])}
 
-Return a JSON array like this:
-[
-  {{
-    "company": "Company Name",
-    "role": "Senior Product Manager",
-    "product": "Construction analytics SaaS",
-    "why": "Direct overlap with TraceAir domain and industrial background",
-    "url": "https://...",
-    "location": "Remote / Netherlands"
-  }}
-]
+Find 3-8 real companies actively hiring PM roles that match.
 
-Return ONLY the JSON array, no other text. If nothing found return [].
+YOU MUST respond with ONLY a valid JSON array. No text before or after. No markdown. No explanation.
+
+Example format:
+[{{"company":"Acme","role":"Senior PM","product":"Construction SaaS","why":"Matches TraceAir domain","url":"https://acme.com/careers","location":"Remote EU"}}]
+
+Already known companies to skip: {', '.join(seen_companies[:20]) if seen_companies else 'none'}
+
+Return [] if nothing found. Return ONLY JSON.
 """
 
     response = requests.post(
