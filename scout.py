@@ -10,22 +10,15 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
 SEEN_FILE = "seen_companies.json"
 
 PROFILE = """
-You are a job scout helping a Product Manager find relevant companies and roles.
-
-Candidate profile:
-- Senior/Lead/Staff PM or Head of Product
-- Currently PM at TraceAir (construction tech, drone mapping, SaaS for US homebuilders)
-- 11 years at Spraying Systems Co — deep knowledge of industrial verticals: pulp & paper, food & beverage, dairy, meat, bakery, confectionery, wood products (MDF/OSB/DSP), metallurgy, automotive, mining, oil & gas
-- Built 0-to-1 products, enterprise B2B discovery, cross-functional delivery
-- Based in Spain, works remotely
-- Open to: US companies hiring via EOR (Deel/Remote.com), EU-headquartered companies, remote or hybrid in Northern Europe
-- NOT looking for: roles requiring US presence, on-site only, consumer apps with no industrial/B2B angle
-
-Target companies:
-- Series A to C startups
-- Industrial tech, IIoT, manufacturing SaaS, construction tech, food traceability, physical operations AI
-- Companies where understanding how a factory or construction site works is an advantage
-- YC-backed companies in these domains are especially interesting
+PM candidate profile for job matching:
+- Role: Senior/Lead/Staff PM or Head of Product
+- Current: PM at TraceAir (construction tech, drone mapping SaaS, US homebuilders)
+- Background: 11 yrs Spraying Systems Co — industrial verticals: pulp/paper, food/beverage, dairy, meat, bakery, wood products, metallurgy, automotive, mining, oil/gas
+- Skills: 0-to-1 products, enterprise B2B discovery, cross-functional delivery, computer vision products
+- CV/drone angle: looking for companies applying drone/CV/aerial/satellite imagery tech in ANY domain (agriculture, infrastructure inspection, insurance, mining, utilities, environmental)
+- Location: Spain, remote preferred. Open to EOR (Deel/Remote). EU HQ ok. Northern Europe hybrid possible.
+- Target: Series A-C startups
+- NOT: US on-site only, pure consumer apps
 """
 
 SEARCH_QUERIES = [
@@ -133,7 +126,7 @@ Return ONLY the JSON array, no other text. If nothing found return [].
             "content-type": "application/json",
         },
         json={
-            "model": "claude-sonnet-4-6",
+            "model": "claude-haiku-4-5-20251001",
             "max_tokens": 4000,
             "tools": [{"type": "web_search_20250305", "name": "web_search"}],
             "messages": [{"role": "user", "content": prompt}],
