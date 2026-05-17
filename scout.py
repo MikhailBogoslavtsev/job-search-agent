@@ -148,6 +148,9 @@ Return ONLY the JSON array, no other text. If nothing found return [].
     for block in data.get("content", []):
         if block.get("type") == "text":
             text += block.get("text", "")
+    print(f"DEBUG - Response blocks: {len(data.get('content', []))}")
+    print(f"DEBUG - Raw text: {text[:500]}")
+    print(f"DEBUG - API error: {data.get('error', 'none')}")
 
     # Parse JSON
     text = text.strip()
