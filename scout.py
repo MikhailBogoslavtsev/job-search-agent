@@ -92,7 +92,7 @@ Candidate: PM with TraceAir (construction drone SaaS) + 11 yrs industrial backgr
 Target: Series A-C startups in industrial tech, construction tech, IIoT, computer vision, drone/aerial analytics, food traceability, physical operations AI.
 
 Search using these queries:
-{chr(10).join(f'- {q}' for q in SEARCH_QUERIES[:10])}
+{chr(10).join(f'- {q}' for q in SEARCH_QUERIES[:5])}
 
 Find 3-8 real companies actively hiring PM roles that match.
 
@@ -114,7 +114,7 @@ Return [] if nothing found. Return ONLY JSON.
             "content-type": "application/json",
         },
         json={
-            "model": "claude-haiku-4-5-20251001",
+            "model": "claude-sonnet-4-6",
             "max_tokens": 4000,
             "tools": [{"type": "web_search_20250305", "name": "web_search"}],
             "messages": [{"role": "user", "content": prompt}],
