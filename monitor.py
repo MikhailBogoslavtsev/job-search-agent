@@ -46,6 +46,7 @@ COMPANIES = [
     {"name": "iFoodDS", "ats": "html", "url": "https://www.ifoodds.com/about-us/careers"},
     {"name": "SafetyChain", "ats": "html", "url": "https://www.safetychain.com/company/careers"},
     {"name": "Alto Pharmacy", "ats": "html", "url": "https://alto.wd1.myworkdayjobs.com/en-US/FuzeHealthCareerSite"},
+    {"name": "Slate Technologies", "ats": "html", "url": "https://slatetechnologies.applytojob.com/apply"},
 ]
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
