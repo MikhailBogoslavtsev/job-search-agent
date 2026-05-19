@@ -133,21 +133,31 @@ Return [] if nothing found. Return ONLY JSON.
     print(f"DEBUG - Raw text: {text[:500]}")
     print(f"DEBUG - API error: {data.get('error', 'none')}")
 
-    # Parse JSON — handle text before/after JSON block
     import re
 
-    # Try to extract JSON array from anywhere in the text
+    # Find all JSON array candidates and try each one
+    json_matches = re.finditer(r'\[.*?\]', text, re.DOTALL)
+    for match in json_matches:
+        json_str = match.group(0).strip()
+        if not json_str or json_str == "[]":
+            continue
+        try:
+            result = json.loads(json_str)
+            if isinstance(result, list) and len(result) > 0:
+                return result
+        except Exception:
+            continue
+
+    # Try greedy match as fallback
     json_match = re.search(r'\[.*\]', text, re.DOTALL)
-    if not json_match:
-        print(f"No JSON array found in response")
-        return []
+    if json_match:
+        try:
+            return json.loads(json_match.group(0).strip())
+        except Exception:
+            pass
 
-    json_str = json_match.group(0).strip()
-
-    if not json_str or json_str == "[]":
-        return []
-
-    return json.loads(json_str)
+    print("No valid JSON array found in response")
+    return []
 
 def main():
     seen = load_seen()
