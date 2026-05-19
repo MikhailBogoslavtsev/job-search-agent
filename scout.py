@@ -1,13 +1,16 @@
 import os
 import json
+import re
 import requests
 from datetime import datetime
 
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
 SEEN_FILE = "seen_companies.json"
+STATE_FILE = "scout_state.json"
+
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
 
 PROFILE = """
 PM candidate profile for job matching:
@@ -54,9 +57,35 @@ def save_seen(seen):
     with open(SEEN_FILE, "w") as f:
         json.dump(seen, f, indent=2)
 
+def load_state():
+    if os.path.exists(STATE_FILE):
+        with open(STATE_FILE, "r") as f:
+            return json.load(f)
+    return {"query_index": 0}
+
+def save_state(state):
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2)
+
+def get_next_queries(state, n=3):
+    idx = state.get("query_index", 0)
+    queries = SEARCH_QUERIES[idx:idx+n]
+    if len(queries) < n:
+        queries += SEARCH_QUERIES[:n-len(queries)]
+    state["query_index"] = (idx + n) % len(SEARCH_QUERIES)
+    return queries
+
+def validate_url(url):
+    if not url:
+        return False
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10, allow_redirects=True)
+        return r.status_code < 400
+    except Exception:
+        return False
+
 def send_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    # Split long messages
     if len(message) > 4000:
         chunks = [message[i:i+4000] for i in range(0, len(message), 4000)]
         for chunk in chunks:
@@ -74,36 +103,25 @@ def send_telegram(message):
             "disable_web_page_preview": False,
         })
 
-def validate_url(url):
-    if not url:
-        return False
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=10, allow_redirects=True)
-        return r.status_code < 400
-    except Exception:
-        return False
-
-def run_claude_scout(seen_companies):
+def run_claude_scout(queries, seen_companies):
     prompt = f"""
 You are a job scout. Search the web and find companies hiring Senior/Lead/Staff PM or Head of Product.
 
-Candidate: PM with TraceAir (construction drone SaaS) + 11 yrs industrial background (food, pulp/paper, manufacturing, mining). Based in Spain, remote. Open to EU companies or US via EOR.
+{PROFILE}
 
-Target: Series A-C startups in industrial tech, construction tech, IIoT, computer vision, drone/aerial analytics, food traceability, physical operations AI.
+Search using ONLY these 3 queries:
+{chr(10).join(f'- {q}' for q in queries)}
 
-Search using these queries:
-{chr(10).join(f'- {q}' for q in SEARCH_QUERIES[:5])}
+Find 3-6 real companies actively hiring PM roles that match the candidate.
 
-Find 3-8 real companies actively hiring PM roles that match.
+Skip these already known companies: {', '.join(seen_companies[:5]) if seen_companies else 'none'}
 
 YOU MUST respond with ONLY a valid JSON array. No text before or after. No markdown. No explanation.
 
-Example format:
-[{{"company":"Acme","role":"Senior PM","product":"Construction SaaS","why":"Matches TraceAir domain","url":"https://acme.com/careers","location":"Remote EU"}}]
+Format:
+[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country"}}]
 
-Already known companies to skip: {', '.join(seen_companies[:5]) if seen_companies else 'none'}
-
-Return [] if nothing found. Return ONLY JSON.
+Return [] if nothing found. JSON only.
 """
 
     response = requests.post(
@@ -115,7 +133,7 @@ Return [] if nothing found. Return ONLY JSON.
         },
         json={
             "model": "claude-sonnet-4-6",
-            "max_tokens": 4000,
+            "max_tokens": 1000,
             "tools": [{"type": "web_search_20250305", "name": "web_search"}],
             "messages": [{"role": "user", "content": prompt}],
         },
@@ -124,18 +142,17 @@ Return [] if nothing found. Return ONLY JSON.
 
     data = response.json()
 
-    # Extract text from response
+    if data.get("error"):
+        print(f"API error: {data['error']}")
+        return []
+
     text = ""
     for block in data.get("content", []):
         if block.get("type") == "text":
             text += block.get("text", "")
-    print(f"DEBUG - Response blocks: {len(data.get('content', []))}")
-    print(f"DEBUG - Raw text: {text[:500]}")
-    print(f"DEBUG - API error: {data.get('error', 'none')}")
 
-    import re
+    print(f"Raw text preview: {text[:300]}")
 
-    # Find all JSON array candidates and try each one
     json_matches = re.finditer(r'\[.*?\]', text, re.DOTALL)
     for match in json_matches:
         json_str = match.group(0).strip()
@@ -148,7 +165,6 @@ Return [] if nothing found. Return ONLY JSON.
         except Exception:
             continue
 
-    # Try greedy match as fallback
     json_match = re.search(r'\[.*\]', text, re.DOTALL)
     if json_match:
         try:
@@ -156,33 +172,35 @@ Return [] if nothing found. Return ONLY JSON.
         except Exception:
             pass
 
-    print("No valid JSON array found in response")
     return []
 
 def main():
     seen = load_seen()
-    print(f"Known companies: {len(seen)}")
+    state = load_state()
 
-    print("Running AI scout...")
+    queries = get_next_queries(state, n=3)
+    print(f"Known companies: {len(seen)}")
+    print(f"This week's queries: {queries}")
+
     try:
-        results = run_claude_scout(seen)
+        results = run_claude_scout(queries, seen)
     except Exception as e:
         print(f"Scout error: {e}")
         send_telegram(f"⚠️ Scout error: {e}")
         return
 
-    print(f"Found {len(results)} new matches")
+    save_state(state)
+    print(f"Found {len(results)} matches")
 
     if not results:
         msg = (
-            f"🤖 <b>AI Scout — no new finds</b>\n\n"
-            f"Searched {len(SEARCH_QUERIES)} queries — nothing new matching your profile.\n\n"
+            f"🤖 <b>AI Scout — nothing new this week</b>\n\n"
+            f"Searched 3 queries — no new PM roles matching your profile.\n\n"
             f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
         )
         send_telegram(msg)
         return
 
-    # Validate URLs
     print("Validating URLs...")
     for r in results:
         if r.get("url"):
@@ -191,12 +209,10 @@ def main():
                 print(f"  Invalid URL for {r['company']}: {r['url']}")
                 r["url"] = ""
 
-    # Update seen list
     new_companies = [r["company"] for r in results]
     seen.extend(new_companies)
     save_seen(seen)
 
-    # Build message
     msg = f"🤖 <b>AI Scout — {len(results)} new {'find' if len(results)==1 else 'finds'}</b>\n\n"
     for r in results:
         msg += f"🏢 <b>{r['company']}</b>\n"
@@ -207,7 +223,7 @@ def main():
         if r.get("url"):
             msg += f"🔗 {r['url']}\n"
         else:
-            msg += f"🔍 <i>No verified link — search manually</i>\n"
+            msg += f"🔍 <i>Search manually</i>\n"
         msg += "\n"
 
     msg += f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"
