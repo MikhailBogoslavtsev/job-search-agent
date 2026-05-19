@@ -101,7 +101,7 @@ YOU MUST respond with ONLY a valid JSON array. No text before or after. No markd
 Example format:
 [{{"company":"Acme","role":"Senior PM","product":"Construction SaaS","why":"Matches TraceAir domain","url":"https://acme.com/careers","location":"Remote EU"}}]
 
-Already known companies to skip: {', '.join(seen_companies[:20]) if seen_companies else 'none'}
+Already known companies to skip: {', '.join(seen_companies[:5]) if seen_companies else 'none'}
 
 Return [] if nothing found. Return ONLY JSON.
 """
