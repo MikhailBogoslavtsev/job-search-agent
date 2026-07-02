@@ -19,34 +19,19 @@ KEYWORDS = [
 ]
 
 COMPANIES = [
-    {"name": "Squint", "ats": "ashby", "slug": "squint"},
+    {"name": "Squint", "ats": "ashby", "slug": "squint.ai"},
     {"name": "Sierra Platform", "ats": "ashby", "slug": "sierra"},
-    {"name": "Greenlite", "ats": "ashby", "slug": "greenlite"},
+    {"name": "Greenlite", "ats": "ashby", "slug": "greenlitecareers"},
+    {"name": "Sweedpos", "ats": "ashby", "slug": "sweedpos.com"},
     {"name": "Valon", "ats": "greenhouse", "slug": "valon"},
     {"name": "Engine", "ats": "greenhouse", "slug": "engine"},
     {"name": "OpenSpace", "ats": "greenhouse", "slug": "openspace"},
     {"name": "PermitFlow", "ats": "greenhouse", "slug": "permitflow"},
     {"name": "MaintainX", "ats": "greenhouse", "slug": "maintainx"},
+    {"name": "Smartcat", "ats": "greenhouse", "slug": "smartcatplatforminc"},
     {"name": "MoonPay", "ats": "lever", "slug": "moonpay"},
-    {"name": "Preply", "ats": "html", "url": "https://preply.com/en/careers"},
-    {"name": "Sword Health", "ats": "html", "url": "https://jobs.lever.co/swordhealth"},
-    {"name": "Revolut", "ats": "html", "url": "https://www.revolut.com/careers"},
     {"name": "Linear", "ats": "html", "url": "https://linear.app/careers"},
-    {"name": "Navan", "ats": "html", "url": "https://navan.com/careers"},
-    {"name": "Trunk Tools", "ats": "html", "url": "https://trunktools.com/careers"},
-    {"name": "Buildots", "ats": "html", "url": "https://buildots.com/careers"},
-    {"name": "DroneDeploy", "ats": "html", "url": "https://www.dronedeploy.com/company/careers"},
-    {"name": "Propeller Aerobotics", "ats": "html", "url": "https://www.propelleraero.com/careers"},
-    {"name": "Tulip Interfaces", "ats": "html", "url": "https://tulip.co/careers"},
     {"name": "Augury", "ats": "html", "url": "https://www.augury.com/careers"},
-    {"name": "Cognite", "ats": "html", "url": "https://www.cognite.com/en/careers"},
-    {"name": "CoLab", "ats": "html", "url": "https://www.colabsoftware.com/careers"},
-    {"name": "HappyRobot", "ats": "html", "url": "https://www.happyrobot.ai/careers"},
-    {"name": "Nominal", "ats": "html", "url": "https://www.nominal.so/careers"},
-    {"name": "iFoodDS", "ats": "html", "url": "https://www.ifoodds.com/about-us/careers"},
-    {"name": "SafetyChain", "ats": "html", "url": "https://www.safetychain.com/company/careers"},
-    {"name": "Alto Pharmacy", "ats": "html", "url": "https://alto.wd1.myworkdayjobs.com/en-US/FuzeHealthCareerSite"},
-    {"name": "Slate Technologies", "ats": "html", "url": "https://slatetechnologies.applytojob.com/apply"},
 ]
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
