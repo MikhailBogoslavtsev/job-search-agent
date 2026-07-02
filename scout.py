@@ -210,7 +210,9 @@ def main():
                 r["url"] = ""
 
     new_companies = [r["company"] for r in results]
-    seen.extend(new_companies)
+    for c in new_companies:
+        if c not in seen:
+            seen.append(c)
     save_seen(seen)
 
     msg = f"🤖 <b>AI Scout — {len(results)} new {'find' if len(results)==1 else 'finds'}</b>\n\n"
