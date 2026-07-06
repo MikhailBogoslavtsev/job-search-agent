@@ -24,7 +24,7 @@ plain API diff. So the system is split on exactly that line:
 |---|---|---|
 | Job | Track known companies | Discover new ones |
 | Method | Ashby / Greenhouse / Lever ATS APIs, hash-diffed | Claude (Sonnet) + web search tool |
-| Cadence | Daily | Weekly |
+| Cadence | Daily | 2x/week (Mon & Wed) |
 | Cost | $0 (rules) | Bounded (see below) |
 | Trigger | Any change in a known company's postings | New company matching the profile |
 
@@ -40,8 +40,9 @@ The LLM path is the expensive one, so it's the one with a budget:
 - **Capped output tokens** (2000) and a **mid-tier model** (Sonnet, not
   Opus) — discovery doesn't need the largest model, it needs decent judgment
   over search results.
-- **Weekly cadence**, vs. the deterministic monitor's daily cadence — the
-  free path runs often, the paid path runs rarely.
+- **Twice-weekly cadence** (Mon & Wed), vs. the deterministic monitor's daily
+  cadence — the free path runs every day, the paid path runs on a fixed,
+  sparse schedule.
 
 The rules path (`monitor.py`) has effectively zero marginal cost per run:
 plain HTTP calls to ATS JSON APIs, hashed and diffed against the last known
@@ -84,5 +85,5 @@ Requires `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and (for `scout.py`)
 ```
 pip install -r requirements.txt
 python monitor.py   # daily: check known companies
-python scout.py     # weekly: discover new ones
+python scout.py     # Mon/Wed: discover new ones
 ```
