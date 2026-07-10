@@ -19,9 +19,10 @@ PM candidate profile for job matching:
 - Background: 11 yrs Spraying Systems Co — industrial verticals: pulp/paper, food/beverage, dairy, meat, bakery, wood products, metallurgy, automotive, mining, oil/gas
 - Skills: 0-to-1 products, enterprise B2B discovery, cross-functional delivery, computer vision products
 - CV/drone angle: looking for companies applying drone/CV/aerial/satellite imagery tech in ANY domain (agriculture, infrastructure inspection, insurance, mining, utilities, environmental)
+- Industry scope: ANY B2B SaaS vertical is fair game (HR tech, martech, devtools/infra, legal tech, supply chain/logistics, cybersecurity, healthtech ops, climate/energy, real estate tech, vertical AI tools, industrial/construction) — not limited to construction or industrial
 - Location: Spain, remote preferred. Open to EOR (Deel/Remote). EU HQ ok. Northern Europe hybrid possible.
 - Target: Series A-C startups
-- NOT: US on-site only, pure consumer apps
+- NOT: US on-site only, pure consumer apps, fintech (requires domain-specific regulatory/financial knowledge the candidate doesn't have)
 """
 
 SEARCH_QUERIES = [
@@ -45,6 +46,18 @@ SEARCH_QUERIES = [
     "infrastructure inspection drone AI startup hiring PM 2026",
     "satellite imagery analytics startup senior PM remote 2026",
     "site:wellfound.com senior product manager computer vision drone",
+    "senior product manager B2B SaaS startup remote Europe 2026 hiring",
+    "head of product B2B SaaS Series B startup remote 2026",
+    "YC startup B2B SaaS senior product manager hiring 2026 -fintech",
+    "lead product manager HR tech SaaS startup remote Europe 2026",
+    "senior PM devtools infrastructure startup remote 2026 hiring",
+    "senior product manager cybersecurity SaaS startup remote Europe 2026",
+    "lead PM supply chain logistics SaaS startup hiring remote 2026",
+    "senior product manager legal tech SaaS startup remote 2026",
+    "head of product climate tech energy SaaS startup remote Europe 2026",
+    "senior PM vertical AI B2B SaaS startup hiring remote 2026",
+    "Wellfound senior product manager B2B SaaS remote Europe -fintech",
+    "Otta lead product manager B2B SaaS startup remote Europe",
 ]
 
 def load_seen():
@@ -75,14 +88,39 @@ def get_next_queries(state, n=3):
     state["query_index"] = (idx + n) % len(SEARCH_QUERIES)
     return queries
 
-def validate_url(url):
+CLOSED_LISTING_SIGNALS = [
+    "no longer accepting applications",
+    "no longer accepting new applicants",
+    "position has been filled",
+    "this position is no longer available",
+    "this role is no longer available",
+    "job has been closed",
+    "posting has expired",
+    "this posting has expired",
+    "not currently accepting applications",
+    "this role is closed",
+    "no longer open",
+    "job is no longer active",
+    "this job is no longer active",
+    "we are no longer hiring for this role",
+]
+
+def check_listing(url):
+    """Returns (url_ok, confirmed). confirmed=False means the URL either
+    doesn't resolve or its page text suggests the role may already be closed
+    - not proof either way, just what we could check automatically."""
     if not url:
-        return False
+        return False, False
     try:
         r = requests.get(url, headers=HEADERS, timeout=10, allow_redirects=True)
-        return r.status_code < 400
+        if r.status_code >= 400:
+            return False, False
+        body = r.text.lower()
+        if any(signal in body for signal in CLOSED_LISTING_SIGNALS):
+            return True, False
+        return True, True
     except Exception:
-        return False
+        return False, False
 
 def send_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -113,13 +151,21 @@ Search using ONLY these 3 queries:
 {chr(10).join(f'- {q}' for q in queries)}
 
 Find 3-6 real companies actively hiring PM roles that match the candidate.
+Do NOT include fintech companies.
 
 Skip these already known companies: {', '.join(seen_companies[:5]) if seen_companies else 'none'}
+
+For each result, set "status" to "confirmed" only if you directly saw a live
+application page for that exact role with an active "Apply" button (e.g. the
+company's own careers page or its ATS listing). Set "status" to "unconfirmed"
+if you found the role via a secondary source (news article, LinkedIn mention,
+aggregator, cached page, or you're unsure the posting is still live) — do not
+guess "confirmed" to sound more useful.
 
 YOU MUST respond with ONLY a valid JSON array. No text before or after. No markdown. No explanation.
 
 Format:
-[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country"}}]
+[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country","status":"confirmed|unconfirmed"}}]
 
 Return [] if nothing found. JSON only.
 """
@@ -203,11 +249,12 @@ def main():
 
     print("Validating URLs...")
     for r in results:
-        if r.get("url"):
-            valid = validate_url(r["url"])
-            if not valid:
-                print(f"  Invalid URL for {r['company']}: {r['url']}")
-                r["url"] = ""
+        url_ok, url_confirmed = check_listing(r.get("url", ""))
+        if r.get("url") and not url_ok:
+            print(f"  Invalid URL for {r['company']}: {r['url']}")
+            r["url"] = ""
+        model_confirmed = r.get("status") == "confirmed"
+        r["status"] = "confirmed" if (url_confirmed and model_confirmed) else "unconfirmed"
 
     new_companies = [r["company"] for r in results]
     for c in new_companies:
@@ -226,6 +273,8 @@ def main():
             msg += f"🔗 {r['url']}\n"
         else:
             msg += f"🔍 <i>Search manually</i>\n"
+        if r.get("status") != "confirmed":
+            msg += f"⚠️ <i>Not confirmed still open — verify before applying</i>\n"
         msg += "\n"
 
     msg += f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC</i>"

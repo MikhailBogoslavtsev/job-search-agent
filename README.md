@@ -54,6 +54,14 @@ changed" work.
 - **Every URL the model returns gets a live HTTP check** before it's sent to
   me — LLMs confidently return job-posting links that don't resolve, and I'd
   rather see nothing than a dead link.
+- **"Confirmed" vs. "unconfirmed" status on every find:** Scout finds roles
+  via live web search, not a real-time ATS API, so it can surface listings
+  that are already closed. A result is only tagged confirmed if the model
+  says it saw a live application page AND the URL check finds no
+  "no longer accepting applications" / "position filled" language on the
+  page (a 200 status alone doesn't mean the role is still open). Anything
+  else gets a ⚠️ "not confirmed" tag in the Telegram message instead of
+  being dropped, since the company itself is still a useful signal.
 - **Strict JSON-only prompting** with regex extraction and fallback parsing,
   because free-text responses from a "return JSON" prompt still sometimes
   wrap it in prose.
@@ -70,12 +78,15 @@ Telegram Bot API, GitHub Actions (cron + `workflow_dispatch`).
 ## Scope note
 
 This was built for my own search, so `scout.py`'s matching profile and
-`monitor.py`'s company list are tuned to my specific target (industrial /
-construction-tech / drone & CV SaaS) — not general-purpose. The part that
-generalizes is the architecture: the rules-vs-model split, the cost/latency
-budget on the LLM path, and the eval guardrail on model output. That's the
-same reasoning I'd apply to designing any agentic workflow — decide what
-actually needs a model, then put a budget and a check on it.
+`monitor.py`'s company list are tuned to my specific target — Senior/Lead PM
+or Head of Product at Series A-C B2B SaaS startups (any vertical: industrial /
+construction-tech / drone & CV SaaS, but also HR tech, devtools, cybersecurity,
+supply chain, legal tech, climate tech, etc. — excluding fintech, which needs
+domain-specific knowledge the candidate doesn't have) — not general-purpose.
+The part that generalizes is the architecture: the rules-vs-model split, the
+cost/latency budget on the LLM path, and the eval guardrail on model output.
+That's the same reasoning I'd apply to designing any agentic workflow — decide
+what actually needs a model, then put a budget and a check on it.
 
 ## Running it
 
