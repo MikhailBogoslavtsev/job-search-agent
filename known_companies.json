@@ -1,1 +1,62 @@
-{}
+{
+  "countfromabove.com": {
+    "name": "Count from Above",
+    "first_seen": "2026-07-15",
+    "score": 8,
+    "summary": "MLSaaS platform enabling organizations to build custom object detection models on satellite and drone imagery with no ML expertise, targeting B2B use cases like disaster response, mining, and infrastructure."
+  },
+  "kesowa.com": {
+    "name": "Kesowa",
+    "first_seen": "2026-07-15",
+    "score": 7,
+    "summary": "Cloud-based drone data platform (ARU) offering AI-powered GIS, mission planning, change detection, and geospatial analytics for urban planners, city managers, and infrastructure teams."
+  },
+  "yugmi.com": {
+    "name": "YugmiAI",
+    "first_seen": "2026-07-15",
+    "score": 6,
+    "summary": "AI-powered construction and infrastructure management platform combining document intelligence, computer vision, GIS, and agentic AI for site engineers and contractors."
+  },
+  "magikkraft.com": {
+    "name": "MagikKraft",
+    "first_seen": "2026-07-15",
+    "score": 9,
+    "summary": "AI-powered construction progress tracking platform using drones and 360° imagery to deliver real-time site visibility, defect detection, and analytics to developers and contractors."
+  },
+  "viaskai.com": {
+    "name": "Viaskai",
+    "first_seen": "2026-07-15",
+    "score": 8,
+    "summary": "Drone-captured aerial imagery and AI platform that helps roofing, solar, and insurance contractors identify property damage and target sales opportunities before competitors."
+  },
+  "constroai.com": {
+    "name": "ConstroAI",
+    "first_seen": "2026-07-15",
+    "score": 8,
+    "summary": "AI and drone-based construction site management platform providing real-time insights, safety monitoring, and defect detection for construction operators."
+  },
+  "trekz.ai": {
+    "name": "Trekz Incorporated",
+    "first_seen": "2026-07-15",
+    "score": 4,
+    "summary": "Drone and mobile mapping company delivering AI-powered 3D digital twins and survey-grade data for construction, infrastructure, and disaster recovery."
+  },
+  "aeroyantra.com": {
+    "name": "Aeroyantra",
+    "first_seen": "2026-07-15",
+    "score": 8,
+    "summary": "Cloud-based drone survey intelligence platform that processes raw drone imagery into engineering deliverables (orthomosaics, point clouds, volume reports) for mining, construction, and engineering firms."
+  },
+  "eyerod.com": {
+    "name": "eyerod",
+    "first_seen": "2026-07-15",
+    "score": 9,
+    "summary": "AI/computer vision SaaS platform for utility-scale solar projects, turning drone imagery and field data into actionable construction, quality, and asset intelligence."
+  },
+  "fieldnerve.com": {
+    "name": "FieldNerve",
+    "first_seen": "2026-07-15",
+    "score": 8,
+    "summary": "GenAI-native agentic automation platform for infrastructure and construction teams, converting fragmented field data into real-time operational intelligence."
+  }
+}
