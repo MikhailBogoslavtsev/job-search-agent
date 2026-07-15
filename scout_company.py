@@ -22,7 +22,7 @@ EXA_RESULTS_PER_QUERY = 10     # how many results Exa returns per run
 EXA_TEXT_CHARS = 6000          # cap of page text we hand to Claude (token budget)
 CLAUDE_MODEL = "claude-sonnet-4-6"
 
-# --- The 8 rotating queries (one runs per execution) ---
+# --- The rotating queries (one runs per execution) ---
 # Exa is a SEMANTIC engine: queries are rich natural-language descriptions of
 # the ideal page, not keyword lists. The company-discovery queries use Exa's
 # real `category` field (value "company") rather than an inline "category:"
@@ -33,6 +33,9 @@ COMPANY_QUERIES = [
     {"category": "company", "query": "vertical SaaS companies digitizing physical field operations for contractors, surveyors and civil engineers"},
     {"category": "company", "query": "European startups applying machine learning to physical operations — logistics, energy, agriculture, the built environment — with a product-led B2B SaaS model"},
     {"category": "company", "query": "startups building AI agents or copilots embedded inside workflow software for engineering and operations teams"},
+    {"category": "company", "query": "startups building the data infrastructure, annotation and model-development tooling that other teams use to train, evaluate and ship machine learning and computer vision products"},
+    {"category": "company", "query": "AI-native B2B SaaS product companies building agentic or LLM-powered software, where product managers are expected to build and prototype with AI tools themselves"},
+    {"category": "company", "query": "product-led B2B SaaS startups embedding AI agents, copilots and automation into knowledge-work and business operations software, hiring remotely across Europe"},
     {"category": None, "query": "job posting for a senior or lead product manager at a remote-first European startup building a SaaS platform that turns imagery or sensor data into decisions for field teams"},
     {"category": None, "query": "job posting for a head of product or director of product at a Series A to C startup applying AI to construction, infrastructure or industrial operations"},
     {"category": None, "query": "job posting for a product manager at a company hiring remotely across Europe, building ML products from geospatial, earth observation or camera data"},
