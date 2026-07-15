@@ -1,0 +1,35 @@
+name: Company Scout
+
+# Manual-only for now (Run workflow button in the Actions tab). No cron yet —
+# this lets Level C be triggered on demand and compared against Level B before
+# committing to a schedule. To make it weekly later, add under `on:`:
+#   schedule:
+#     - cron: '0 10 * * 5'   # Fridays 10:00 UTC (clear of Level B's Mon/Wed)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scout-companies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scout_company.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+      - name: Save state
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add known_companies.json company_scout_state.json
+          git diff --staged --quiet || git commit -m "update company scout state"
+          git push
