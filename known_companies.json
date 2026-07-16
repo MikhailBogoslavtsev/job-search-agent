@@ -58,5 +58,65 @@
     "first_seen": "2026-07-15",
     "score": 8,
     "summary": "GenAI-native agentic automation platform for infrastructure and construction teams, converting fragmented field data into real-time operational intelligence."
+  },
+  "leap.tec.br": {
+    "name": "Leap Soluções em Tecnologia Ltda",
+    "first_seen": "2026-07-16",
+    "score": 8,
+    "summary": "Builds Harpia, an AI/computer vision platform for automated corrosion detection, structural inspection, and thermographic analysis targeting oil, gas, mining, and utility industries."
+  },
+  "visnetai.co": {
+    "name": "ViSNET A.I",
+    "first_seen": "2026-07-16",
+    "score": 6,
+    "summary": "Builds an AI-powered infrastructure intelligence platform using computer vision and drone automation for industrial and infrastructure inspections, sold B2B."
+  },
+  "linkedin.com": {
+    "name": "ViSNET A.I",
+    "first_seen": "2026-07-16",
+    "score": 6,
+    "summary": "Builds an AI-powered infrastructure intelligence platform using computer vision and drone automation for industrial and infrastructure inspections, sold B2B."
+  },
+  "skyvisor.ai": {
+    "name": "SkyVisor",
+    "first_seen": "2026-07-16",
+    "score": 9,
+    "summary": "SaaS platform for drone-based AI inspection and asset management of wind and solar farms, sold B2B to renewable energy operators."
+  },
+  "ombrulla.com": {
+    "name": "Ombrulla",
+    "first_seen": "2026-07-16",
+    "score": 6,
+    "summary": "Industrial AI platform (TRITVA, PETRAN) offering visual inspection, predictive maintenance, and connected-worker safety for asset-heavy industries via edge/cloud deployments."
+  },
+  "vision-ais.com": {
+    "name": "Vision AIS, LLC",
+    "first_seen": "2026-07-16",
+    "score": 4,
+    "summary": "Builds fit-to-purpose automated machine vision and AI inspection systems for industrial and oil & gas clients, combining hardware, sensors, and edge ML software."
+  },
+  "spectx.nl": {
+    "name": "SpectX",
+    "first_seen": "2026-07-16",
+    "score": 9,
+    "summary": "Autonomous aerial X-ray inspection platform using synchronized drones and AI for structural defect detection in wind turbines, oil & gas, and infrastructure."
+  },
+  "aplik.com": {
+    "name": "Aplik S.A.",
+    "first_seen": "2026-07-16",
+    "score": 7,
+    "summary": "Develops computer vision and AI-based monitoring systems for mining and industrial operations (conveyors, leach pads, cathode inspection, cable monitoring), sold to mining and industrial operators."
+  },
+  "clearwell.ai": {
+    "name": "Clearwell AI",
+    "first_seen": "2026-07-16",
+    "score": 8,
+    "summary": "AI-native SaaS platform for tank asset lifecycle intelligence, serving inspection contractors and asset owners in water, oil & gas, and energy industries."
+  },
+  "aegisvision.ai": {
+    "name": "AegisVision",
+    "first_seen": "2026-07-16",
+    "score": 8,
+    "summary": "AI-powered computer vision platform for real-time defect detection, quality assurance, and safety compliance monitoring sold to manufacturing, construction, energy, and other industrial sectors."
   }
 }
