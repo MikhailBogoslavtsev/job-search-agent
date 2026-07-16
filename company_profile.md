@@ -30,17 +30,17 @@ product is what I want.
 ## Soft signals (raise the score, but none is a gate on its own)
 
 - Applies AI / computer vision / ML / imagery / sensor / automation to a
-  physical, real-world operation (not purely digital/online workflows).
+  physical, real-world operation.
 - Sells B2B to field teams, operators, engineers, contractors, or industrial
   customers.
 - Startup stage (seed to Series C) rather than a large incumbent.
 - Product-led: a platform or SaaS product, ideally with some 0-to-1 surface.
 - Remote-friendly or European is a mild plus — but do NOT filter by country.
+- It can be consumer product also but less priority because most probably my domain will not fit
 
 ## Not a fit
 
 - Services / consulting / agencies (the hard filter above).
-- Pure consumer apps with no B2B/operational angle.
 
 Everything not listed as the hard filter is a soft signal only. When unsure
 between two scores, pick the higher one — the funnel is meant to be wide.
