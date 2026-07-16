@@ -22,6 +22,18 @@ EXA_RESULTS_PER_QUERY = 10     # how many results Exa returns per run
 EXA_TEXT_CHARS = 6000          # cap of page text we hand to Claude (token budget)
 CLAUDE_MODEL = "claude-sonnet-4-6"
 
+# --- URL validation (pure HTTP, no LLM) ---
+URL_CHECK_TIMEOUT = 8          # seconds for the per-company reachability check
+BROWSER_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+)
+PARKED_DOMAIN_MARKERS = [      # text that flags a dead / for-sale / parked domain
+    "domain is for sale",
+    "buy this domain",
+    "godaddy.com/domainsearch",
+]
+
 # --- The rotating queries (one runs per execution) ---
 # Exa is a SEMANTIC engine: queries are rich natural-language descriptions of
 # the ideal page, not keyword lists. The company-discovery queries use Exa's
@@ -91,6 +103,36 @@ def normalize_domain(value):
     if netloc.startswith("www."):
         netloc = netloc[4:]
     return netloc
+
+
+# --- URL validation (pure HTTP reachability check, no LLM) ---
+def validate_url(domain, timeout=URL_CHECK_TIMEOUT):
+    """Confirm a company's domain actually resolves, returns < 400, and isn't a
+    parked / for-sale placeholder. Follows redirects and reports the final URL.
+    Never raises — returns a dict so the caller can log and move on."""
+    url = domain if domain.startswith("http") else f"https://{domain}"
+    try:
+        resp = requests.get(
+            url,
+            timeout=timeout,
+            allow_redirects=True,
+            headers={"User-Agent": BROWSER_UA},
+        )
+        if resp.status_code >= 400:
+            return {"domain": domain, "final_url": resp.url,
+                    "status_code": resp.status_code, "valid": False,
+                    "reason": f"status {resp.status_code}"}
+        body = resp.text[:3000].lower()
+        if any(marker in body for marker in PARKED_DOMAIN_MARKERS):
+            return {"domain": domain, "final_url": resp.url,
+                    "status_code": resp.status_code, "valid": False,
+                    "reason": "parked / for-sale page"}
+        return {"domain": domain, "final_url": resp.url,
+                "status_code": resp.status_code, "valid": True, "reason": ""}
+    except Exception as e:
+        # Timeout, connection error, DNS failure, malformed URL, etc.
+        return {"domain": domain, "final_url": None, "status_code": None,
+                "valid": False, "reason": str(e)}
 
 
 # --- Exa semantic search ---
@@ -164,7 +206,8 @@ agency rather than a product (SaaS / platform) company, set is_product_company
 to false and give it a low score. Semantic search cannot tell these apart —
 that judgment is your job. Everything else in the profile is a soft signal.
 
-Do NOT filter by country.
+Apply the profile's Geography guidance as written — it is a soft scoring
+signal, not the product/services hard filter.
 
 Respond with ONLY valid JSON — no markdown fences, no preamble, no text after:
 {{"score": 7, "name": "Company Name", "domain": "example.com", "summary": "One line on what they build and who they sell to.", "is_product_company": true, "reason": "Why this score, referencing the profile."}}
@@ -213,13 +256,13 @@ def send_telegram(message):
         })
 
 
-def format_company(verdict, domain):
+def format_company(verdict, link):
     name = verdict.get("name") or "Unknown company"
     score = verdict.get("score", 0)
     summary = verdict.get("summary", "") or ""
     reason = verdict.get("reason", "") or ""
     msg = f"🏢 <b>{name}</b>  ·  {score}/10\n"
-    msg += f"🔗 {domain}\n\n"
+    msg += f"🔗 {link}\n\n"
     msg += f"💡 {summary}\n\n"
     msg += f"✅ Why: {reason}"
     return msg
@@ -293,17 +336,44 @@ def main():
     save_known(known)
     print(f"Scored {scored} new companies, {skipped_known} already known, {len(hits)} above threshold")
 
+    # --- URL validation: runs AFTER scoring/threshold, BEFORE the Telegram send ---
+    # A company can score well on its page text but have a dead, parked, or
+    # redirecting domain. Check each qualifying company with a plain HTTP GET
+    # (no LLM) and only send the ones whose link actually resolves. One bad
+    # check must not crash the run, so validate_url never raises.
+    verified_hits = []
+    for verdict, domain in hits:
+        name = verdict.get("name") or domain
+        check = validate_url(domain)
+        if check["valid"]:
+            verdict["verified_url"] = check["final_url"]
+            if domain in known:
+                known[domain]["verified_url"] = check["final_url"]
+            verified_hits.append((verdict, check["final_url"]))
+        else:
+            print(f"  URL check failed for {name} ({domain}): {check['reason']}")
+
+    if verified_hits:
+        # Persist the verified_url we just stored on the passing records.
+        save_known(known)
+    print(f"{len(verified_hits)} of {len(hits)} above-threshold companies passed URL validation")
+
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M")
 
-    if hits:
-        for verdict, domain in hits:
-            send_telegram(format_company(verdict, domain))
-        print(f"Sent {len(hits)} companies to Telegram")
+    if verified_hits:
+        for verdict, verified_url in verified_hits:
+            send_telegram(format_company(verdict, verified_url))
+        print(f"Sent {len(verified_hits)} companies to Telegram")
     else:
+        if hits:
+            note = (f"Scored {scored} new companies; {len(hits)} cleared "
+                    f"{SCORE_THRESHOLD}/10 but their links failed validation.")
+        else:
+            note = f"Scored {scored} new companies — none cleared the threshold."
         send_telegram(
-            f"🏢 <b>Company Scout — nothing above {SCORE_THRESHOLD}/10 this run</b>\n\n"
+            f"🏢 <b>Company Scout — nothing to send this run</b>\n\n"
             f"Query [{label}]: {query_obj['query']}\n"
-            f"Scored {scored} new companies — none cleared the threshold.\n\n"
+            f"{note}\n\n"
             f"<i>{timestamp} UTC</i>"
         )
         print("Sent 'nothing new' summary to Telegram")

@@ -63,7 +63,27 @@ product is what I want.
   acceptable as a deliberate stepping stone — but mainly when they carry real
   end-to-end ownership of a product area, not a narrow single-feature scope.
 - Product-led: a platform or SaaS product, ideally with some 0-to-1 surface.
-- Remote-friendly or European is a mild plus — but do NOT filter by country.
+- Remote-friendly or European is a mild plus. Location is otherwise not a
+  blanket filter — but see the Geography section below for a few regions that
+  do pull the score down.
+
+## Geography (a soft signal, but a real one)
+
+Companies **headquartered in India, China, South Korea, or Turkey** are a low
+fit for me — score them **low (roughly 2–4)** — **unless** the page clearly
+shows they hire **remote worldwide** (or specifically across Europe / my
+region). I'm not looking to relocate to those regions or take a local-only
+role there.
+
+- Still worth recording (that's why they go in the file), just not worth a
+  Telegram alert when there's no worldwide-remote signal.
+- If a company from one of these regions **clearly** offers remote-worldwide or
+  global roles, don't apply this penalty — score it on its merits.
+- Examples seen that should score low: Kesowa, YugmiAI, Aeroyantra, FieldNerve
+  (India), Eyerod (Turkey) — all with no worldwide roles.
+
+This applies only to the regions named above. Companies elsewhere (Europe, US,
+etc.) are not penalized on location.
 
 ## Not a fit
 
