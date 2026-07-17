@@ -178,9 +178,10 @@ Return [] if nothing found. JSON only.
             "content-type": "application/json",
         },
         json={
-            "model": "claude-sonnet-4-6",
+            "model": "claude-sonnet-5",
             "max_tokens": 2000,
-            "tools": [{"type": "web_search_20250305", "name": "web_search"}],
+            "thinking": {"type": "disabled"},
+            "tools": [{"type": "web_search_20260209", "name": "web_search"}],
             "messages": [{"role": "user", "content": prompt}],
         },
         timeout=120,

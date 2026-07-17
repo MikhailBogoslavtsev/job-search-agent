@@ -10,25 +10,35 @@ company and dismiss it than never see it. Err toward including.
 
 ## What I'm looking for
 
-I'm interested in companies building software products that apply AI, computer
-vision, machine learning, imagery, sensor data or automation to real-world
-physical operations — across construction, infrastructure, industry, energy,
-agriculture, logistics, manufacturing, and adjacent domains. I care about
+I'm interested in companies building B2B SaaS products in ANY industry —
+not just construction, infrastructure, industry, energy, agriculture,
+logistics and manufacturing (my own background), but also HR tech, martech,
+devtools/infra, legal tech, cybersecurity, supply chain, climate/energy tech,
+healthtech ops, real estate tech, and vertical AI tools generally. Applying
+AI, computer vision, ML, imagery, sensor data or automation to real-world
+physical operations is still a strong plus, not a requirement. I care about
 product companies (SaaS / platforms), not services or consulting agencies.
 Startup-stage is more interesting than large corporates. I'm open to a wide
 range — err toward including a company rather than excluding it.
 
-## The one hard filter
+## The two hard filters
 
-**Product company, not a services / outsourcing / consulting agency.**
+**1. Product company, not a services / outsourcing / consulting agency.**
 If the company mainly sells people's time (custom development shops, staffing,
 system integrators, "we build your MVP" agencies), it is NOT a fit — score it
 low and set `is_product_company` to false, regardless of how interesting the
 domain sounds. A real product/SaaS/platform company that sells a repeatable
 product is what I want.
 
+**2. Not fintech.** Fintech (banking, payments, lending, trading, insurance
+infrastructure, etc.) requires domain-specific regulatory/financial knowledge
+I don't have — score fintech companies low even if everything else about them
+fits.
+
 ## Soft signals (raise the score, but none is a gate on its own)
 
+- Any B2B SaaS vertical — industrial/physical-operations domains are a plus
+  but not required.
 - Applies AI / computer vision / ML / imagery / sensor / automation to a
   physical, real-world operation.
 - Sells B2B to field teams, operators, engineers, contractors, or industrial
@@ -40,7 +50,8 @@ product is what I want.
 
 ## Not a fit
 
-- Services / consulting / agencies (the hard filter above).
+- Services / consulting / agencies (hard filter 1).
+- Fintech (hard filter 2).
 
-Everything not listed as the hard filter is a soft signal only. When unsure
+Everything not listed as a hard filter is a soft signal only. When unsure
 between two scores, pick the higher one — the funnel is meant to be wide.
