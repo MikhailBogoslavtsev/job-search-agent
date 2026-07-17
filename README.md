@@ -53,8 +53,14 @@ Design choices worth calling out:
   "Overstory" vs "Overstory Inc.".
 - **An LLM filter, because search can't tell product from services.** A SaaS
   company and a consulting agency describe themselves almost identically;
-  only a model reading the page can separate them. That's the one hard filter;
-  everything else is a soft signal for the score.
+  only a model reading the page can separate them. That's one of two hard
+  filters (the other is fintech, out of scope for this candidate); everything
+  else is a soft signal for the score.
+- **Live domain check before anything reaches Telegram.** Companies clearing
+  the score threshold get their domain HTTP-checked (https then http) before
+  being sent — Exa's semantic search sometimes surfaces stale or parked
+  pages, and a company whose site doesn't resolve gets flagged in the message
+  rather than presented as a clean hit.
 - **The profile lives in `company_profile.md`, not the code.** Edit that one
   file to widen or narrow the funnel — the score threshold is a constant in
   `scout_company.py` (starts at 6, since the seed profile is deliberately broad).

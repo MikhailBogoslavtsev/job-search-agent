@@ -11,6 +11,8 @@ TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 EXA_API_KEY = os.environ["EXA_API_KEY"]
 
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JobMonitorBot/1.0)"}
+
 # --- State / config files ---
 KNOWN_FILE = "known_companies.json"        # dedupe memory, keyed by domain
 STATE_FILE = "company_scout_state.json"    # rotation pointer
@@ -94,6 +96,21 @@ def normalize_domain(value):
     if netloc.startswith("www."):
         netloc = netloc[4:]
     return netloc
+
+
+# --- URL validation ---
+def check_domain_alive(domain):
+    """HTTP-check a normalized domain (tries https then http). Exa's semantic
+    search sometimes surfaces stale or parked pages; this catches domains
+    that no longer resolve at all before we tell the user to go look at them."""
+    for scheme in ("https://", "http://"):
+        try:
+            r = requests.get(scheme + domain, headers=HEADERS, timeout=10, allow_redirects=True)
+            if r.status_code < 400:
+                return True
+        except Exception:
+            continue
+    return False
 
 
 # --- Exa semantic search ---
@@ -220,7 +237,7 @@ def send_telegram(message):
         })
 
 
-def format_company(verdict, domain):
+def format_company(verdict, domain, domain_alive):
     name = verdict.get("name") or "Unknown company"
     score = verdict.get("score", 0)
     summary = verdict.get("summary", "") or ""
@@ -229,6 +246,8 @@ def format_company(verdict, domain):
     msg += f"🔗 {domain}\n\n"
     msg += f"💡 {summary}\n\n"
     msg += f"✅ Why: {reason}"
+    if not domain_alive:
+        msg += "\n\n⚠️ <i>Site didn't resolve when checked — verify before reaching out</i>"
     return msg
 
 
@@ -280,6 +299,11 @@ def main():
         # Prefer the domain Claude cleaned; fall back to the URL's domain.
         domain = normalize_domain(verdict.get("domain", "")) or url_domain
 
+        # Only worth the live HTTP check for companies we're about to surface.
+        domain_alive = True
+        if is_product and score >= SCORE_THRESHOLD:
+            domain_alive = check_domain_alive(domain)
+
         # Write EVERY scored company (any score) so it never gets re-scored.
         known[domain] = {
             "name": verdict.get("name") or result.get("title", ""),
@@ -294,8 +318,8 @@ def main():
 
         # Hard filter (product, not services) + score gate for Telegram.
         if is_product and score >= SCORE_THRESHOLD:
-            hits.append((verdict, domain))
-        print(f"  {domain}: {score}/10 product={is_product}")
+            hits.append((verdict, domain, domain_alive))
+        print(f"  {domain}: {score}/10 product={is_product} alive={domain_alive}")
 
     save_known(known)
     print(f"Scored {scored} new companies, {skipped_known} already known, {len(hits)} above threshold")
@@ -303,8 +327,8 @@ def main():
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M")
 
     if hits:
-        for verdict, domain in hits:
-            send_telegram(format_company(verdict, domain))
+        for verdict, domain, domain_alive in hits:
+            send_telegram(format_company(verdict, domain, domain_alive))
         print(f"Sent {len(hits)} companies to Telegram")
     else:
         send_telegram(
