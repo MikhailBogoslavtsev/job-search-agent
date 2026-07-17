@@ -37,7 +37,7 @@ something worth seeing.
 for **companies worth tracking even when they have no vacancy right now** — so
 they're already on the radar the day they do start hiring.
 
-Pipeline: [Exa](https://exa.ai) semantic search (8 rotating queries, one per
+Pipeline: [Exa](https://exa.ai) semantic search (14 rotating queries, one per
 run) → dedupe by normalized domain against `known_companies.json` → Claude
 Sonnet scores each *new* company 0–10 against an editable profile → companies
 scoring `>=` the threshold go to Telegram; every scored company (any score) is
@@ -66,7 +66,7 @@ Design choices worth calling out:
 
 The LLM path is the expensive one, so it's the one with a budget:
 
-- **3 rotating search queries per run**, drawn from a bank of 20 and cycled
+- **3 rotating search queries per run**, drawn from a bank of 32 and cycled
   via persisted state (`scout_state.json`) — not 20 queries every week.
 - **Capped output tokens** (2000) and a **mid-tier model** (Sonnet, not
   Opus) — discovery doesn't need the largest model, it needs decent judgment

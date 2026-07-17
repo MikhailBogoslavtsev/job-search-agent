@@ -20,9 +20,9 @@ PROFILE_FILE = "company_profile.md"        # editable scoring rubric
 SCORE_THRESHOLD = 6            # companies scoring >= this get sent to Telegram
 EXA_RESULTS_PER_QUERY = 10     # how many results Exa returns per run
 EXA_TEXT_CHARS = 6000          # cap of page text we hand to Claude (token budget)
-CLAUDE_MODEL = "claude-sonnet-4-6"
+CLAUDE_MODEL = "claude-sonnet-5"
 
-# --- The 8 rotating queries (one runs per execution) ---
+# --- The 14 rotating queries (one runs per execution) ---
 # Exa is a SEMANTIC engine: queries are rich natural-language descriptions of
 # the ideal page, not keyword lists. The company-discovery queries use Exa's
 # real `category` field (value "company") rather than an inline "category:"
@@ -36,6 +36,12 @@ COMPANY_QUERIES = [
     {"category": None, "query": "job posting for a senior or lead product manager at a remote-first European startup building a SaaS platform that turns imagery or sensor data into decisions for field teams"},
     {"category": None, "query": "job posting for a head of product or director of product at a Series A to C startup applying AI to construction, infrastructure or industrial operations"},
     {"category": None, "query": "job posting for a product manager at a company hiring remotely across Europe, building ML products from geospatial, earth observation or camera data"},
+    {"category": "company", "query": "B2B SaaS startups building vertical software products for HR, legal, supply chain or logistics teams, not fintech"},
+    {"category": "company", "query": "startups building developer tools or infrastructure software sold to engineering teams"},
+    {"category": "company", "query": "cybersecurity SaaS startups selling to enterprise security and IT teams"},
+    {"category": "company", "query": "climate tech or energy SaaS startups selling software products to operations teams, not fintech"},
+    {"category": None, "query": "job posting for a senior or lead product manager at a Series A to C B2B SaaS startup remote in Europe, any industry except fintech"},
+    {"category": None, "query": "job posting for a head of product at a remote-first B2B SaaS startup building a vertical software platform, not a fintech company"},
 ]
 
 
@@ -156,10 +162,13 @@ Page text:
 
 Score this company 0-10 against the profile.
 
-The ONE hard rule: if this is a services / consulting / outsourcing / staffing
-agency rather than a product (SaaS / platform) company, set is_product_company
-to false and give it a low score. Semantic search cannot tell these apart —
-that judgment is your job. Everything else in the profile is a soft signal.
+Two hard rules from the profile: (1) if this is a services / consulting /
+outsourcing / staffing agency rather than a product (SaaS / platform)
+company, set is_product_company to false and give it a low score — semantic
+search cannot tell these apart, that judgment is your job; (2) if this is a
+fintech company (banking, payments, lending, trading, insurance
+infrastructure), give it a low score regardless of how well it otherwise
+fits. Everything else in the profile is a soft signal.
 
 Do NOT filter by country.
 
@@ -177,6 +186,7 @@ Respond with ONLY valid JSON — no markdown fences, no preamble, no text after:
         json={
             "model": CLAUDE_MODEL,
             "max_tokens": 1000,
+            "thinking": {"type": "disabled"},
             "messages": [{"role": "user", "content": prompt}],
         },
         timeout=90,
