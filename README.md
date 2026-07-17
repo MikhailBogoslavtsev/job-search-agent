@@ -1,39 +1,51 @@
 # Job Scout
 
-A personal AI job-search agent that runs on autopilot: watch a known list of
-companies for new roles, and separately go discover companies I don't know to
-watch yet — without burning LLM cost on either one more than it needs.
+A personal AI job-search agent that runs on autopilot: go discover companies I
+don't know to watch yet, and score companies worth tracking even before they're
+hiring — without burning LLM cost more than it needs.
 
 Built solo with Claude Code + Python. Runs serverless on GitHub Actions, no
 server, no database.
 
-## Why two agents, not one
+> **Level A — the Job Monitor (`monitor.py`) — has been retired** (2026-07-17).
+> It tracked a fixed list of known companies via ATS APIs and hash-diffed their
+> postings daily. It wasn't earning its keep, so it's been moved to
+> [`archive/`](archive/) and its workflow no longer runs. The discovery agents
+> below are what the search actually needs. The rules-vs-model reasoning it
+> illustrated is preserved in the section below, since it's the design point
+> the whole system is built around.
+
+## Rules vs. model — the split the system is built on
 
 Job search has two different problems that don't need the same tool:
 
 - **"Did anything change at a company I already know?"** — high frequency,
-  structured data, no ambiguity. This is a rules problem.
+  structured data, no ambiguity. This is a rules problem — no LLM needed. This
+  was Level A (`monitor.py`, now retired): plain HTTP calls to ATS JSON APIs,
+  hashed and diffed against the last known state.
 - **"What companies should I even be watching?"** — open-ended, needs
-  judgment and live web search. This is a model problem.
+  judgment and live web search. This is a model problem. This is what the
+  active agents do.
 
-Using an LLM for both would mean paying model latency and token cost to
-re-check the same ~30 known companies every day, for zero benefit over a
-plain API diff. So the system is split on exactly that line:
+The point that survives the monitor's retirement: don't pay model latency and
+token cost to re-check the same known companies every day when a plain API diff
+does it for free. Decide what actually needs a model, then put a budget and a
+check on it.
 
-| | `monitor.py` | `scout.py` |
+| | `scout.py` (Level B) | `scout_company.py` (Level C) |
 |---|---|---|
-| Job | Track known companies | Discover new ones |
-| Method | Ashby / Greenhouse / Lever ATS APIs, hash-diffed | Claude (Sonnet) + web search tool |
-| Cadence | Daily | 2x/week (Mon & Wed) |
-| Cost | $0 (rules) | Bounded (see below) |
-| Trigger | Any change in a known company's postings | New company matching the profile |
+| Job | Discover companies hiring PMs | Discover companies worth tracking |
+| Method | Claude (Sonnet) + web search tool | Exa semantic search + Claude (Sonnet) scoring |
+| Cadence | 2x/week (Mon & Wed) | On demand (manual) |
+| Cost | Bounded (see below) | Bounded (see below) |
+| Trigger | New company matching the profile | Company scoring over threshold |
 
 Both paths land in the same place: a Telegram message, only when there's
 something worth seeing.
 
 ## Level C — Company Scout (`scout_company.py`)
 
-`monitor.py` and `scout.py` both look for **open roles**. Company Scout looks
+`scout.py` looks for **open roles**. Company Scout looks
 for **companies worth tracking even when they have no vacancy right now** — so
 they're already on the radar the day they do start hiring.
 
@@ -77,14 +89,14 @@ The LLM path is the expensive one, so it's the one with a budget:
 - **Capped output tokens** (2000) and a **mid-tier model** (Sonnet, not
   Opus) — discovery doesn't need the largest model, it needs decent judgment
   over search results.
-- **Twice-weekly cadence** (Mon & Wed), vs. the deterministic monitor's daily
-  cadence — the free path runs every day, the paid path runs on a fixed,
-  sparse schedule.
+- **Twice-weekly cadence** (Mon & Wed) for Level B, on-demand for Level C —
+  the paid paths run on a fixed, sparse schedule, not continuously.
 
-The rules path (`monitor.py`) has effectively zero marginal cost per run:
-plain HTTP calls to ATS JSON APIs, hashed and diffed against the last known
-state. No model in the loop at all for the 90% of "check if anything
-changed" work.
+The retired rules path (`monitor.py`, now in [`archive/`](archive/)) had
+effectively zero marginal cost per run: plain HTTP calls to ATS JSON APIs,
+hashed and diffed against the last known state, no model in the loop at all.
+That's the reference point for why the model paths get a budget — the cheap
+work should never touch a model.
 
 ## Guardrails
 
@@ -115,7 +127,7 @@ Telegram Bot API, GitHub Actions (cron + `workflow_dispatch`).
 ## Scope note
 
 This was built for my own search, so `scout.py`'s matching profile and
-`monitor.py`'s company list are tuned to my specific target — Senior/Lead PM
+`company_profile.md`'s scoring rubric are tuned to my specific target — Senior/Lead PM
 or Head of Product at Series A-C B2B SaaS startups (any vertical: industrial /
 construction-tech / drone & CV SaaS, but also HR tech, devtools, cybersecurity,
 supply chain, legal tech, climate tech, etc. — excluding fintech, which needs
@@ -134,7 +146,9 @@ Requires `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and (for `scout.py`)
 
 ```
 pip install -r requirements.txt
-python monitor.py          # daily: check known companies for new roles
 python scout.py            # Mon/Wed: discover companies hiring PMs
 python scout_company.py    # on demand: discover companies worth tracking
 ```
+
+(`monitor.py` — the retired Level A monitor — lives in [`archive/`](archive/)
+and is no longer wired to a workflow.)
