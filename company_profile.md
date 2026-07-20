@@ -37,6 +37,10 @@ fits.
 
 ## Soft signals (raise the score, but none is a gate on its own)
 
+- **Specific area of strong interest: AI-driven supply chain planning and
+  optimization platforms** (demand forecasting, inventory/network
+  optimization, logistics planning, procurement optimization, etc.). Flag
+  these clearly and score them highly.
 - Any B2B SaaS vertical — industrial/physical-operations domains are a plus
   but not required.
 - Applies AI / computer vision / ML / imagery / sensor / automation to a
