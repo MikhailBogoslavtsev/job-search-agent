@@ -118,5 +118,59 @@
     "first_seen": "2026-07-16",
     "score": 8,
     "summary": "AI-powered computer vision platform for real-time defect detection, quality assurance, and safety compliance monitoring sold to manufacturing, construction, energy, and other industrial sectors."
+  },
+  "ivosystems.com": {
+    "name": "IVO Systems",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "B2B SaaS operations platform for heavy civil contractors, managing equipment tracking, field timecards, maintenance, dispatch, and inspections."
+  },
+  "fieldwire.com": {
+    "name": "Fieldwire by Hilti",
+    "first_seen": "2026-07-20",
+    "score": 5,
+    "summary": "Jobsite management SaaS platform connecting field and office teams for construction contractors, now owned by Hilti."
+  },
+  "prostarcorp.com": {
+    "name": "PointMan by ProStar",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "Cloud/mobile SaaS platform for capturing and managing above/below-ground utility infrastructure data, sold to utility companies, surveyors, municipalities and construction firms."
+  },
+  "virtual-surveyor.com": {
+    "name": "Virtual Surveyor",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "SaaS platform that turns drone/point-cloud survey data into CAD terrain models, volumes and reports for surveyors, engineers, contractors and quarry operators."
+  },
+  "onstationapp.com": {
+    "name": "OnStation",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "Mobile SaaS platform for digital stationing and real-time documentation on road construction sites, sold to civil engineering and heavy highway contractors."
+  },
+  "civilmesh.com": {
+    "name": "Civil Mesh Pro",
+    "first_seen": "2026-07-20",
+    "score": 2,
+    "summary": "A civil engineering services firm providing aerial mapping, photogrammetry, surveying, and earthwork takeoff consulting to contractors and developers."
+  },
+  "fulcrumapp.com": {
+    "name": "Fulcrum",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "AI-powered field data collection and process management platform for frontline/field operations teams, with geospatial and agentic AI capabilities."
+  },
+  "metafield.com": {
+    "name": "MetaField",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "Cloud-based SaaS platform for construction materials testing, geotechnical engineering, and inspection firms, unifying field data collection, lab testing, and reporting."
+  },
+  "operix.com": {
+    "name": "Operix",
+    "first_seen": "2026-07-20",
+    "score": 7,
+    "summary": "Field operations SaaS platform for specialty contractors (mechanical, electrical, HVAC, plumbing) covering scheduling, dispatch, invoicing, and accounting integrations."
   }
 }
