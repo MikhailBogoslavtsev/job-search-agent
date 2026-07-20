@@ -172,5 +172,59 @@
     "first_seen": "2026-07-20",
     "score": 7,
     "summary": "Field operations SaaS platform for specialty contractors (mechanical, electrical, HVAC, plumbing) covering scheduling, dispatch, invoicing, and accounting integrations."
+  },
+  "etalytics.com": {
+    "name": "etalytics",
+    "first_seen": "2026-07-20",
+    "score": 9,
+    "summary": "AI-native SaaS platform (etaONE) that optimizes industrial energy, HVAC, and cooling systems via digital twins and predictive analytics for data centers, pharma, chemicals, and automotive operators."
+  },
+  "konboi.ai": {
+    "name": "Konboi",
+    "first_seen": "2026-07-20",
+    "score": 9,
+    "summary": "Physical AI product (Hypermile) providing autonomous cruise control retrofit for commercial trucks to cut fuel consumption and CO2 emissions, sold to trucking/logistics fleets."
+  },
+  "enersee.ai": {
+    "name": "Enersee",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "AI-driven virtual energy manager SaaS platform for energy, facility, and sustainability managers to optimize building energy efficiency at scale."
+  },
+  "guided.energy": {
+    "name": "Guided",
+    "first_seen": "2026-07-20",
+    "score": 9,
+    "summary": "AI agents that automate freight track-and-trace, carrier booking, load sourcing, and dispatch for logistics/transportation teams."
+  },
+  "smartcloudfarming.com": {
+    "name": "Smart Cloud Farming",
+    "first_seen": "2026-07-20",
+    "score": 8,
+    "summary": "A soil intelligence SaaS platform using satellite data, ML, and smart sampling to enable carbon/sustainability programs to measure and verify soil data at scale, sold to agrifood companies and carbon project developers."
+  },
+  "zentur.io": {
+    "name": "Zentur.io",
+    "first_seen": "2026-07-20",
+    "score": 9,
+    "summary": "SaaS platform (digital twin + customer portal) for district heating operators to optimize thermal networks and decarbonize supply, sold to utilities/network operators."
+  },
+  "peakpower.io": {
+    "name": "Peak Power",
+    "first_seen": "2026-07-20",
+    "score": 7,
+    "summary": "AI-powered optimizer that automates energy storage asset trading across electricity markets, sold to renewable energy asset owners/operators."
+  },
+  "annea.ai": {
+    "name": "ANNEA",
+    "first_seen": "2026-07-20",
+    "score": 9,
+    "summary": "AI-powered predictive maintenance and underperformance detection platform for renewable energy assets (wind, solar, hydro), sold to operators and asset managers."
+  },
+  "entropic.energy": {
+    "name": "Entropic",
+    "first_seen": "2026-07-20",
+    "score": 9,
+    "summary": "AI-powered engineering/simulation platform that helps process engineers design industrial decarbonization systems (heat recovery, heat pumps, thermal storage) for industrial sites, sold B2B to industrial companies and process engineers."
   }
 }
