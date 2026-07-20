@@ -170,8 +170,8 @@ Format:
 Return [] if nothing found. JSON only.
 """
 
-    response = requests.post(
-        "https://api.anthropic.com/v1/messages",
+    request_kwargs = dict(
+        url="https://api.anthropic.com/v1/messages",
         headers={
             "x-api-key": ANTHROPIC_API_KEY,
             "anthropic-version": "2023-06-01",
@@ -184,8 +184,18 @@ Return [] if nothing found. JSON only.
             "tools": [{"type": "web_search_20260209", "name": "web_search"}],
             "messages": [{"role": "user", "content": prompt}],
         },
-        timeout=120,
+        timeout=280,
     )
+
+    for attempt in range(2):
+        try:
+            response = requests.post(**request_kwargs)
+            break
+        except requests.exceptions.Timeout:
+            if attempt == 0:
+                print("Anthropic API read timed out, retrying once...")
+                continue
+            raise
 
     data = response.json()
 
