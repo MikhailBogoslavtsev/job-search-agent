@@ -226,5 +226,59 @@
     "first_seen": "2026-07-20",
     "score": 9,
     "summary": "AI-powered engineering/simulation platform that helps process engineers design industrial decarbonization systems (heat recovery, heat pumps, thermal storage) for industrial sites, sold B2B to industrial companies and process engineers."
+  },
+  "occamshub.com": {
+    "name": "OccamsHub",
+    "first_seen": "2026-07-22",
+    "score": 7,
+    "summary": "Agentic AI platform with SRE copilots that predict outages, automate root cause analysis, and recommend remediation for Ops/SRE teams."
+  },
+  "cokpit.ai": {
+    "name": "Cokpit",
+    "first_seen": "2026-07-22",
+    "score": 7,
+    "summary": "An agentic AI DevOps platform that automates infrastructure config, CI/CD pipelines, incident resolution and documentation for engineering teams (DevOps engineers, SREs, IT leaders)."
+  },
+  "pathnovo.com": {
+    "name": "Pathnovo",
+    "first_seen": "2026-07-22",
+    "score": 8,
+    "summary": "AI agents that parse P&IDs, FMEAs, BOMs, and engineering drawings into structured data for oil & gas, chemicals, and pharma plants, offered via API/SDK."
+  },
+  "wippy.ai": {
+    "name": "Wippy AI",
+    "first_seen": "2026-07-22",
+    "score": 6,
+    "summary": "Open-source, self-hosted runtime/infrastructure for building and running production AI agent systems, sold to engineering teams and SaaS companies embedding AI features."
+  },
+  "inkeep.com": {
+    "name": "Inkeep",
+    "first_seen": "2026-07-22",
+    "score": 6,
+    "summary": "AI agent platform (no-code builder + developer SDK) for building customer support, sales, and in-product copilot agents, sold to engineering and business teams."
+  },
+  "gnucleus.ai": {
+    "name": "gNucleus AI",
+    "first_seen": "2026-07-22",
+    "score": 8,
+    "summary": "Generative AI platform for CAD design, simulation, and engineering optimization, sold to industrial/manufacturing engineering teams."
+  },
+  "teammvx.com": {
+    "name": "MVX",
+    "first_seen": "2026-07-22",
+    "score": 7,
+    "summary": "B2B SaaS platform providing an orchestration layer for enterprise AI agents (PM/dev/QA agents) with enterprise-grade RBAC, audit logs and deployment flexibility, sold to software/AI teams."
+  },
+  "semor.ai": {
+    "name": "Semorai GmbH",
+    "first_seen": "2026-07-22",
+    "score": 8,
+    "summary": "AI engineering automation platform that builds a private historical knowledge graph to automate engineering workflows for automotive, manufacturing, and defense customers."
+  },
+  "copperpilot.ai": {
+    "name": "CopperPilot",
+    "first_seen": "2026-07-22",
+    "score": 7,
+    "summary": "AI copilot platform for hardware engineers to accelerate schematic design, firmware, and validation, sold to electronics/hardware design teams."
   }
 }
