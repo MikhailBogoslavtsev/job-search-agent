@@ -24,11 +24,16 @@ EXA_RESULTS_PER_QUERY = 10     # how many results Exa returns per run
 EXA_TEXT_CHARS = 6000          # cap of page text we hand to Claude (token budget)
 CLAUDE_MODEL = "claude-sonnet-5"
 
-# --- The 14 rotating queries (one runs per execution) ---
+# --- The rotating queries (one runs per execution) ---
 # Exa is a SEMANTIC engine: queries are rich natural-language descriptions of
 # the ideal page, not keyword lists. The company-discovery queries use Exa's
 # real `category` field (value "company") rather than an inline "category:"
 # prefix; the job-posting queries use no category.
+#
+# The "Augury cluster" queries at the end target the top-priority archetype
+# (see augury_profile.md): industrial AI with agents/copilots for plant and
+# operations personas — the intersection of physical-operations domain and
+# agentic AI.
 COMPANY_QUERIES = [
     {"category": "company", "query": "startups turning drone or satellite imagery into operational decisions for construction and infrastructure field teams"},
     {"category": "company", "query": "companies building computer vision products for industrial inspection of energy assets, utilities, mining sites and manufacturing plants"},
@@ -44,6 +49,11 @@ COMPANY_QUERIES = [
     {"category": "company", "query": "climate tech or energy SaaS startups selling software products to operations teams, not fintech"},
     {"category": None, "query": "job posting for a senior or lead product manager at a Series A to C B2B SaaS startup remote in Europe, any industry except fintech"},
     {"category": None, "query": "job posting for a head of product at a remote-first B2B SaaS startup building a vertical software platform, not a fintech company"},
+    # --- Augury cluster: industrial AI + agents/copilots for operations personas ---
+    {"category": "company", "query": "startups building industrial AI agents or copilots for manufacturing operations, reliability and maintenance teams — machine health, process health, predictive maintenance on live plant data"},
+    {"category": "company", "query": "companies building an industrial data platform that unifies fragmented operational sources — historians, CMMS, MES, ERP, sensors — and layers AI agents or copilots on top for plant engineers"},
+    {"category": "company", "query": "vertical SaaS for frontline manufacturing operations and maintenance — CMMS, machine health, process optimization for process engineers, reliability engineers and plant managers — adding AI copilots"},
+    {"category": None, "query": "job posting for a product manager or head of product at an industrial AI startup building agents or copilots for manufacturing, predictive maintenance, machine health or plant operations, remote"},
 ]
 
 

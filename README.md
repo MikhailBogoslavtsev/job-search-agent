@@ -49,7 +49,7 @@ something worth seeing.
 for **companies worth tracking even when they have no vacancy right now** — so
 they're already on the radar the day they do start hiring.
 
-Pipeline: [Exa](https://exa.ai) semantic search (14 rotating queries, one per
+Pipeline: [Exa](https://exa.ai) semantic search (18 rotating queries, one per
 run) → dedupe by normalized domain against `known_companies.json` → Claude
 Sonnet scores each *new* company 0–10 against an editable profile → companies
 scoring `>=` the threshold go to Telegram; every scored company (any score) is
