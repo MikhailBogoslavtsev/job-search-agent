@@ -30,10 +30,10 @@ CLAUDE_MODEL = "claude-sonnet-5"
 # real `category` field (value "company") rather than an inline "category:"
 # prefix; the job-posting queries use no category.
 #
-# The "Augury cluster" queries at the end target the top-priority archetype
+# The "Augury cluster" queries at the end add coverage for another shape
 # (see augury_profile.md): industrial AI with agents/copilots for plant and
 # operations personas — the intersection of physical-operations domain and
-# agentic AI.
+# agentic AI. Included alongside the others, not prioritized above them.
 COMPANY_QUERIES = [
     {"category": "company", "query": "startups turning drone or satellite imagery into operational decisions for construction and infrastructure field teams"},
     {"category": "company", "query": "companies building computer vision products for industrial inspection of energy assets, utilities, mining sites and manufacturing plants"},

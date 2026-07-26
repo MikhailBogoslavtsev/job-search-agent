@@ -37,18 +37,17 @@ fits.
 
 ## Soft signals (raise the score, but none is a gate on its own)
 
-- **Top-priority archetype: the "Augury cluster" — industrial AI with
-  agents/copilots for plant & operations personas.** Companies building
-  AI-native (ideally *agentic* — copilots, LLM agents, applied ML on
-  operational data) products for manufacturing, plants, factories, field
-  service or heavy-asset operations, sold to process engineers, reliability
-  engineers, maintenance planners, operations leaders or plant managers.
-  This is the strongest fit of all — score these highly and flag them
-  clearly. Bonus when they unify fragmented industrial data sources
-  (historians, CMMS, MES, ERP, sensors, CAD). Examples of the shape:
-  Augury, Tractian, Cognite, Uptake, Sight Machine, Tulip Interfaces,
-  MaintainX, Seeq, Samotics. See `augury_profile.md` for the full archetype
-  and target cluster.
+- **Also include: the "Augury cluster" — industrial AI with agents/copilots
+  for plant & operations personas.** Companies building AI-native (ideally
+  *agentic* — copilots, LLM agents, applied ML on operational data) products
+  for manufacturing, plants, factories, field service or heavy-asset
+  operations, sold to process engineers, reliability engineers, maintenance
+  planners, operations leaders or plant managers. Count this as a soft signal
+  like the others — a plus, not a gate, and not ranked above other verticals.
+  Bonus when they unify fragmented industrial data sources (historians, CMMS,
+  MES, ERP, sensors, CAD). Examples of the shape: Augury, Tractian, Cognite,
+  Uptake, Sight Machine, Tulip Interfaces, MaintainX, Seeq, Samotics. See
+  `augury_profile.md` for the full archetype and target cluster.
 - **Specific area of strong interest: AI-driven supply chain planning and
   optimization platforms** (demand forecasting, inventory/network
   optimization, logistics planning, procurement optimization, etc.). Flag
