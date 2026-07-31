@@ -108,6 +108,29 @@ def normalize_domain(value):
     return netloc
 
 
+# --- Name normalization (second dedupe key) ---
+# The same company routinely shows up in Exa results under several different
+# domains in one run: its own site, its ATS subdomain (job-boards.eu.
+# greenhouse.io, apply.workable.com, ...) and third-party aggregators (join.com,
+# remoterocketship.com, builtin.com, ...). None of those match each other as
+# domains, so domain-only dedupe lets the same company get re-scored and
+# re-sent to Telegram multiple times in a single run. Claude's returned
+# "name" field is consistent across those pages, so use it as a second key.
+_NAME_SUFFIXES = (" inc", " llc", " gmbh", " ltd", " limited", " corp",
+                   " co", " ag", " sa", " bv", " plc", " group")
+
+def normalize_company_name(name):
+    if not name:
+        return ""
+    name = name.lower().strip()
+    name = re.sub(r"\(.*?\)", "", name)      # drop "(YC W19)"-style notes
+    name = re.sub(r"[^a-z0-9]+", " ", name).strip()
+    for suffix in _NAME_SUFFIXES:
+        if name.endswith(suffix):
+            name = name[: -len(suffix)].strip()
+    return name
+
+
 # --- URL validation ---
 def check_domain_alive(domain):
     """HTTP-check a normalized domain (tries https then http). Exa's semantic
@@ -283,9 +306,17 @@ def main():
     save_state(state)
     print(f"Exa returned {len(results)} results")
 
+    # Name index for cross-domain dedupe, seeded from everything already known.
+    name_index = {}
+    for dom, info in known.items():
+        norm = normalize_company_name(info.get("name", ""))
+        if norm:
+            name_index.setdefault(norm, dom)
+
     hits = []          # product companies scoring >= threshold -> Telegram
     scored = 0
     skipped_known = 0
+    skipped_duplicate_name = 0
 
     for result in results:
         url_domain = normalize_domain(result.get("url", ""))
@@ -308,6 +339,19 @@ def main():
 
         # Prefer the domain Claude cleaned; fall back to the URL's domain.
         domain = normalize_domain(verdict.get("domain", "")) or url_domain
+        norm_name = normalize_company_name(verdict.get("name", ""))
+
+        # Same company already known under a different domain (own site vs.
+        # ATS page vs. aggregator) -> alias this domain to the existing
+        # record instead of re-scoring/re-sending it as if it were new.
+        canonical_domain = name_index.get(norm_name) if norm_name else None
+        if canonical_domain and canonical_domain not in (domain, url_domain):
+            skipped_duplicate_name += 1
+            known[domain] = known[canonical_domain]
+            if url_domain not in known:
+                known[url_domain] = known[canonical_domain]
+            print(f"  Skipped {domain}: duplicate of '{verdict.get('name')}' already known via {canonical_domain}")
+            continue
 
         # Only worth the live HTTP check for companies we're about to surface.
         domain_alive = True
@@ -325,6 +369,8 @@ def main():
         # this company is deduped on either key next time.
         if url_domain not in known:
             known[url_domain] = known[domain]
+        if norm_name:
+            name_index[norm_name] = domain
 
         # Hard filter (product, not services) + score gate for Telegram.
         if is_product and score >= SCORE_THRESHOLD:
@@ -332,7 +378,8 @@ def main():
         print(f"  {domain}: {score}/10 product={is_product} alive={domain_alive}")
 
     save_known(known)
-    print(f"Scored {scored} new companies, {skipped_known} already known, {len(hits)} above threshold")
+    print(f"Scored {scored} new companies, {skipped_known} already known by domain, "
+          f"{skipped_duplicate_name} duplicate by name, {len(hits)} above threshold")
 
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M")
 
