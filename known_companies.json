@@ -280,5 +280,107 @@
     "first_seen": "2026-07-22",
     "score": 7,
     "summary": "AI copilot platform for hardware engineers to accelerate schematic design, firmware, and validation, sold to electronics/hardware design teams."
+  },
+  "overstory.com": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 9,
+    "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "job-boards.eu.greenhouse.io": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 9,
+    "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "seqana.com": {
+    "name": "Seqana",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "EU-based SaaS company using earth observation and ML to provide soil carbon monitoring, reporting, and verification (MRV) tools for regenerative agriculture, sold to carbon offset partners and agriculture stakeholders."
+  },
+  "join.com": {
+    "name": "Seqana",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Builds a data/SaaS MRV (monitoring, reporting, verification) platform using satellite imagery, remote sensing and ML to measure soil organic carbon, sold to carbon project developers, agrifood corporations, NGOs and governments."
+  },
+  "remoterocketship.com": {
+    "name": "Seqana",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "EU-based SaaS company using earth observation and ML to provide soil carbon monitoring, reporting, and verification (MRV) tools for regenerative agriculture, sold to carbon offset partners and agriculture stakeholders."
+  },
+  "arlula.com": {
+    "name": "Arlula",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "Earth Observation Data Infrastructure platform automating satellite/drone imagery tasking, processing and delivery for commercial, defence and government customers via SaaS, private cloud, and on-prem."
+  },
+  "builtin.com": {
+    "name": "Arlula",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "Earth Observation Data Infrastructure platform automating satellite/drone imagery tasking, processing and delivery for commercial, defence and government customers via SaaS, private cloud, and on-prem."
+  },
+  "overstory.ai": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI and satellite imagery platform that detects vegetation risk near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "remoteitjobs.app": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI and satellite imagery platform that detects vegetation risk near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "agreena.com": {
+    "name": "Agreena",
+    "first_seen": "2026-07-31",
+    "score": 3,
+    "summary": "Climate agtech building a soil carbon MRV platform and carbon credit issuance for farmers, with remote sensing/ML data products, rooted in agriculture and carbon finance."
+  },
+  "jobs.weekday.works": {
+    "name": "Agreena",
+    "first_seen": "2026-07-31",
+    "score": 3,
+    "summary": "Climate agtech building a soil carbon MRV platform and carbon credit issuance for farmers, with remote sensing/ML data products, rooted in agriculture and carbon finance."
+  },
+  "semios.com": {
+    "name": "Semios",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "Agricultural IoT/data SaaS platform (Smartfield) providing sensor data and analytics to growers and agronomists for precision agriculture."
+  },
+  "apply.workable.com": {
+    "name": "Semios Group",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AgTech SaaS platform combining IoT sensors, pheromone-based pest management, water/frost management, and farm management data for growers, agronomists, and ag retailers."
+  },
+  "zeitview.com": {
+    "name": "Zeitview",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Enterprise B2B SaaS platform (Asset Insights) using aerial imaging, computer vision, and AI to inspect and monitor high-value physical infrastructure like solar, wind, utilities, and commercial properties."
+  },
+  "zeitview.hire.trakstar.com": {
+    "name": "Zeitview",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Enterprise B2B SaaS platform (Asset Insights) using aerial imaging, computer vision, and AI to inspect and monitor high-value physical infrastructure like solar, wind, utilities, and commercial properties."
+  },
+  "derived.earth": {
+    "name": "DERIVED",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "Satellite AI platform delivering field-level agricultural intelligence (crop classification, yield prediction, risk signals) via API to insurers, commodity traders, and governments."
+  },
+  "talents.vaia.com": {
+    "name": "Semios",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "Agricultural IoT/data SaaS platform (Smartfield) providing sensor data and analytics to growers and agronomists for precision agriculture."
   }
 }
