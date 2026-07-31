@@ -382,5 +382,101 @@
     "first_seen": "2026-07-31",
     "score": 7,
     "summary": "Agricultural IoT/data SaaS platform (Smartfield) providing sensor data and analytics to growers and agronomists for precision agriculture."
+  },
+  "civilgrid.com": {
+    "name": "CivilGrid",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "A civil design/data platform that consolidates underground utility, geotechnical, and jurisdictional data for utilities, civil engineers, and municipalities to plan and build infrastructure faster and safer."
+  },
+  "jobs-radar.com": {
+    "name": "CivilGrid",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "A civil design/data platform that consolidates underground utility, geotechnical, and jurisdictional data for utilities, civil engineers, and municipalities to plan and build infrastructure faster and safer."
+  },
+  "roebling.com": {
+    "name": "Roebling",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI-native capital projects platform combining a deterministic process model, LLMs, and a no-code simulation engine to accelerate planning and engineering for large industrial infrastructure investments."
+  },
+  "jobs.ashbyhq.com": {
+    "name": "Roebling",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI-native capital projects platform combining a deterministic process model, LLMs, and a no-code simulation engine to accelerate planning and engineering for large industrial infrastructure investments."
+  },
+  "firmus.ai": {
+    "name": "Firmus",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI-powered pre-construction design review and risk analysis platform for general contractors, developers, and AEC stakeholders."
+  },
+  "glacian.ai": {
+    "name": "Glacian",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Physical AI software platform combining physics-based digital twins and reinforcement learning to optimize data center power and cooling operations, sold to data center operators."
+  },
+  "tealhq.com": {
+    "name": "Glacian",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Physical AI software platform combining physics-based digital twins and reinforcement learning to optimize data center power and cooling operations, sold to data center operators."
+  },
+  "aiaec.com": {
+    "name": "AIAEC LLC",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Early-stage AI-driven SaaS platform for architecture, engineering, and construction—handling zoning, regulations, and technical workflows for civil engineers, architects, planners, and municipalities."
+  },
+  "recruiting.paylocity.com": {
+    "name": "AIAEC LLC",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "Early-stage AI-driven SaaS platform for architecture, engineering, and construction—handling zoning, regulations, and technical workflows for civil engineers, architects, planners, and municipalities."
+  },
+  "higharc.com": {
+    "name": "Higharc",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "VC-backed platform for home design/homebuilding — CAD/BIM-style drafting-to-construction-document software with AI and APIs, sold to homebuilders and construction industry partners."
+  },
+  "flexgen.zya.me": {
+    "name": "Higharc",
+    "first_seen": "2026-07-31",
+    "score": 7,
+    "summary": "VC-backed platform for home design/homebuilding — CAD/BIM-style drafting-to-construction-document software with AI and APIs, sold to homebuilders and construction industry partners."
+  },
+  "jmjphillip.com": {
+    "name": "Unknown (via jmjphillip.com job listing)",
+    "first_seen": "2026-07-31",
+    "score": 3,
+    "summary": "A job posting (not a company site) for a Director of Product role at an unnamed construction technology company using AI/automation, located in Royse City, TX."
+  },
+  "neuraum.com": {
+    "name": "Neuraum",
+    "first_seen": "2026-07-31",
+    "score": 5,
+    "summary": "German marketplace platform connecting new home builders with building companies, with matching algorithms and construction-process management software."
+  },
+  "neuraum.jobs.personio.de": {
+    "name": "Neuraum",
+    "first_seen": "2026-07-31",
+    "score": 5,
+    "summary": "German marketplace platform connecting new home builders with building companies, with matching algorithms and construction-process management software."
+  },
+  "permitflow.com": {
+    "name": "PermitFlow",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI-powered platform that automates construction permitting, licensing, and compliance workflows for contractors and builders."
+  },
+  "aplyr.ai": {
+    "name": "PermitFlow",
+    "first_seen": "2026-07-31",
+    "score": 8,
+    "summary": "AI-powered platform that automates construction permitting, licensing, and compliance workflows for contractors and builders."
   }
 }
