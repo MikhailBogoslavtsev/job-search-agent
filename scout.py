@@ -191,9 +191,9 @@ Return [] if nothing found. JSON only.
         try:
             response = requests.post(**request_kwargs)
             break
-        except requests.exceptions.Timeout:
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
             if attempt == 0:
-                print("Anthropic API read timed out, retrying once...")
+                print(f"Anthropic API request failed ({e.__class__.__name__}), retrying once...")
                 continue
             raise
 
