@@ -478,5 +478,59 @@
     "first_seen": "2026-07-31",
     "score": 8,
     "summary": "AI-powered platform that automates construction permitting, licensing, and compliance workflows for contractors and builders."
+  },
+  "planet.com": {
+    "name": "Planet",
+    "first_seen": "2026-08-07",
+    "score": 6,
+    "summary": "Satellite imaging and geospatial data platform selling Earth observation analytics/solutions to government, defense, and commercial customers."
+  },
+  "hiring.camp": {
+    "name": "Planet Labs",
+    "first_seen": "2026-08-07",
+    "score": 7,
+    "summary": "Satellite imaging and Earth observation data platform providing real-time insights/analytics to commercial, government, defense, and humanitarian customers."
+  },
+  "hydrosat.com": {
+    "name": "Hydrosat",
+    "first_seen": "2026-08-07",
+    "score": 7,
+    "summary": "Builds a thermal infrared Earth observation satellite constellation and SaaS analytics products (Field Irrigation Advisor, Water Productivity, Water Use Compliance) for agriculture and water resource management, sold to farmers, irrigation managers, ag advisors, and policymakers."
+  },
+  "geoaquawatch.org": {
+    "name": "Hydrosat",
+    "first_seen": "2026-08-07",
+    "score": 7,
+    "summary": "Builds a thermal infrared Earth observation satellite constellation and SaaS analytics products (Field Irrigation Advisor, Water Productivity, Water Use Compliance) for agriculture and water resource management, sold to farmers, irrigation managers, ag advisors, and policymakers."
+  },
+  "earthdaily.com": {
+    "name": "EarthDaily Agro",
+    "first_seen": "2026-08-07",
+    "score": 7,
+    "summary": "Earth observation and geospatial analytics platform delivering agronomic/change-detection data products to agriculture, mining, insurance, and government clients."
+  },
+  "earthdailyagro.applytojob.com": {
+    "name": "EarthDaily Agro",
+    "first_seen": "2026-08-07",
+    "score": 7,
+    "summary": "Earth observation and geospatial analytics platform delivering agronomic/change-detection data products to agriculture, mining, insurance, and government clients."
+  },
+  "remotely.de": {
+    "name": "Planet",
+    "first_seen": "2026-08-07",
+    "score": 6,
+    "summary": "Satellite imaging and geospatial data platform selling Earth observation analytics/solutions to government, defense, and commercial customers."
+  },
+  "freelancermap.de": {
+    "name": "consultingheads GmbH",
+    "first_seen": "2026-08-07",
+    "score": 1,
+    "summary": "A freelance staffing/consulting marketplace posting a contract role for a Tech Product Manager at an unnamed aerospace client working on AI-powered satellite image analysis."
+  },
+  "hubmub.com": {
+    "name": "HubMub (recruiting for Space Domain Awareness company)",
+    "first_seen": "2026-08-07",
+    "score": 6,
+    "summary": "This is a job listing posted by a recruiter (HubMub) for a Senior Product Manager role at an undisclosed company building Space Domain Awareness and Space Traffic Management software for satellite operators and government/defense bodies."
   }
 }
