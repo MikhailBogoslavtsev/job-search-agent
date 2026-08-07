@@ -226,22 +226,34 @@ Respond with ONLY valid JSON — no markdown fences, no preamble, no text after:
 {{"score": 7, "name": "Company Name", "domain": "example.com", "summary": "One line on what they build and who they sell to.", "is_product_company": true, "reason": "Why this score, referencing the profile."}}
 """
 
-    response = requests.post(
-        "https://api.anthropic.com/v1/messages",
-        headers={
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json",
-        },
-        json={
-            "model": CLAUDE_MODEL,
-            "max_tokens": 1000,
-            "thinking": {"type": "disabled"},
-            "messages": [{"role": "user", "content": prompt}],
-        },
-        timeout=90,
-    )
-    data = response.json()
+    # Timeouts/connection errors happen occasionally and are transient — retry
+    # once before giving up, and never let this propagate out of the function.
+    # An uncaught exception here used to kill the whole run mid-loop (losing
+    # every company already scored, since state is only saved after the loop).
+    data = None
+    for attempt in range(2):
+        try:
+            response = requests.post(
+                "https://api.anthropic.com/v1/messages",
+                headers={
+                    "x-api-key": ANTHROPIC_API_KEY,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json",
+                },
+                json={
+                    "model": CLAUDE_MODEL,
+                    "max_tokens": 1000,
+                    "thinking": {"type": "disabled"},
+                    "messages": [{"role": "user", "content": prompt}],
+                },
+                timeout=90,
+            )
+            data = response.json()
+            break
+        except requests.exceptions.RequestException as e:
+            print(f"  Claude API request failed (attempt {attempt + 1}/2): {e}")
+    if data is None:
+        return None
     if data.get("error"):
         print(f"  Claude API error: {data['error']}")
         return None
