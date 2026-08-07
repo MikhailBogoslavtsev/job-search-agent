@@ -532,5 +532,41 @@
     "first_seen": "2026-08-07",
     "score": 6,
     "summary": "This is a job listing posted by a recruiter (HubMub) for a Senior Product Manager role at an undisclosed company building Space Domain Awareness and Space Traffic Management software for satellite operators and government/defense bodies."
+  },
+  "niyuk.ai": {
+    "name": "Niyuk",
+    "first_seen": "2026-08-07",
+    "score": 6,
+    "summary": "AI-first HR platform offering recruitment/ATS automation, HRMS/payroll, and a recruitment CRM sold to startups, enterprises and staffing agencies."
+  },
+  "kyth.ai": {
+    "name": "Kyth",
+    "first_seen": "2026-08-07",
+    "score": 6,
+    "summary": "AI-powered legal talent intelligence platform that helps Am Law firms, search agencies, and legal market investors analyze recruiting, lateral moves, and book portability."
+  },
+  "qubento.com": {
+    "name": "Qubento Technologies",
+    "first_seen": "2026-08-07",
+    "score": 2,
+    "summary": "Small Indian SaaS startup offering supply chain and B2B payments solutions including on-demand warehousing, with explicit fintech payments focus."
+  },
+  "pixelfreight.com": {
+    "name": "Pixelfreight",
+    "first_seen": "2026-08-07",
+    "score": 1,
+    "summary": "A small web design/digital consulting studio building websites and providing supply chain SME advisory for trucking carriers, 3PLs, and freight brokers."
+  },
+  "sotira.co": {
+    "name": "Sotira",
+    "first_seen": "2026-08-07",
+    "score": 3,
+    "summary": "A marketplace/platform connecting brands with vetted buyers to offload overstock and short-dated inventory, self-described as a fintech company modernizing overstock procurement."
+  },
+  "annawrites.io": {
+    "name": "Anna Writes: Content Boutique",
+    "first_seen": "2026-08-07",
+    "score": 0,
+    "summary": "A boutique content writing/copywriting service for B2B and B2C companies, not a software product."
   }
 }
