@@ -274,12 +274,18 @@ def send_telegram(message):
     else:
         chunks = [message]
     for chunk in chunks:
-        requests.post(url, json={
-            "chat_id": int(TELEGRAM_CHAT_ID),
-            "text": chunk,
-            "parse_mode": "HTML",
-            "disable_web_page_preview": True,
-        })
+        # Same failure mode as the old score_company() bug: this runs after
+        # all the scoring work, so an uncaught network error here would still
+        # crash the whole run. Log and move on instead.
+        try:
+            requests.post(url, json={
+                "chat_id": int(TELEGRAM_CHAT_ID),
+                "text": chunk,
+                "parse_mode": "HTML",
+                "disable_web_page_preview": True,
+            }, timeout=30)
+        except requests.exceptions.RequestException as e:
+            print(f"  Telegram send failed: {e}")
 
 
 def format_company(verdict, domain, domain_alive):
