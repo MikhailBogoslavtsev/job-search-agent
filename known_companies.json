@@ -622,5 +622,53 @@
     "first_seen": "2026-08-11",
     "score": 6,
     "summary": "AI-powered developer tool that automates code reviews and bug fixes, sold to software engineering teams."
+  },
+  "legionsecurity.ai": {
+    "name": "Legion Security",
+    "first_seen": "2026-08-11",
+    "score": 7,
+    "summary": "AI-native SOC analyst that learns and automates security analysts' investigation workflows, sold to cybersecurity operations teams."
+  },
+  "fig.security": {
+    "name": "Fig Security",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "SecOps resilience platform that detects and fixes broken detection/response flows in a company's security stack, sold to SOC/security engineering teams."
+  },
+  "dropzone.ai": {
+    "name": "Dropzone AI",
+    "first_seen": "2026-08-11",
+    "score": 7,
+    "summary": "AI agent platform for SOC teams that autonomously triages security alerts, investigates threats, and does threat hunting, sold to enterprises and MSSPs."
+  },
+  "native.security": {
+    "name": "Native",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "Cloud security control plane that unifies and manages built-in cloud security controls across AWS, Azure, GCP, and OCI for enterprise security teams."
+  },
+  "legitsecurity.com": {
+    "name": "Legit Security",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "AI-native ASPM platform that secures application development and software supply chains, sold to AppSec and engineering teams."
+  },
+  "relyx.io": {
+    "name": "RelyX",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "SaaS platform that quantifies cyber risk in financial terms (ALE, ROI) and generates board-ready reports for CISOs and security teams."
+  },
+  "vezran.com": {
+    "name": "VEZRAN",
+    "first_seen": "2026-08-11",
+    "score": 7,
+    "summary": "Builds an autonomous AI orchestration engine, first deployed as an AI-agent-driven cybersecurity defense platform (SOC automation) sold to enterprises."
+  },
+  "cybox.ai": {
+    "name": "CyBox Security",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "AI-era DevSecOps/application security platform (code, dependencies, secrets, IaC, PR firewall) sold to CTOs and engineering leaders."
   }
 }
