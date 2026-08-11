@@ -568,5 +568,59 @@
     "first_seen": "2026-08-07",
     "score": 0,
     "summary": "A boutique content writing/copywriting service for B2B and B2C companies, not a software product."
+  },
+  "ankra.ai": {
+    "name": "Ankra",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "AI-driven platform for automating Kubernetes/cloud infrastructure (IaC, GitOps) sold to developer/platform engineering teams."
+  },
+  "shipyard.build": {
+    "name": "Shipyard",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "DevOps platform for engineering teams to create and manage ephemeral environments (dev/test/QA) to speed feature delivery and cut cloud costs."
+  },
+  "skyhook.io": {
+    "name": "Skyhook",
+    "first_seen": "2026-08-11",
+    "score": 4,
+    "summary": "Kubernetes internal developer platform (IDP) that automates DevOps workflows for cloud backend engineering teams."
+  },
+  "mendral.com": {
+    "name": "Mendral",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "AI agent that autonomously runs DevOps/CI-CD pipelines—detecting supply-chain security issues, diagnosing CI failures, and optimizing pipeline performance—sold to engineering/DevOps teams."
+  },
+  "syncable.dev": {
+    "name": "Syncable.dev",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "AI-native DevOps platform that deploys code to multi-cloud infrastructure and uses a knowledge graph plus real-time metrics to auto-debug and optimize deployments, sold to engineering teams."
+  },
+  "crafting.dev": {
+    "name": "Crafting",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "Cloud dev environment / agentic engineering infrastructure platform that gives AI coding agents access to real dependencies for testing and shipping code, sold to engineering teams."
+  },
+  "blaxel.ai": {
+    "name": "Blaxel",
+    "first_seen": "2026-08-11",
+    "score": 4,
+    "summary": "Developer infrastructure/cloud platform providing sandboxes and hosting for running and scaling AI agents, sold to developers building agentic applications."
+  },
+  "wiroxa.dev": {
+    "name": "Wiroxa",
+    "first_seen": "2026-08-11",
+    "score": 4,
+    "summary": "Tiny early-stage team building GitCommitter, an AI-powered git commit automation tool for developers."
+  },
+  "ellipsis.dev": {
+    "name": "Ellipsis",
+    "first_seen": "2026-08-11",
+    "score": 6,
+    "summary": "AI-powered developer tool that automates code reviews and bug fixes, sold to software engineering teams."
   }
 }
