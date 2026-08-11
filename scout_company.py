@@ -53,6 +53,12 @@ COMPANY_QUERIES = [
     {"category": "company", "query": "companies building an industrial data platform that unifies fragmented operational sources — historians, CMMS, MES, ERP, sensors — and layers AI agents or copilots on top for plant engineers"},
     {"category": "company", "query": "vertical SaaS for frontline manufacturing operations and maintenance — CMMS, machine health, process optimization for process engineers, reliability engineers and plant managers — adding AI copilots"},
     {"category": None, "query": "job posting for a product manager or head of product at an industrial AI startup building agents or copilots for manufacturing, predictive maintenance, machine health or plant operations, remote"},
+    # --- New verticals cluster (2026-08-11): broadening beyond the physical-
+    # operations / industrial-AI focus above into four additional shapes.
+    {"category": "company", "query": "startups building foundation models, coding agents, workflow automation or AI evaluation tooling for technical teams, not fintech — companies like Anthropic, OpenAI, Bolt.new, StackBlitz, n8n, Encord and Skild AI"},
+    {"category": "company", "query": "travel and OTA startups building flight or accommodation booking platforms and travel connectivity infrastructure, similar to Aviasales, ETG and Hopper"},
+    {"category": "company", "query": "consumer marketplace and social apps in dating, delivery, music or edtech, not B2B SaaS — companies like Feeld, Raya, Glovo, Muse Group, Preply and TripleTen"},
+    {"category": "company", "query": "vertical B2B SaaS startups in document automation, procurement and spend management, translation, ecommerce platforms, vacation-rental property management, market research, time tracking or developer project management — companies like PandaDoc, Archlet, Smartcat, commercetools, Cint, Lodgify, Hostaway, Toggl and Linear"},
 ]
 
 
