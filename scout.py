@@ -25,6 +25,27 @@ PM candidate profile for job matching:
 - NOT: US on-site only, pure consumer apps, fintech (requires domain-specific regulatory/financial knowledge the candidate doesn't have)
 """
 
+# --- Name normalization (dedupe key) ---
+# The model returns the same company under slightly different names across
+# runs — "Wingtra" one week, "Wingtra AG" the next, "Confido" vs.
+# "Confido (YC S21)" — and an exact-string check against seen_companies.json
+# doesn't catch any of that, so the same company gets re-sent to Telegram.
+# Same normalization scout_company.py uses for its name-based dedupe.
+_NAME_SUFFIXES = (" inc", " llc", " gmbh", " ltd", " limited", " corp",
+                   " co", " ag", " sa", " bv", " plc", " group")
+
+def normalize_company_name(name):
+    if not name:
+        return ""
+    name = name.lower().strip()
+    name = re.sub(r"\(.*?\)", "", name)      # drop "(YC W19)"-style notes
+    name = re.sub(r"[^a-z0-9]+", " ", name).strip()
+    for suffix in _NAME_SUFFIXES:
+        if name.endswith(suffix):
+            name = name[: -len(suffix)].strip()
+    return name
+
+
 SEARCH_QUERIES = [
     "senior product manager remote Europe industrial SaaS 2026 hiring",
     "lead PM construction tech startup hiring remote 2026",
@@ -249,6 +270,23 @@ def main():
     save_state(state)
     print(f"Found {len(results)} matches")
 
+    # Hard-filter against companies we already track, on normalized name —
+    # the prompt asks the model to skip known companies, but it's only a
+    # soft instruction and it only sees a 5-name sample (see the prompt
+    # above), so this is the real guard against re-sending "Wingtra AG"
+    # when "Wingtra" is already known.
+    seen_norm = {normalize_company_name(c) for c in seen}
+    deduped = []
+    for r in results:
+        norm = normalize_company_name(r.get("company", ""))
+        if norm and norm in seen_norm:
+            print(f"  Skipped {r.get('company')}: duplicate of an already-known company")
+            continue
+        if norm:
+            seen_norm.add(norm)
+        deduped.append(r)
+    results = deduped
+
     if not results:
         msg = (
             f"🤖 <b>AI Scout — nothing new this week</b>\n\n"
@@ -268,9 +306,12 @@ def main():
         r["status"] = "confirmed" if (url_confirmed and model_confirmed) else "unconfirmed"
 
     new_companies = [r["company"] for r in results]
+    existing_norm = {normalize_company_name(c) for c in seen}
     for c in new_companies:
-        if c not in seen:
+        norm = normalize_company_name(c)
+        if norm and norm not in existing_norm:
             seen.append(c)
+            existing_norm.add(norm)
     save_seen(seen)
 
     msg = f"🤖 <b>AI Scout — {len(results)} new {'find' if len(results)==1 else 'finds'}</b>\n\n"
