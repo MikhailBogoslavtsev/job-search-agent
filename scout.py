@@ -202,7 +202,12 @@ Return [] if nothing found. JSON only.
             "model": "claude-sonnet-5",
             "max_tokens": 2000,
             "thinking": {"type": "disabled"},
-            "tools": [{"type": "web_search_20260209", "name": "web_search"}],
+            # max_uses caps how many searches the model can run per call. Without
+            # it, an open-ended search loop can re-feed growing page content back
+            # into context on every round and rack up several dollars in a single
+            # run (happened on 2026-08-15 — a run burned the account's credit
+            # balance and hung near the request timeout before failing).
+            "tools": [{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}],
             "messages": [{"role": "user", "content": prompt}],
         },
         timeout=280,
