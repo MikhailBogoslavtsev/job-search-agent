@@ -670,5 +670,59 @@
     "first_seen": "2026-08-11",
     "score": 6,
     "summary": "AI-era DevSecOps/application security platform (code, dependencies, secrets, IaC, PR firewall) sold to CTOs and engineering leaders."
+  },
+  "1komma5grad.com": {
+    "name": "1KOMMA5°",
+    "first_seen": "2026-08-24",
+    "score": 5,
+    "summary": "A residential energy company installing solar/battery/heat pump systems, unified by a software platform (Heartbeat) that manages them as a virtual power plant, sold to homeowners."
+  },
+  "1komma5grad.jobs.personio.com": {
+    "name": "1KOMMA5°",
+    "first_seen": "2026-08-24",
+    "score": 6,
+    "summary": "Builds Heartbeat AI, a virtual power plant software platform that orchestrates solar, batteries, heat pumps and EVs with smart metering/steering, sold alongside hardware installation to homeowners and grid partners."
+  },
+  "enode.com": {
+    "name": "Enode",
+    "first_seen": "2026-08-24",
+    "score": 8,
+    "summary": "API platform connecting and optimizing distributed energy devices (EVs, heat pumps, batteries), selling B2B SaaS to energy companies and green tech innovators to activate and monetize flexibility."
+  },
+  "climatetechlist.com": {
+    "name": "Enode",
+    "first_seen": "2026-08-24",
+    "score": 8,
+    "summary": "API platform connecting and optimizing distributed energy devices (EVs, heat pumps, batteries), selling B2B SaaS to energy companies and green tech innovators to activate and monetize flexibility."
+  },
+  "plancraft.io": {
+    "name": "plancraft",
+    "first_seen": "2026-08-24",
+    "score": 8,
+    "summary": "AI-first B2B SaaS platform for tradespeople/contractors that automates quoting, scheduling, invoicing and admin work, scaling across Europe."
+  },
+  "clever.cv": {
+    "name": "plancraft",
+    "first_seen": "2026-08-24",
+    "score": 8,
+    "summary": "AI-first B2B SaaS platform for tradespeople/contractors that automates quoting, scheduling, invoicing and admin work, scaling across Europe."
+  },
+  "motork.io": {
+    "name": "MotorK",
+    "first_seen": "2026-08-24",
+    "score": 6,
+    "summary": "SaaS platform (StockSparK) for car dealers to manage stock ingestion, distribution to channels, and marketing campaigns."
+  },
+  "remotive.com": {
+    "name": "MotorK",
+    "first_seen": "2026-08-24",
+    "score": 6,
+    "summary": "SaaS platform (StockSparK) for car dealers to manage stock ingestion, distribution to channels, and marketing campaigns."
+  },
+  "1komma5grad.jobs.personio.de": {
+    "name": "1KOMMA5°",
+    "first_seen": "2026-08-24",
+    "score": 5,
+    "summary": "A residential energy company installing solar/battery/heat pump systems, unified by a software platform (Heartbeat) that manages them as a virtual power plant, sold to homeowners."
   }
 }
