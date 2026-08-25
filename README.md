@@ -36,7 +36,7 @@ check on it.
 |---|---|---|
 | Job | Discover companies hiring PMs | Discover companies worth tracking |
 | Method | Claude (Sonnet) + web search tool | Exa semantic search + Claude (Sonnet) scoring |
-| Cadence | 2x/week (Mon & Wed) | On demand (manual) |
+| Cadence | 5x/week (weekdays) | 3x/week (Mon/Wed/Fri) + on demand |
 | Cost | Bounded (see below) | Bounded (see below) |
 | Trigger | New company matching the profile | Company scoring over threshold |
 
@@ -76,9 +76,13 @@ Design choices worth calling out:
 - **The profile lives in `company_profile.md`, not the code.** Edit that one
   file to widen or narrow the funnel — the score threshold is a constant in
   `scout_company.py` (starts at 6, since the seed profile is deliberately broad).
-- **Manual for now.** The workflow is `workflow_dispatch`-only (no cron yet),
-  so it can be run on demand and compared against Level B before picking a
-  schedule.
+- **Scheduled, plus on demand.** After running manually for a while to
+  compare against Level B, the workflow now also fires on a cron: Mon/Wed/Fri
+  at 10:00 Europe/Madrid time. GitHub Actions cron is always UTC and doesn't
+  track DST on its own, so the workflow schedules both UTC times 10:00 Madrid
+  can land on and has a step that checks the actual local hour and skips the
+  run unless it's really 10:00 there — see `.github/workflows/scout_company.yml`.
+  `workflow_dispatch` still works for a manual run any time.
 
 ## Cost & latency, as an explicit design choice
 
@@ -89,14 +93,34 @@ The LLM path is the expensive one, so it's the one with a budget:
 - **Capped output tokens** (2000) and a **mid-tier model** (Sonnet, not
   Opus) — discovery doesn't need the largest model, it needs decent judgment
   over search results.
-- **Twice-weekly cadence** (Mon & Wed) for Level B, on-demand for Level C —
-  the paid paths run on a fixed, sparse schedule, not continuously.
+- **Fixed, sparse schedule, not continuous.** Level B runs weekdays, Level C
+  runs Mon/Wed/Fri — both fixed cadences, not "whenever something might have
+  changed."
 
 The retired rules path (`monitor.py`, now in [`archive/`](archive/)) had
 effectively zero marginal cost per run: plain HTTP calls to ATS JSON APIs,
 hashed and diffed against the last known state, no model in the loop at all.
 That's the reference point for why the model paths get a budget — the cheap
 work should never touch a model.
+
+### What it actually costs
+
+Ballpark numbers, worked out from the caps already in the code (Claude
+Sonnet — `claude-sonnet-5` — at $2/$10 per 1M input/output tokens, web search
+at $10 per 1,000 searches) — not pulled from billed totals, so treat this as
+a ceiling, not a receipt:
+
+- **Level B** (`scout.py`): one Claude call per run, capped at 6 searches
+  ($0.06) and 2,000 output tokens ($0.02), plus a few cents of input tokens
+  for the prompt and search results — roughly **$0.10–0.15/run**. At 5
+  runs/week that's **~$2–3/month**.
+- **Level C** (`scout_company.py`): up to 10 scoring calls per run (fewer as
+  `known_companies.json` grows and more results are already known), each
+  ~$0.01–0.02 — roughly **up to $0.15/run**. At 3 runs/week that's **~$1–2/month**.
+  Exa's own search cost is separate and billed by Exa, not included here.
+- **Combined, LLM side only:** comfortably under **$5/month** — cheaper than
+  most SaaS subscriptions, for something that replaces hours of manual
+  scrolling every week.
 
 ## Guardrails
 
