@@ -724,5 +724,65 @@
     "first_seen": "2026-08-24",
     "score": 5,
     "summary": "A residential energy company installing solar/battery/heat pump systems, unified by a software platform (Heartbeat) that manages them as a virtual power plant, sold to homeowners."
+  },
+  "procurepro.io": {
+    "name": "ProcurePro",
+    "first_seen": "2026-08-25",
+    "score": 7,
+    "summary": "B2B SaaS platform that digitizes and consolidates construction procurement/contracting workflows for major builders and their supply chains."
+  },
+  "pitchmeai.com": {
+    "name": "ProcurePro",
+    "first_seen": "2026-08-25",
+    "score": 7,
+    "summary": "B2B SaaS platform that digitizes and consolidates construction procurement/contracting workflows for major builders and their supply chains."
+  },
+  "clearlyai.com": {
+    "name": "Clearly AI",
+    "first_seen": "2026-08-25",
+    "score": 7,
+    "summary": "AI platform that automates security/privacy reviews (threat models, DPIAs, vendor risk assessments) for enterprise security teams, sold B2B SaaS to companies like Rivian, Ericsson, and Okta."
+  },
+  "ycombinator.com": {
+    "name": "Clearly AI",
+    "first_seen": "2026-08-25",
+    "score": 7,
+    "summary": "AI platform that automates security/privacy reviews (threat models, DPIAs, vendor risk assessments) for enterprise security teams, sold B2B SaaS to companies like Rivian, Ericsson, and Okta."
+  },
+  "scoro.com": {
+    "name": "Scoro",
+    "first_seen": "2026-08-25",
+    "score": 6,
+    "summary": "AI-powered professional services automation (PSA) SaaS platform for agencies and consultancies to manage projects, resourcing, time tracking, and billing."
+  },
+  "careers.scoro.com": {
+    "name": "Scoro",
+    "first_seen": "2026-08-25",
+    "score": 6,
+    "summary": "AI-powered professional services automation (PSA) SaaS platform for agencies and consultancies to manage projects, resourcing, time tracking, and billing."
+  },
+  "tread.io": {
+    "name": "Tread",
+    "first_seen": "2026-08-25",
+    "score": 8,
+    "summary": "AI-native operating system / SaaS platform for construction materials logistics (aggregate, asphalt, concrete), sold to producers, contractors, and hauling fleets to digitize scale house operations, ticketing, and dispatch."
+  },
+  "builtinsf.com": {
+    "name": "Tread",
+    "first_seen": "2026-08-25",
+    "score": 8,
+    "summary": "AI-native operating system / SaaS platform for construction materials logistics (aggregate, asphalt, concrete), sold to producers, contractors, and hauling fleets to digitize scale house operations, ticketing, and dispatch."
+  },
+  "joinrise.co": {
+    "name": "Handoff",
+    "first_seen": "2026-08-25",
+    "score": 8,
+    "summary": "AI-native SaaS platform for remodeling/construction companies that automates estimating, procurement, and operations, sold to contractors and remodelers."
+  },
+  "accure.jobs.personio.com": {
+    "name": "ACCURE",
+    "first_seen": "2026-08-25",
+    "score": 7,
+    "summary": "Cloud-based battery analytics platform for operators of grid-scale energy storage and EV fleets, applying data/ML to improve battery safety, performance and lifetime."
   }
 }
