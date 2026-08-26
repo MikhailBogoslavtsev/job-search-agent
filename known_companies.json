@@ -784,5 +784,41 @@
     "first_seen": "2026-08-25",
     "score": 7,
     "summary": "Cloud-based battery analytics platform for operators of grid-scale energy storage and EV fleets, applying data/ML to improve battery safety, performance and lifetime."
+  },
+  "cpnet.ai": {
+    "name": "CPNET.AI",
+    "first_seen": "2026-08-26",
+    "score": 9,
+    "summary": "Agentic AI data platform for manufacturing that unifies machine/MES/QMS/EAM data and delivers predictive/prescriptive process optimization to process and manufacturing engineers."
+  },
+  "presageinsights.ai": {
+    "name": "Presage Insights",
+    "first_seen": "2026-08-26",
+    "score": 8,
+    "summary": "IoT-based smart sensors and AI predictive maintenance platform for asset health/machine condition monitoring, sold to manufacturing plant and maintenance teams."
+  },
+  "spogen.ai": {
+    "name": "spogen.ai",
+    "first_seen": "2026-08-26",
+    "score": 8,
+    "summary": "AI knowledge platform for machinery OEMs that turns technical documentation and machine data into AI-assistant guidance and compliance validation for operators, technicians, dealers, and after-sales teams."
+  },
+  "flow-tool.com": {
+    "name": "Augmented Industries",
+    "first_seen": "2026-08-26",
+    "score": 8,
+    "summary": "Munich-based industrial AI company whose FLOW TOOL platform provides AI-powered work instructions, troubleshooting, and microtraining/knowledge management for manufacturing technicians and field service operators."
+  },
+  "mroplan.ai": {
+    "name": "MROPLAN.ai",
+    "first_seen": "2026-08-26",
+    "score": 8,
+    "summary": "AI-driven CMMS platform that ingests OEM manuals/SOPs to auto-generate preventive maintenance plans and compliance documentation for small manufacturers."
+  },
+  "reliasol.ai": {
+    "name": "ReliaSol",
+    "first_seen": "2026-08-26",
+    "score": 8,
+    "summary": "AI-based predictive maintenance platform (RSIMS) for industrial plants, sold to maintenance/reliability engineers across manufacturing, energy, chemical, and mining industries."
   }
 }
