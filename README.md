@@ -105,22 +105,24 @@ work should never touch a model.
 
 ### What it actually costs
 
-Ballpark numbers, worked out from the caps already in the code (Claude
-Sonnet — `claude-sonnet-5` — at $2/$10 per 1M input/output tokens, web search
-at $10 per 1,000 searches) — not pulled from billed totals, so treat this as
-a ceiling, not a receipt:
+Real numbers, pulled from the Anthropic Console cost dashboard for Aug 1–25,
+2026 (both scripts share one API key, Claude Sonnet — `claude-sonnet-5` — at
+$2/$10 per 1M input/output tokens, web search at $10 per 1,000 searches) —
+not a ceiling estimate, an actual bill:
 
-- **Level B** (`scout.py`): one Claude call per run, capped at 6 searches
-  ($0.06) and 2,000 output tokens ($0.02), plus a few cents of input tokens
-  for the prompt and search results — roughly **$0.10–0.15/run**. At 5
-  runs/week that's **~$2–3/month**.
-- **Level C** (`scout_company.py`): up to 10 scoring calls per run (fewer as
-  `known_companies.json` grows and more results are already known), each
-  ~$0.01–0.02 — roughly **up to $0.15/run**. At 3 runs/week that's **~$1–2/month**.
-  Exa's own search cost is separate and billed by Exa, not included here.
-- **Combined, LLM side only:** comfortably under **$5/month** — cheaper than
-  most SaaS subscriptions, for something that replaces hours of manual
-  scrolling every week.
+- **Total for the 25 days: $17.65** ($15.16 in tokens, $2.49 in web search).
+- **Aug 15 alone: $5.53** — 31% of the entire 25-day bill, in one run. That's
+  the day an open-ended search loop got away from itself, before the
+  `max_uses` cap on `scout.py`'s web search tool existed (see the comment
+  next to `max_uses` in `scout.py` for the full story).
+- **Every other day: ~$0.81 on average**, $1.84 max. Splitting before/after
+  the fix: **$0.97/day average before** the search cap went in, **$0.56/day
+  average after** — a ~42% drop, and no repeat of the Aug 15 spike since.
+- **Steady-state, no incidents:** roughly **$15–20/month** — still well under
+  most SaaS subscriptions for something that replaces hours of manual
+  scrolling every week, but noticeably more than a back-of-envelope ceiling
+  would suggest. The lesson: measure the real bill, don't just trust the caps
+  in the code.
 
 ## Guardrails
 
@@ -163,15 +165,15 @@ what actually needs a model, then put a budget and a check on it.
 
 ## Running it
 
-Requires `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and (for `scout.py`)
-`ANTHROPIC_API_KEY` as environment variables / GitHub Actions secrets.
+Requires `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and `ANTHROPIC_API_KEY` as
+environment variables / GitHub Actions secrets — both scripts call Claude.
 
 `scout_company.py` additionally needs `EXA_API_KEY`.
 
 ```
 pip install -r requirements.txt
-python scout.py            # Mon/Wed: discover companies hiring PMs
-python scout_company.py    # on demand: discover companies worth tracking
+python scout.py            # weekdays: discover companies hiring PMs
+python scout_company.py    # Mon/Wed/Fri + on demand: discover companies worth tracking
 ```
 
 (`monitor.py` — the retired Level A monitor — lives in [`archive/`](archive/)
