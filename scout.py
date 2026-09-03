@@ -207,7 +207,11 @@ Return [] if nothing found. JSON only.
             # into context on every round and rack up several dollars in a single
             # run (happened on 2026-08-15 — a run burned the account's credit
             # balance and hung near the request timeout before failing).
-            "tools": [{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}],
+            # Was 6, which the runs on 2026-08-31 and 2026-09-01 both burned
+            # through mid-investigation ("I've hit the search tool usage limit
+            # for this session") before confirming any live postings — bumped
+            # to 10 to give it room to verify leads without going unbounded.
+            "tools": [{"type": "web_search_20260209", "name": "web_search", "max_uses": 10}],
             "messages": [{"role": "user", "content": prompt}],
         },
         timeout=280,
