@@ -1,7 +1,11 @@
 name: AI Job Scout
 on:
+  # Offset from :00 — GitHub Actions' schedule trigger is best-effort and
+  # queues get congested at the top of the hour (every repo's cron fires
+  # there too), which was causing multi-hour delays. A less popular minute
+  # cuts that queueing delay; it doesn't guarantee an exact fire time.
   schedule:
-    - cron: '0 9 * * 1-5'
+    - cron: '17 9 * * 1-5'
   workflow_dispatch:
 
 permissions:

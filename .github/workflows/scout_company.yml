@@ -5,10 +5,16 @@ name: Company Scout
 # 10:00 Madrid can land on (08:00 UTC in CEST/summer, 09:00 UTC in CET/winter)
 # and the "Check Madrid local time" step below skips every step except the
 # one that actually lands on 10:00 local — see that step for how.
+#
+# Offset to :17 rather than :00 — GitHub's schedule trigger is best-effort
+# and queues get congested at the top of the hour (every repo's cron fires
+# there too), which was causing multi-hour delays. The local-hour check
+# below still works fine off a 17-minute offset since Madrid's UTC offset
+# is always a whole number of hours.
 on:
   schedule:
-    - cron: '0 8 * * 1,3,5'
-    - cron: '0 9 * * 1,3,5'
+    - cron: '17 8 * * 1,3,5'
+    - cron: '17 9 * * 1,3,5'
   workflow_dispatch:
 
 permissions:
