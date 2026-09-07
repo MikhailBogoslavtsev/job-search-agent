@@ -1,0 +1,19 @@
+# Web searches for Role Scout. One per line. Lines starting with # are ignored.
+#
+# A few of these run each time, rotating through the list, so a long list
+# costs no more per run than a short one — it just takes longer to cycle.
+# The setup page generates a tailored list from your answers; these are
+# generic starting points.
+#
+# Tip: the current year in a query genuinely helps filter out stale postings.
+
+senior product manager remote Europe B2B SaaS hiring
+head of product Series B startup remote hiring
+lead product manager B2B SaaS startup remote Europe
+YC startup product manager hiring
+Wellfound senior product manager remote Europe
+Otta lead product manager B2B SaaS startup
+senior product manager devtools infrastructure startup remote
+lead PM supply chain logistics SaaS startup hiring remote
+senior product manager climate tech energy SaaS remote Europe
+head of product vertical AI B2B SaaS startup remote

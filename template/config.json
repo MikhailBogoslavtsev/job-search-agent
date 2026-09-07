@@ -1,0 +1,9 @@
+{
+  "score_threshold": 6,
+  "model": "claude-sonnet-5",
+  "max_web_searches": 10,
+  "max_output_tokens": 2000,
+  "queries_per_run": 3,
+  "exa_results_per_query": 10,
+  "exa_text_chars": 6000
+}

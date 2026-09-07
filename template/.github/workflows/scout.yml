@@ -1,0 +1,42 @@
+# Role Scout — finds companies hiring right now. Runs weekdays.
+#
+# CHANGING THE TIME: the number below is the UTC hour. The setup page picked
+# it to land at the time you asked for. Two things worth knowing:
+#   - It is UTC, so when your clocks change for daylight saving, the message
+#     arrives an hour earlier or later. Edit the number here if that bothers you.
+#   - The minute is 17, not 00, on purpose. GitHub's scheduler is best-effort
+#     and every repo's cron fires at the top of the hour, so :00 queues badly.
+name: Role Scout
+
+on:
+  schedule:
+    - cron: '17 8 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scout.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # The repo itself is the database: what the scout learned this run gets
+      # committed back so the next run remembers it.
+      - name: Remember what we found
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add seen_companies.json scout_state.json
+          git diff --staged --quiet || git commit -m "update scout memory"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push

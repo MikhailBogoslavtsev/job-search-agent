@@ -1,0 +1,8 @@
+[
+  {"category": "company", "query": "B2B SaaS startups building vertical software products for operations, HR, legal, supply chain or logistics teams"},
+  {"category": "company", "query": "startups building developer tools or infrastructure software sold to engineering teams"},
+  {"category": "company", "query": "climate tech or energy SaaS startups selling software products to operations teams"},
+  {"category": "company", "query": "startups building AI agents or copilots embedded inside workflow software for engineering and operations teams"},
+  {"category": null, "query": "job posting for a senior or lead product manager at a Series A to C B2B SaaS startup, remote in Europe"},
+  {"category": null, "query": "job posting for a head of product at a remote-first B2B SaaS startup building a vertical software platform"}
+]

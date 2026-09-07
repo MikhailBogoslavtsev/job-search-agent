@@ -1,0 +1,37 @@
+# Company Scout — finds companies worth watching before they post a job.
+# Runs Mon/Wed/Fri. Skips itself quietly if you never added an EXA_API_KEY.
+#
+# CHANGING THE TIME: see the note in scout.yml — same rules, UTC hour.
+name: Company Scout
+
+on:
+  schedule:
+    - cron: '17 8 * * 1,3,5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scout-companies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scout_company.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+      - name: Remember what we found
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add known_companies.json company_scout_state.json
+          git diff --staged --quiet || git commit -m "update company scout memory"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
