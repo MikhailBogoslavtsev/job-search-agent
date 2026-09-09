@@ -820,5 +820,41 @@
     "first_seen": "2026-08-26",
     "score": 8,
     "summary": "AI-based predictive maintenance platform (RSIMS) for industrial plants, sold to maintenance/reliability engineers across manufacturing, energy, chemical, and mining industries."
+  },
+  "wolkabout.ai": {
+    "name": "WolkAbout",
+    "first_seen": "2026-09-09",
+    "score": 8,
+    "summary": "Industrial data management/contextualization platform (AIrport) that unifies fragmented plant data (SCADA, historians, ERP, sensors) into AI-ready data products for manufacturing, oil & gas, and energy operators."
+  },
+  "bravura-ai.com": {
+    "name": "Bravura-AI",
+    "first_seen": "2026-09-09",
+    "score": 8,
+    "summary": "AI-powered platform (PlantUnity) unifying engineering, operational, and streaming data for process manufacturing plants (oil, gas, pharma, chemicals, heavy industry), sold to engineers and operators."
+  },
+  "nodalix.ai": {
+    "name": "Nodalix",
+    "first_seen": "2026-09-09",
+    "score": 8,
+    "summary": "Agentic AI platform providing operational intelligence for industrial facilities (data centers, manufacturing, oil & gas, power generation), sold to plant/operations personas."
+  },
+  "quantis.ai": {
+    "name": "Quantis.ai",
+    "first_seen": "2026-09-09",
+    "score": 8,
+    "summary": "AI/IIoT SaaS platform (Pocket Factory) for predictive maintenance and line monitoring in beverage bottling/filling plants, sold to plant managers, operations and maintenance leaders."
+  },
+  "serkayon.com": {
+    "name": "Serkayon Industrial Intelligence Pvt Ltd",
+    "first_seen": "2026-09-09",
+    "score": 5,
+    "summary": "Builds IIoT/digital-twin monitoring platforms (e.g. PoultryNet) for plant data logging, energy monitoring, and predictive maintenance sold to manufacturers and process facilities like poultry feed mills and pharma plants."
+  },
+  "insytes.ai": {
+    "name": "Insytes",
+    "first_seen": "2026-09-09",
+    "score": 8,
+    "summary": "Early-stage startup building Cauza/Kronos, a causal AI platform that finds root causes (not just correlations) of production issues for manufacturers, sold to plant/operations teams."
   }
 }
