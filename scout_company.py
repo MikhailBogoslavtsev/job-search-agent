@@ -1,6 +1,7 @@
 import os
 import json
 import re
+import time
 import requests
 from datetime import datetime
 from urllib.parse import urlparse
@@ -152,6 +153,9 @@ def check_domain_alive(domain):
 
 
 # --- Exa semantic search ---
+EXA_MAX_RETRIES = 3          # total attempts on a 429 before giving up
+EXA_RETRY_BACKOFF = 5        # seconds; doubles each retry (5s, 10s, ...)
+
 def exa_search(query_obj):
     body = {
         "query": query_obj["query"],
@@ -162,14 +166,30 @@ def exa_search(query_obj):
     if query_obj.get("category"):
         body["category"] = query_obj["category"]
 
-    r = requests.post(
-        "https://api.exa.ai/search",
-        headers={"x-api-key": EXA_API_KEY, "Content-Type": "application/json"},
-        json=body,
-        timeout=60,
-    )
-    r.raise_for_status()
-    return r.json().get("results", [])
+    # This runs at most twice a week and makes exactly one Exa call per run,
+    # so a 429 here is Exa-side throttling, not us hammering the API. A
+    # short backoff-and-retry rides out a transient rate-limit blip instead
+    # of burning the whole scheduled run (and its Telegram alert) on it.
+    for attempt in range(EXA_MAX_RETRIES):
+        r = requests.post(
+            "https://api.exa.ai/search",
+            headers={"x-api-key": EXA_API_KEY, "Content-Type": "application/json"},
+            json=body,
+            timeout=60,
+        )
+        if r.status_code == 429 and attempt < EXA_MAX_RETRIES - 1:
+            wait = EXA_RETRY_BACKOFF * (2 ** attempt)
+            retry_after = r.headers.get("Retry-After")
+            if retry_after:
+                try:
+                    wait = max(wait, float(retry_after))
+                except ValueError:
+                    pass
+            print(f"  Exa 429 (attempt {attempt + 1}/{EXA_MAX_RETRIES}), retrying in {wait:.0f}s...")
+            time.sleep(wait)
+            continue
+        r.raise_for_status()
+        return r.json().get("results", [])
 
 
 # --- Defensive JSON parsing for Claude's reply ---
