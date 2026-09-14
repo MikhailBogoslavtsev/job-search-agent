@@ -856,5 +856,59 @@
     "first_seen": "2026-09-09",
     "score": 8,
     "summary": "Early-stage startup building Cauza/Kronos, a causal AI platform that finds root causes (not just correlations) of production issues for manufacturers, sold to plant/operations teams."
+  },
+  "getmaintainx.com": {
+    "name": "MaintainX",
+    "first_seen": "2026-09-14",
+    "score": 9,
+    "summary": "AI-enabled CMMS/EAM SaaS platform for maintenance work orders, preventive maintenance, and asset management, sold to industrial and frontline maintenance teams."
+  },
+  "dovient.com": {
+    "name": "Dovient",
+    "first_seen": "2026-09-14",
+    "score": 9,
+    "summary": "AI copilot/knowledge platform for industrial frontline maintenance teams that captures plant tacit knowledge and delivers step-by-step troubleshooting guidance to technicians on the shopfloor."
+  },
+  "oxmaint.ai": {
+    "name": "Oxmaint AI",
+    "first_seen": "2026-09-14",
+    "score": 8,
+    "summary": "AI-powered EAM/CMMS platform with predictive maintenance, IoT and ERP integration, sold to plant managers and maintenance teams in manufacturing and industrial facilities."
+  },
+  "allie-ai.com": {
+    "name": "Allie",
+    "first_seen": "2026-09-14",
+    "score": 9,
+    "summary": "AI agent platform for manufacturing that connects to PLCs, MES and ERPs to monitor plant operations, predict downtime, and enable autonomous control, sold to food/beverage/CPG manufacturers."
+  },
+  "aicraft.io": {
+    "name": "AICraft",
+    "first_seen": "2026-09-14",
+    "score": 8,
+    "summary": "Builds a multi-agent AI/IIoT platform (predictive maintenance, production optimization, computer-vision quality control, energy management, supply chain intelligence) sold to manufacturers and plant/operations personas."
+  },
+  "quartic.ai": {
+    "name": "Quartic",
+    "first_seen": "2026-09-14",
+    "score": 9,
+    "summary": "Industrial DataOps and AI-driven Manufacturing Operations Management platform that contextualizes plant/batch data for predictive quality, asset reliability, and process optimization, sold to process engineers and manufacturers in life sciences, chemicals, and CPG."
+  },
+  "coremfg.io": {
+    "name": "Core Manufacturing Intelligence Inc.",
+    "first_seen": "2026-09-14",
+    "score": 8,
+    "summary": "Early-stage SaaS platform connecting shop-floor equipment data with AI chat/ML to give manufacturers real-time production insights, downtime reduction, and natural-language querying of operational data."
+  },
+  "edge2web.com": {
+    "name": "Edge2Web",
+    "first_seen": "2026-09-14",
+    "score": 8,
+    "summary": "SaaS smart manufacturing platform with low-code/no-code tools and GenAI assistants for industrial data analytics, KPI visualization (OEE/OOE/MTBF), and shop-floor performance, sold to plant engineers and industrial companies."
+  },
+  "intelycx.com": {
+    "name": "Intelycx",
+    "first_seen": "2026-09-14",
+    "score": 8,
+    "summary": "AI-powered Manufacturing Operations Management platform with vision inspection, machine connectivity, and a generative AI assistant (ARIS), sold to manufacturers/plant teams."
   }
 }
