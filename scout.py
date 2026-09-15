@@ -213,18 +213,49 @@ Return [] if nothing found. JSON only.
             # to 10 to give it room to verify leads without going unbounded.
             "tools": [{"type": "web_search_20260209", "name": "web_search", "max_uses": 10}],
             "messages": [{"role": "user", "content": prompt}],
+            "stream": True,
         },
-        # 280s wasn't always enough for a full 10-search round trip to come
-        # back — the 2026-09-15 run hit ReadTimeout on both attempts (~280s
-        # each) with nothing malformed about the request, just a slow one.
-        # Raised to 480s to give a legitimately slow search round room to
-        # finish instead of getting cut off.
-        timeout=480,
+        # Streamed rather than a single blocking call: a non-streamed request
+        # has to wait for the ENTIRE response — including every web_search
+        # round the model runs — before a single byte arrives, so a fixed
+        # timeout caps total generation time. On 2026-09-15 that cut a run
+        # off at 280s twice in a row and it was billed ~$1 for tokens/search
+        # the client never got to see. Streaming delivers events (and
+        # periodic pings) as they happen, so the read timeout below only has
+        # to cover the gap between events, not the whole multi-search reply
+        # — a slow-but-alive run keeps completing instead of getting
+        # discarded, whatever it costs.
+        timeout=(10, 60),
+        stream=True,
     )
 
+    text = ""
+    api_error = None
     for attempt in range(2):
+        text = ""
+        api_error = None
         try:
             response = requests.post(**request_kwargs)
+            try:
+                if response.status_code != 200:
+                    try:
+                        api_error = response.json().get("error")
+                    except Exception:
+                        api_error = {"message": response.text[:500]}
+                else:
+                    for line in response.iter_lines(decode_unicode=True):
+                        if not line or not line.startswith("data: "):
+                            continue
+                        event = json.loads(line[len("data: "):])
+                        etype = event.get("type")
+                        if etype == "content_block_delta" and event.get("delta", {}).get("type") == "text_delta":
+                            text += event["delta"].get("text", "")
+                        elif etype == "error":
+                            api_error = event.get("error")
+                        elif etype == "message_stop":
+                            break
+            finally:
+                response.close()
             break
         except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
             if attempt == 0:
@@ -232,16 +263,9 @@ Return [] if nothing found. JSON only.
                 continue
             raise
 
-    data = response.json()
-
-    if data.get("error"):
-        print(f"API error: {data['error']}")
+    if api_error:
+        print(f"API error: {api_error}")
         return []
-
-    text = ""
-    for block in data.get("content", []):
-        if block.get("type") == "text":
-            text += block.get("text", "")
 
     print(f"Raw text preview: {text[:300]}")
 
