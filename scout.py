@@ -214,7 +214,12 @@ Return [] if nothing found. JSON only.
             "tools": [{"type": "web_search_20260209", "name": "web_search", "max_uses": 10}],
             "messages": [{"role": "user", "content": prompt}],
         },
-        timeout=280,
+        # 280s wasn't always enough for a full 10-search round trip to come
+        # back — the 2026-09-15 run hit ReadTimeout on both attempts (~280s
+        # each) with nothing malformed about the request, just a slow one.
+        # Raised to 480s to give a legitimately slow search round room to
+        # finish instead of getting cut off.
+        timeout=480,
     )
 
     for attempt in range(2):
