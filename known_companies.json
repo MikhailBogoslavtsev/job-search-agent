@@ -910,5 +910,53 @@
     "first_seen": "2026-09-14",
     "score": 8,
     "summary": "AI-powered Manufacturing Operations Management platform with vision inspection, machine connectivity, and a generative AI assistant (ARIS), sold to manufacturers/plant teams."
+  },
+  "augury.com": {
+    "name": "Augury",
+    "first_seen": "2026-09-16",
+    "score": 10,
+    "summary": "Industrial AI platform providing machine health monitoring, predictive maintenance, and agentic AI workflows for manufacturers' reliability and operations teams."
+  },
+  "talentpulse.66ghz.com": {
+    "name": "Augury",
+    "first_seen": "2026-09-16",
+    "score": 9,
+    "summary": "AI-driven industrial machine health and process efficiency monitoring platform sold to plant, maintenance, and reliability teams in manufacturing operations."
+  },
+  "taskpilotx.22web.org": {
+    "name": "Uplift (posting for undisclosed industrial AI client)",
+    "first_seen": "2026-09-16",
+    "score": 2,
+    "summary": "This page is a recruitment agency (Uplift) job listing to fill a Director of Product Management role for an undisclosed client in AI-driven industrial reliability/predictive maintenance."
+  },
+  "jobera.com": {
+    "name": "Augury",
+    "first_seen": "2026-09-16",
+    "score": 10,
+    "summary": "Industrial AI platform providing machine health monitoring, predictive maintenance, and agentic AI workflows for manufacturers' reliability and operations teams."
+  },
+  "senrasystems.us": {
+    "name": "Senra Systems",
+    "first_seen": "2026-09-16",
+    "score": 6,
+    "summary": "Builds configurable factory software for electrical wire harness manufacturing, used internally to run and scale their own high-throughput production operations."
+  },
+  "jobless.dev": {
+    "name": "Senra Systems",
+    "first_seen": "2026-09-16",
+    "score": 6,
+    "summary": "Builds configurable factory software for electrical wire harness manufacturing, used internally to run and scale their own high-throughput production operations."
+  },
+  "hexion.com": {
+    "name": "Hexion",
+    "first_seen": "2026-09-16",
+    "score": 2,
+    "summary": "Hexion is a large chemical manufacturing company building an internal industrial AI platform (Smartech AI) for its own plant operations, hiring a product lead for that internal platform."
+  },
+  "jobborse24.de": {
+    "name": "Hexion",
+    "first_seen": "2026-09-16",
+    "score": 2,
+    "summary": "Hexion is a large chemical manufacturing company building an internal industrial AI platform (Smartech AI) for its own plant operations, hiring a product lead for that internal platform."
   }
 }
