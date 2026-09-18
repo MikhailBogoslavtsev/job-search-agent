@@ -958,5 +958,59 @@
     "first_seen": "2026-09-16",
     "score": 2,
     "summary": "Hexion is a large chemical manufacturing company building an internal industrial AI platform (Smartech AI) for its own plant operations, hiring a product lead for that internal platform."
+  },
+  "kilo.ai": {
+    "name": "Kilo",
+    "first_seen": "2026-09-18",
+    "score": 6,
+    "summary": "Open-source agentic AI coding platform/IDE extension that routes to multiple LLM providers for software developers, sold B2B/B2C to engineering teams."
+  },
+  "benchflow.ai": {
+    "name": "BenchFlow",
+    "first_seen": "2026-09-18",
+    "score": 3,
+    "summary": "Builds benchmark environments and eval infrastructure for AI agent developers/model builders, not for physical-operations or vertical B2B use cases."
+  },
+  "replicas.dev": {
+    "name": "Replicas",
+    "first_seen": "2026-09-18",
+    "score": 5,
+    "summary": "Provides cloud-based background coding agents that turn engineering tickets into pull requests, sold to software engineering teams via Slack/Linear/GitHub integrations."
+  },
+  "firedolphin.com": {
+    "name": "FireDolphin",
+    "first_seen": "2026-09-18",
+    "score": 3,
+    "summary": "Early-stage AI research startup building foundation models and agentic systems, with a first product (MicroDolphin) demonstrating agentic execution, but no clear vertical or B2B SaaS use case defined yet."
+  },
+  "codemod.com": {
+    "name": "Codemod",
+    "first_seen": "2026-09-18",
+    "score": 6,
+    "summary": "A code intelligence and automation platform that helps AI agents perform large-scale code migrations, framework upgrades, and security remediation across codebases, sold to engineering teams and platform engineers."
+  },
+  "vectant.dev": {
+    "name": "Vectant",
+    "first_seen": "2026-09-18",
+    "score": 5,
+    "summary": "Cloud runtime/control plane for parallel AI coding agents with scoped permissions, GPU hot module replacement, and reviewable audit trails, sold to software engineering teams."
+  },
+  "koder.com": {
+    "name": "koderAI",
+    "first_seen": "2026-09-18",
+    "score": 4,
+    "summary": "A multi-agent AI coding platform that generates apps/websites from natural language prompts, targeting non-technical users and developers broadly."
+  },
+  "simmspace.ai": {
+    "name": "SiMMspace Inc.",
+    "first_seen": "2026-09-18",
+    "score": 5,
+    "summary": "A devtools/infra platform (IDE) for developers to build modular, composable AI/agent pipelines combining LLMs, retrieval, CV, and other AI components."
+  },
+  "gammacode.dev": {
+    "name": "Gammacode",
+    "first_seen": "2026-09-18",
+    "score": 5,
+    "summary": "AI code generation, security scanning, and autonomous coding agents for indie devs, SMB engineering teams, and early-stage startups."
   }
 }
