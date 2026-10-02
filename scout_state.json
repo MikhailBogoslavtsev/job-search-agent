@@ -1,3 +1,30 @@
 {
-  "query_index": 17
+  "query_index": 20,
+  "run_log": [
+    {
+      "date": "2026-10-02",
+      "queries": [
+        "lead PM supply chain logistics SaaS startup hiring remote",
+        "senior product manager legal tech SaaS startup remote",
+        "head of product climate tech energy SaaS startup remote Europe"
+      ],
+      "raw": [
+        {
+          "company": "Qase",
+          "query": "lead PM supply chain logistics SaaS startup hiring remote",
+          "new": true
+        },
+        {
+          "company": "Enode",
+          "query": "head of product climate tech energy SaaS startup remote Europe",
+          "new": false
+        },
+        {
+          "company": "Actionstep",
+          "query": "senior product manager legal tech SaaS startup remote",
+          "new": true
+        }
+      ]
+    }
+  ]
 }
