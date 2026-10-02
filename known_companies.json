@@ -1012,5 +1012,53 @@
     "first_seen": "2026-09-18",
     "score": 5,
     "summary": "AI code generation, security scanning, and autonomous coding agents for indie devs, SMB engineering teams, and early-stage startups."
+  },
+  "sitemarker.com": {
+    "name": "SiteMarker",
+    "first_seen": "2026-10-02",
+    "score": 7,
+    "summary": "A location-first field documentation and reporting SaaS platform for civil engineers, landscape architects, planners, and construction teams to capture geotagged site data and generate reports."
+  },
+  "crane.ist": {
+    "name": "Crane",
+    "first_seen": "2026-10-02",
+    "score": 7,
+    "summary": "A mobile/cloud field management SaaS platform for construction (forms, inspections, QA/QC, handover, IoT integration) sold to owners, developers, GCs, and contractors."
+  },
+  "openspace.ai": {
+    "name": "OpenSpace",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "A visual intelligence SaaS platform that turns construction jobsite imagery (from 360° cameras, drones, smartphones) into real-time insights for construction teams, integrated with Procore and Autodesk."
+  },
+  "opusense.com": {
+    "name": "Opusense",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-native field operations platform for engineering, construction, and property teams that turns photos/voice notes/site observations into structured reports, task tracking, and searchable project knowledge."
+  },
+  "arcsite.com": {
+    "name": "ArcSite",
+    "first_seen": "2026-10-02",
+    "score": 7,
+    "summary": "Mobile-first CAD/drawing, takeoff, and estimating SaaS for field service contractors (HVAC, remodeling, repair) to create drawings, estimates, and proposals on-site."
+  },
+  "procore.com": {
+    "name": "Unearth Technologies, Inc.",
+    "first_seen": "2026-10-02",
+    "score": 3,
+    "summary": "Mobile mapping SaaS (OnePlace) for construction teams to geolocate project photos, drawings, and drone surveys; already acquired by Procore in 2023."
+  },
+  "fullyn.com": {
+    "name": "Fullyn",
+    "first_seen": "2026-10-02",
+    "score": 7,
+    "summary": "B2B SaaS platform connecting field operations, asset/sensor data, and ERP/business systems (Odoo-native) for construction, HVAC, maintenance, cleaning and logistics teams."
+  },
+  "bulldozair.com": {
+    "name": "Bulldozair",
+    "first_seen": "2026-10-02",
+    "score": 6,
+    "summary": "A collaborative SaaS platform for construction project owners and contractors to manage compliance, checklists, and field data collection for construction/industrial projects."
   }
 }
