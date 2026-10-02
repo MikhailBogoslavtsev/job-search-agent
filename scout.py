@@ -1,4 +1,5 @@
 import os
+import html
 import json
 import re
 import requests
@@ -47,38 +48,42 @@ def normalize_company_name(name):
 
 
 SEARCH_QUERIES = [
-    "senior product manager remote Europe industrial SaaS 2026 hiring",
-    "lead PM construction tech startup hiring remote 2026",
-    "head of product manufacturing IoT startup Europe 2026",
-    "YC startup industrial AI product manager 2026",
-    "food traceability SaaS senior PM remote 2026",
-    "physical operations AI startup product manager hiring 2026",
-    "senior PM B2B SaaS Netherlands Germany remote 2026",
-    "Wellfound senior product manager industrial tech remote Europe",
-    "Otta lead PM construction manufacturing startup",
+    # Industrial / physical operations (his own background)
+    "senior product manager remote Europe industrial SaaS hiring",
+    "lead PM construction tech startup hiring remote",
+    "head of product manufacturing IoT startup Europe",
+    "YC startup industrial AI product manager",
+    "food traceability SaaS senior PM remote",
+    "physical operations AI startup product manager hiring",
+    "senior PM B2B SaaS Netherlands Germany remote",
     "site:ycombinator.com/jobs product manager industrial construction",
-    "computer vision AI startup agriculture crop monitoring product manager 2026",
-    "drone analytics startup senior PM remote Europe 2026",
-    "aerial imagery AI platform product manager hiring 2026",
-    "precision agriculture computer vision SaaS product manager 2026",
-    "geospatial AI startup senior product manager 2026",
-    "remote sensing analytics startup PM Europe hiring 2026",
-    "AI inspection startup computer vision product manager 2026",
-    "infrastructure inspection drone AI startup hiring PM 2026",
-    "satellite imagery analytics startup senior PM remote 2026",
-    "site:wellfound.com senior product manager computer vision drone",
-    "senior product manager B2B SaaS startup remote Europe 2026 hiring",
-    "head of product B2B SaaS Series B startup remote 2026",
-    "YC startup B2B SaaS senior product manager hiring 2026 -fintech",
-    "lead product manager HR tech SaaS startup remote Europe 2026",
-    "senior PM devtools infrastructure startup remote 2026 hiring",
-    "senior product manager cybersecurity SaaS startup remote Europe 2026",
-    "lead PM supply chain logistics SaaS startup hiring remote 2026",
-    "senior product manager legal tech SaaS startup remote 2026",
-    "head of product climate tech energy SaaS startup remote Europe 2026",
-    "senior PM vertical AI B2B SaaS startup hiring remote 2026",
-    "Wellfound senior product manager B2B SaaS remote Europe -fintech",
-    "Otta lead product manager B2B SaaS startup remote Europe",
+    # Imagery / CV / geospatial: trimmed from 10 queries to 3 on 2026-10-02.
+    # They kept returning the same few companies already in seen_companies.json,
+    # and most of his screens came from outside these domains.
+    "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
+    "geospatial or remote sensing analytics startup senior product manager remote",
+    "AI inspection or precision agriculture computer vision startup product manager hiring",
+    # B2B SaaS verticals
+    "senior product manager B2B SaaS startup remote Europe hiring",
+    "head of product B2B SaaS Series B startup remote",
+    "YC startup B2B SaaS senior product manager hiring -fintech",
+    "lead product manager HR tech SaaS startup remote Europe",
+    "senior PM devtools infrastructure startup remote hiring",
+    "senior product manager cybersecurity SaaS startup remote Europe",
+    "lead PM supply chain logistics SaaS startup hiring remote",
+    "senior product manager legal tech SaaS startup remote",
+    "head of product climate tech energy SaaS startup remote Europe",
+    "senior PM vertical AI B2B SaaS startup hiring remote",
+    # Title variants (his applications also include these titles)
+    "Product Lead B2B SaaS startup remote Europe hiring",
+    "Principal Product Manager B2B SaaS remote Europe",
+    "Director of Product SaaS startup remote Europe hiring",
+    "Senior Product Owner SaaS platform remote Europe hiring",
+    # AI platform / agents
+    "senior product manager AI agents platform startup remote Europe hiring",
+    "product lead agentic AI workflow automation B2B startup remote",
+    "senior PM LLM developer platform startup remote Europe",
+    "head of product AI-native B2B SaaS Series A or B remote",
 ]
 
 def load_seen():
@@ -101,8 +106,35 @@ def save_state(state):
     with open(STATE_FILE, "w") as f:
         json.dump(state, f, indent=2)
 
+LOG_MAX_RUNS = 300
+
+def log_run(state, queries, raw_results, sent_results):
+    """Append one entry per run to state["run_log"] so query yield can be measured.
+
+    Lives in scout_state.json because the workflow already commits that file.
+    raw = what the model returned; new = what survived dedupe (not already known).
+    Per query, the gap between the two shows which queries only recycle
+    companies he already has.
+    """
+    sent_names = {normalize_company_name(r.get("company", "")) for r in sent_results}
+    log = state.setdefault("run_log", [])
+    log.append({
+        "date": datetime.utcnow().strftime("%Y-%m-%d"),
+        "queries": queries,
+        "raw": [
+            {
+                "company": r.get("company", ""),
+                "query": r.get("query", ""),
+                "new": normalize_company_name(r.get("company", "")) in sent_names,
+            }
+            for r in raw_results
+        ],
+    })
+    state["run_log"] = log[-LOG_MAX_RUNS:]
+    save_state(state)
+
 def get_next_queries(state, n=3):
-    idx = state.get("query_index", 0)
+    idx = state.get("query_index", 0) % len(SEARCH_QUERIES)
     queries = SEARCH_QUERIES[idx:idx+n]
     if len(queries) < n:
         queries += SEARCH_QUERIES[:n-len(queries)]
@@ -185,8 +217,8 @@ guess "confirmed" to sound more useful.
 
 YOU MUST respond with ONLY a valid JSON array. No text before or after. No markdown. No explanation.
 
-Format:
-[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country","status":"confirmed|unconfirmed"}}]
+Format ("query" = the exact one of the 3 queries above that surfaced this result):
+[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country","status":"confirmed|unconfirmed","query":"the query text"}}]
 
 Return [] if nothing found. JSON only.
 """
@@ -264,8 +296,14 @@ Return [] if nothing found. JSON only.
             raise
 
     if api_error:
+        # Raise instead of returning []: an empty list is indistinguishable from
+        # "searched, found nothing", which hid an exhausted-credit outage from
+        # 2026-09-18 to 2026-10-01 (11 runs reported "nothing new" and advanced
+        # the query rotation without searching). main() reports this to
+        # Telegram and leaves the rotation where it was.
         print(f"API error: {api_error}")
-        return []
+        msg = api_error.get("message") if isinstance(api_error, dict) else api_error
+        raise RuntimeError(f"Anthropic API error: {msg}")
 
     print(f"Raw text preview: {text[:300]}")
 
@@ -302,7 +340,7 @@ def main():
         results = run_claude_scout(queries, seen)
     except Exception as e:
         print(f"Scout error: {e}")
-        send_telegram(f"⚠️ Scout error: {e}")
+        send_telegram(f"⚠️ Scout error (queries not advanced): {html.escape(str(e))}")
         return
 
     save_state(state)
@@ -323,7 +361,9 @@ def main():
         if norm:
             seen_norm.add(norm)
         deduped.append(r)
+    raw_results = results
     results = deduped
+    log_run(state, queries, raw_results, results)
 
     if not results:
         msg = (

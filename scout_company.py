@@ -1,4 +1,5 @@
 import os
+import html
 import json
 import re
 import time
@@ -216,6 +217,10 @@ def parse_json_object(text):
 
 
 # --- Claude scoring: reads a company page, returns a structured verdict ---
+class ClaudeAPIError(Exception):
+    pass
+
+
 def score_company(profile, result):
     title = result.get("title", "") or ""
     url = result.get("url", "") or ""
@@ -278,10 +283,13 @@ Respond with ONLY valid JSON — no markdown fences, no preamble, no text after:
         except requests.exceptions.RequestException as e:
             print(f"  Claude API request failed (attempt {attempt + 1}/2): {e}")
     if data is None:
-        return None
+        raise ClaudeAPIError("Claude API unreachable after 2 attempts")
     if data.get("error"):
+        # Raised, not swallowed: returning None made an exhausted-credit outage
+        # look like "scored nothing above threshold" (2026-09-21 to 09-30).
         print(f"  Claude API error: {data['error']}")
-        return None
+        err = data["error"]
+        raise ClaudeAPIError(err.get("message", str(err)) if isinstance(err, dict) else str(err))
 
     text_out = ""
     for block in data.get("content", []):
@@ -344,10 +352,8 @@ def main():
         send_telegram(f"⚠️ <b>Company Scout — Exa error</b>\n{e}")
         return
 
-    # Advance rotation only after a successful search, so a failed run retries
-    # the same query next time instead of silently skipping it.
-    save_state(state)
     print(f"Exa returned {len(results)} results")
+    api_failure = None
 
     # Name index for cross-domain dedupe, seeded from everything already known.
     name_index = {}
@@ -369,7 +375,11 @@ def main():
             skipped_known += 1
             continue
 
-        verdict = score_company(profile, result)
+        try:
+            verdict = score_company(profile, result)
+        except ClaudeAPIError as e:
+            api_failure = e
+            break
         if not verdict:
             print(f"  Skipped {url_domain}: could not parse a verdict")
             continue
@@ -421,6 +431,19 @@ def main():
         print(f"  {domain}: {score}/10 product={is_product} alive={domain_alive}")
 
     save_known(known)
+
+    if api_failure:
+        # Rotation not advanced, so the next run retries this query.
+        send_telegram(
+            f"⚠️ <b>Company Scout — Claude API error</b>\n{html.escape(str(api_failure))}\n"
+            f"Query not advanced; scored {scored} before it stopped."
+        )
+        print(f"Aborted on API error: {api_failure}")
+        return
+
+    # Advance rotation only after a fully scored run, so a failed run retries
+    # the same query next time instead of silently skipping it.
+    save_state(state)
     print(f"Scored {scored} new companies, {skipped_known} already known by domain, "
           f"{skipped_duplicate_name} duplicate by name, {len(hits)} above threshold")
 
