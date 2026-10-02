@@ -1060,5 +1060,65 @@
     "first_seen": "2026-10-02",
     "score": 6,
     "summary": "A collaborative SaaS platform for construction project owners and contractors to manage compliance, checklists, and field data collection for construction/industrial projects."
+  },
+  "exergio.com": {
+    "name": "Exergio",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-powered SaaS layer on top of Building Management Systems that delivers energy performance diagnostics, predictive maintenance, and autonomous control for commercial real estate, sold to facilities/asset managers and property portfolios."
+  },
+  "scubic.pt": {
+    "name": "SCUBIC",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "SaaS platform for water utilities that unifies SCADA/telemetry/GIS data with AI and digital twins to predict demand, detect leaks, and optimize energy/pressure operations."
+  },
+  "cibuscell.com": {
+    "name": "CibusCell Technology",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "Cloud-based Operational AI SaaS platform that helps energy operators optimize complex renewable/hydrogen/battery/industrial energy systems in real time, sold to energy suppliers and industrial operators."
+  },
+  "smartlane.ai": {
+    "name": "Smartlane GmbH",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-powered cloud-based tour and route optimization SaaS for logistics, transport, and dispatch planning sold to logistics/contract carriers."
+  },
+  "aurafleet.eu": {
+    "name": "Aurafleet",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-native operations platform (command centre + mobile app) for European road freight dispatchers and drivers, automating dispatch, exceptions and compliance workflows."
+  },
+  "exa.ai": {
+    "name": "Aurafleet",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-native operations platform (command centre + mobile app) for European road freight dispatchers and drivers, automating dispatch, exceptions and compliance workflows."
+  },
+  "nursy.io": {
+    "name": "Nursy",
+    "first_seen": "2026-10-02",
+    "score": 7,
+    "summary": "Vertical SaaS platform for ornamental nurseries that uses sensors, imaging and AI to optimize irrigation, disease prevention, and crop quality for growers."
+  },
+  "eoniq.ai": {
+    "name": "EONIQ GmbH",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-native Transport Management System (LogiSense) for finished-vehicle logistics, sold to automotive car carriers for dispatch, load optimization, and invoicing."
+  },
+  "oculai.de": {
+    "name": "oculai",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-powered SaaS platform using crane camera imagery and computer vision to automatically track construction progress and productivity for general contractors."
+  },
+  "tovr.eu": {
+    "name": "TOVR",
+    "first_seen": "2026-10-02",
+    "score": 8,
+    "summary": "AI-native freight matching and pricing platform that unifies logistics marketplaces, telematics and ERP data to automate load matching, pricing, and transport assignment for carriers and shippers."
   }
 }
