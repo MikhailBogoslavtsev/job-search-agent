@@ -2,6 +2,7 @@ import os
 import html
 import json
 import re
+import time
 import requests
 from datetime import datetime
 
@@ -108,7 +109,7 @@ def save_state(state):
 
 LOG_MAX_RUNS = 300
 
-def log_run(state, queries, raw_results, sent_results):
+def log_run(state, queries, raw_results, sent_results, stats=None):
     """Append one entry per run to state["run_log"] so query yield can be measured.
 
     Lives in scout_state.json because the workflow already commits that file.
@@ -121,6 +122,7 @@ def log_run(state, queries, raw_results, sent_results):
     log.append({
         "date": datetime.utcnow().strftime("%Y-%m-%d"),
         "queries": queries,
+        "usage": stats or {},
         "raw": [
             {
                 "company": r.get("company", ""),
@@ -194,6 +196,11 @@ def send_telegram(message):
             "disable_web_page_preview": False,
         })
 
+# Wall-clock limit for one scout call. Runs had grown from ~2 min to 14 min
+# (2026-10-02: ~550K input tokens per run) because the search loop re-feeds
+# every result back into context on each round; this stops it from running on.
+SCOUT_DEADLINE_SECONDS = 240
+
 def run_claude_scout(queries, seen_companies):
     prompt = f"""
 You are a job scout. Search the web and find companies hiring Senior/Lead/Staff PM or Head of Product.
@@ -202,6 +209,11 @@ You are a job scout. Search the web and find companies hiring Senior/Lead/Staff 
 
 Search using ONLY these 3 queries:
 {chr(10).join(f'- {q}' for q in queries)}
+
+Budget: run ONE web search per query, at most 5 searches in total. Do not
+retry a query or re-search it with different wording, and do not narrate
+between searches. If a query returns only job boards or aggregator pages,
+move on and work with what you have. Answer as soon as you have 3-6 results.
 
 Find 3-6 real companies actively hiring PM roles that match the candidate.
 Do NOT include fintech companies.
@@ -256,16 +268,21 @@ Return [] if nothing found. JSON only.
         # periodic pings) as they happen, so the read timeout below only has
         # to cover the gap between events, not the whole multi-search reply
         # — a slow-but-alive run keeps completing instead of getting
-        # discarded, whatever it costs.
+        # discarded. SCOUT_DEADLINE_SECONDS (checked per event in the loop
+        # below) is what bounds the total time and therefore the spend.
         timeout=(10, 60),
         stream=True,
     )
 
     text = ""
     api_error = None
+    stats = {"input_tokens": 0, "output_tokens": 0, "searches": 0,
+             "seconds": 0, "hit_deadline": False}
+    started = time.monotonic()
     for attempt in range(2):
         text = ""
         api_error = None
+        stats.update(input_tokens=0, output_tokens=0, searches=0, hit_deadline=False)
         try:
             response = requests.post(**request_kwargs)
             try:
@@ -280,6 +297,19 @@ Return [] if nothing found. JSON only.
                             continue
                         event = json.loads(line[len("data: "):])
                         etype = event.get("type")
+                        if etype == "message_start":
+                            u = event.get("message", {}).get("usage", {})
+                            stats["input_tokens"] += (u.get("input_tokens", 0)
+                                                      + u.get("cache_creation_input_tokens", 0)
+                                                      + u.get("cache_read_input_tokens", 0))
+                        elif etype == "message_delta":
+                            stats["output_tokens"] += event.get("usage", {}).get("output_tokens", 0)
+                        elif etype == "content_block_start":
+                            if event.get("content_block", {}).get("type") == "server_tool_use":
+                                stats["searches"] += 1
+                        if time.monotonic() - started > SCOUT_DEADLINE_SECONDS:
+                            stats["hit_deadline"] = True
+                            break
                         if etype == "content_block_delta" and event.get("delta", {}).get("type") == "text_delta":
                             text += event["delta"].get("text", "")
                         elif etype == "error":
@@ -305,6 +335,10 @@ Return [] if nothing found. JSON only.
         msg = api_error.get("message") if isinstance(api_error, dict) else api_error
         raise RuntimeError(f"Anthropic API error: {msg}")
 
+    stats["seconds"] = round(time.monotonic() - started)
+    print(f"Usage: {stats}")
+    if stats["hit_deadline"]:
+        print(f"Hit the {SCOUT_DEADLINE_SECONDS}s limit; parsing whatever text arrived")
     print(f"Raw text preview: {text[:300]}")
 
     json_matches = re.finditer(r'\[.*?\]', text, re.DOTALL)
@@ -315,18 +349,18 @@ Return [] if nothing found. JSON only.
         try:
             result = json.loads(json_str)
             if isinstance(result, list) and len(result) > 0:
-                return result
+                return result, stats
         except Exception:
             continue
 
     json_match = re.search(r'\[.*\]', text, re.DOTALL)
     if json_match:
         try:
-            return json.loads(json_match.group(0).strip())
+            return json.loads(json_match.group(0).strip()), stats
         except Exception:
             pass
 
-    return []
+    return [], stats
 
 def main():
     seen = load_seen()
@@ -337,7 +371,7 @@ def main():
     print(f"This week's queries: {queries}")
 
     try:
-        results = run_claude_scout(queries, seen)
+        results, stats = run_claude_scout(queries, seen)
     except Exception as e:
         print(f"Scout error: {e}")
         send_telegram(f"⚠️ Scout error (queries not advanced): {html.escape(str(e))}")
@@ -363,7 +397,14 @@ def main():
         deduped.append(r)
     raw_results = results
     results = deduped
-    log_run(state, queries, raw_results, results)
+    log_run(state, queries, raw_results, results, stats)
+
+    if stats.get("hit_deadline"):
+        send_telegram(
+            f"⏱ <b>AI Scout — hit the {SCOUT_DEADLINE_SECONDS}s limit</b>\n"
+            f"{stats['searches']} searches, {stats['input_tokens']:,} input tokens. "
+            f"Queries skipped this round: {html.escape('; '.join(queries))}"
+        )
 
     if not results:
         msg = (
