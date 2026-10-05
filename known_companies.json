@@ -1120,5 +1120,41 @@
     "first_seen": "2026-10-02",
     "score": 8,
     "summary": "AI-native freight matching and pricing platform that unifies logistics marketplaces, telematics and ERP data to automate load matching, pricing, and transport assignment for carriers and shippers."
+  },
+  "aistackworks.com": {
+    "name": "AI StackWorks",
+    "first_seen": "2026-10-05",
+    "score": 6,
+    "summary": "A B2B SaaS platform that orchestrates AI coding agents through planning, QA, documentation, and approval workflows for engineering teams, integrating with Jira, Linear, GitHub, Slack, and Notion."
+  },
+  "flowgenx.ai": {
+    "name": "FlowGenX AI",
+    "first_seen": "2026-10-05",
+    "score": 6,
+    "summary": "A headless, MCP-enabled multi-agent orchestration platform that lets enterprises build, govern, and operate agentic AI workflows and AI co-workers across their systems."
+  },
+  "usekestrel.ai": {
+    "name": "Kestrel AI",
+    "first_seen": "2026-10-05",
+    "score": 6,
+    "summary": "AI agent platform for platform engineering teams that automates incident response, cloud provisioning, CI/CD, and developer requests with deterministic workflows."
+  },
+  "privion-agents.ai": {
+    "name": "Privion AI Agents",
+    "first_seen": "2026-10-05",
+    "score": 8,
+    "summary": "AI agent platform that organizes engineering standards/documentation into a secure operational AI layer for compliance, retrieval, and workflow automation in manufacturing, industrial automation, and utilities."
+  },
+  "zekith.ai": {
+    "name": "Zekith",
+    "first_seen": "2026-10-05",
+    "score": 6,
+    "summary": "AI-native no-code platform for building and orchestrating AI agents and automated workflows, sold to teams wanting to automate operations."
+  },
+  "skyflo.ai": {
+    "name": "Skyflo",
+    "first_seen": "2026-10-05",
+    "score": 5,
+    "summary": "AI engineering harness that coordinates coding agents across repositories, browser, terminal, and CI/CD for software engineering teams."
   }
 }
