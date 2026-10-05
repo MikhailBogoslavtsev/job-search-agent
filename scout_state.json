@@ -1,5 +1,5 @@
 {
-  "query_index": 20,
+  "query_index": 23,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -22,6 +22,38 @@
         {
           "company": "Actionstep",
           "query": "senior product manager legal tech SaaS startup remote",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "queries": [
+        "senior PM vertical AI B2B SaaS startup hiring remote",
+        "Product Lead B2B SaaS startup remote Europe hiring",
+        "Principal Product Manager B2B SaaS remote Europe"
+      ],
+      "usage": {
+        "input_tokens": 7040,
+        "output_tokens": 3836,
+        "searches": 16,
+        "seconds": 60,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "saas.group (Advanced Shipping Manager)",
+          "query": "Product Lead B2B SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Insider (Insider One)",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "PandaDoc",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
           "new": true
         }
       ]
