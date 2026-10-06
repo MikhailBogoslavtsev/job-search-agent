@@ -1,5 +1,5 @@
 {
-  "query_index": 23,
+  "query_index": 26,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -54,6 +54,53 @@
         {
           "company": "PandaDoc",
           "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "queries": [
+        "Director of Product SaaS startup remote Europe hiring",
+        "Senior Product Owner SaaS platform remote Europe hiring",
+        "senior product manager AI agents platform startup remote Europe hiring"
+      ],
+      "usage": {
+        "input_tokens": 7037,
+        "output_tokens": 3345,
+        "searches": 11,
+        "seconds": 50,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "HiveMQ",
+          "query": "Director of Product SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "HiveMQ",
+          "query": "Director of Product SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Qase",
+          "query": "senior product manager AI agents platform startup remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "pixx.io",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "CUJO AI",
+          "query": "senior product manager AI agents platform startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "One Click LCA",
+          "query": "Director of Product SaaS startup remote Europe hiring",
           "new": true
         }
       ]
