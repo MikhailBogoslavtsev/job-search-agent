@@ -326,8 +326,8 @@
   "overstory.ai": {
     "name": "Overstory",
     "first_seen": "2026-07-31",
-    "score": 8,
-    "summary": "AI and satellite imagery platform that detects vegetation risk near power lines, sold to electric utilities to prevent outages and wildfires."
+    "score": 9,
+    "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
   },
   "remoteitjobs.app": {
     "name": "Overstory",
@@ -1156,5 +1156,35 @@
     "first_seen": "2026-10-05",
     "score": 5,
     "summary": "AI engineering harness that coordinates coding agents across repositories, browser, terminal, and CI/CD for software engineering teams."
+  },
+  "meterwork.com": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 9,
+    "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "cyvl.ai": {
+    "name": "CYVL",
+    "first_seen": "2026-10-07",
+    "score": 8,
+    "summary": "AI-powered infrastructure intelligence platform using vehicle-mounted LiDAR, imagery, and computer vision to help governments and civil engineering firms map and manage road/sidewalk conditions and maintenance planning."
+  },
+  "emploive.com": {
+    "name": "CYVL",
+    "first_seen": "2026-10-07",
+    "score": 8,
+    "summary": "AI-powered infrastructure intelligence platform using vehicle-mounted LiDAR, imagery, and computer vision to help governments and civil engineering firms map and manage road/sidewalk conditions and maintenance planning."
+  },
+  "veeva.com": {
+    "name": "Veeva Systems",
+    "first_seen": "2026-10-07",
+    "score": 2,
+    "summary": "Large established enterprise software company selling a life sciences data/cloud platform (Nitro) to pharma commercial teams; this listing is a job posting, not a startup discovery."
+  },
+  "remotepmjobs.com": {
+    "name": "Veeva Systems",
+    "first_seen": "2026-10-07",
+    "score": 2,
+    "summary": "Large established enterprise software company selling a life sciences data/cloud platform (Nitro) to pharma commercial teams; this listing is a job posting, not a startup discovery."
   }
 }
