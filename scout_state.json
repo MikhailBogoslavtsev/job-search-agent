@@ -1,5 +1,5 @@
 {
-  "query_index": 26,
+  "query_index": 0,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -104,6 +104,22 @@
           "new": true
         }
       ]
+    },
+    {
+      "date": "2026-10-07",
+      "queries": [
+        "product lead agentic AI workflow automation B2B startup remote",
+        "senior PM LLM developer platform startup remote Europe",
+        "head of product AI-native B2B SaaS Series A or B remote"
+      ],
+      "usage": {
+        "input_tokens": 7034,
+        "output_tokens": 1782,
+        "searches": 13,
+        "seconds": 43,
+        "hit_deadline": false
+      },
+      "raw": []
     }
   ]
 }
