@@ -1,5 +1,5 @@
 {
-  "query_index": 0,
+  "query_index": 3,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -120,6 +120,48 @@
         "hit_deadline": false
       },
       "raw": []
+    },
+    {
+      "date": "2026-10-08",
+      "queries": [
+        "senior product manager remote Europe industrial SaaS hiring",
+        "lead PM construction tech startup hiring remote",
+        "head of product manufacturing IoT startup Europe"
+      ],
+      "usage": {
+        "input_tokens": 7026,
+        "output_tokens": 2608,
+        "searches": 8,
+        "seconds": 38,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Qase",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": false
+        },
+        {
+          "company": "pixx.io",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": false
+        },
+        {
+          "company": "Runware",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": true
+        },
+        {
+          "company": "Avenga",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": true
+        },
+        {
+          "company": "FactoryPal",
+          "query": "head of product manufacturing IoT startup Europe",
+          "new": true
+        }
+      ]
     }
   ]
 }
