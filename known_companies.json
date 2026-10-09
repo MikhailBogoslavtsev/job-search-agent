@@ -1186,5 +1186,23 @@
     "first_seen": "2026-10-07",
     "score": 2,
     "summary": "Large established enterprise software company selling a life sciences data/cloud platform (Nitro) to pharma commercial teams; this listing is a job posting, not a startup discovery."
+  },
+  "prolo.com": {
+    "name": "Prolo",
+    "first_seen": "2026-10-09",
+    "score": 7,
+    "summary": "AI-driven B2B SaaS procurement platform for the construction industry, selling to construction companies."
+  },
+  "job-in.uk": {
+    "name": "Prolo",
+    "first_seen": "2026-10-09",
+    "score": 7,
+    "summary": "AI-driven B2B SaaS procurement platform for the construction industry, selling to construction companies."
+  },
+  "confidential.careers": {
+    "name": "Confidential AEC AI Startup (via FILD Search)",
+    "first_seen": "2026-10-09",
+    "score": 7,
+    "summary": "Early-stage AI-driven SaaS platform for civil engineers, architects, and planners in the AEC space, including zoning/regulation intelligence tools."
   }
 }
