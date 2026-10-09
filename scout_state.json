@@ -1,5 +1,5 @@
 {
-  "query_index": 3,
+  "query_index": 6,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -159,6 +159,43 @@
         {
           "company": "FactoryPal",
           "query": "head of product manufacturing IoT startup Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "queries": [
+        "YC startup industrial AI product manager",
+        "food traceability SaaS senior PM remote",
+        "physical operations AI startup product manager hiring"
+      ],
+      "usage": {
+        "input_tokens": 7015,
+        "output_tokens": 2218,
+        "searches": 8,
+        "seconds": 34,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Cerrion",
+          "query": "YC startup industrial AI product manager",
+          "new": true
+        },
+        {
+          "company": "FleetWorks",
+          "query": "physical operations AI startup product manager hiring",
+          "new": true
+        },
+        {
+          "company": "Aurelian",
+          "query": "physical operations AI startup product manager hiring",
+          "new": true
+        },
+        {
+          "company": "dili",
+          "query": "physical operations AI startup product manager hiring",
           "new": true
         }
       ]
