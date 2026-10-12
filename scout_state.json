@@ -1,5 +1,5 @@
 {
-  "query_index": 6,
+  "query_index": 9,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -196,6 +196,48 @@
         {
           "company": "dili",
           "query": "physical operations AI startup product manager hiring",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "queries": [
+        "senior PM B2B SaaS Netherlands Germany remote",
+        "site:ycombinator.com/jobs product manager industrial construction",
+        "computer vision startup product manager drone, aerial or satellite imagery remote Europe"
+      ],
+      "usage": {
+        "input_tokens": 7044,
+        "output_tokens": 2625,
+        "searches": 9,
+        "seconds": 40,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "zvoove",
+          "query": "senior PM B2B SaaS Netherlands Germany remote",
+          "new": false
+        },
+        {
+          "company": "dili",
+          "query": "site:ycombinator.com/jobs product manager industrial construction",
+          "new": false
+        },
+        {
+          "company": "Ooak Data",
+          "query": "site:ycombinator.com/jobs product manager industrial construction",
+          "new": true
+        },
+        {
+          "company": "Ageospatial",
+          "query": "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
+          "new": true
+        },
+        {
+          "company": "Flyability",
+          "query": "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
           "new": true
         }
       ]
