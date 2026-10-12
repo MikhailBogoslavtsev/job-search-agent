@@ -481,9 +481,9 @@
   },
   "planet.com": {
     "name": "Planet",
-    "first_seen": "2026-08-07",
+    "first_seen": "2026-10-12",
     "score": 6,
-    "summary": "Satellite imaging and geospatial data platform selling Earth observation analytics/solutions to government, defense, and commercial customers."
+    "summary": "Operates a satellite imaging constellation and cloud platform delivering Earth observation data and analytics to commercial, government, and humanitarian customers."
   },
   "hiring.camp": {
     "name": "Planet Labs",
@@ -493,9 +493,9 @@
   },
   "hydrosat.com": {
     "name": "Hydrosat",
-    "first_seen": "2026-08-07",
+    "first_seen": "2026-10-12",
     "score": 7,
-    "summary": "Builds a thermal infrared Earth observation satellite constellation and SaaS analytics products (Field Irrigation Advisor, Water Productivity, Water Use Compliance) for agriculture and water resource management, sold to farmers, irrigation managers, ag advisors, and policymakers."
+    "summary": "Space/data analytics company building a thermal infrared satellite constellation and software platform for water management, agriculture, defense, and infrastructure monitoring, sold to governments and agribusinesses."
   },
   "geoaquawatch.org": {
     "name": "Hydrosat",
@@ -1204,5 +1204,59 @@
     "first_seen": "2026-10-09",
     "score": 7,
     "summary": "Early-stage AI-driven SaaS platform for civil engineers, architects, and planners in the AEC space, including zoning/regulation intelligence tools."
+  },
+  "thebench.jobs": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 9,
+    "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "aistechspace.com": {
+    "name": "Aistech Space",
+    "first_seen": "2026-10-12",
+    "score": 7,
+    "summary": "Barcelona-based Earth observation company building a cloud geospatial platform delivering high-resolution thermal satellite imagery via API/dashboards for environmental monitoring and resource management clients."
+  },
+  "liveeo.com": {
+    "name": "LiveEO",
+    "first_seen": "2026-10-12",
+    "score": 7,
+    "summary": "Satellite analytics platform using AI/ML on satellite imagery (optical, SAR, 3D terrain) for infrastructure monitoring and defence/intelligence ISR applications."
+  },
+  "liveeo-gmbh.jobs.personio.com": {
+    "name": "LiveEO",
+    "first_seen": "2026-10-12",
+    "score": 7,
+    "summary": "Satellite analytics platform using AI/ML on satellite imagery (optical, SAR, 3D terrain) for infrastructure monitoring and defence/intelligence ISR applications."
+  },
+  "allenai.org": {
+    "name": "Allen Institute for AI (OlmoEarth)",
+    "first_seen": "2026-10-12",
+    "score": 4,
+    "summary": "A nonprofit research institute's platform providing Earth observation foundation models and tooling for conservation, climate, and food security partners (NASA JPL, Global Mangrove Watch, etc.)."
+  },
+  "aijobs.mlyearning.org": {
+    "name": "Allen Institute for AI (OlmoEarth)",
+    "first_seen": "2026-10-12",
+    "score": 4,
+    "summary": "A nonprofit research institute's platform providing Earth observation foundation models and tooling for conservation, climate, and food security partners (NASA JPL, Global Mangrove Watch, etc.)."
+  },
+  "jaabz.com": {
+    "name": "Hydrosat",
+    "first_seen": "2026-10-12",
+    "score": 7,
+    "summary": "Space/data analytics company building a thermal infrared satellite constellation and software platform for water management, agriculture, defense, and infrastructure monitoring, sold to governments and agribusinesses."
+  },
+  "remotifyeurope.com": {
+    "name": "Planet",
+    "first_seen": "2026-10-12",
+    "score": 6,
+    "summary": "Operates a satellite imaging constellation and cloud platform delivering Earth observation data and analytics to commercial, government, and humanitarian customers."
+  },
+  "workmundi.com": {
+    "name": "Overstory",
+    "first_seen": "2026-07-31",
+    "score": 9,
+    "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
   }
 }
