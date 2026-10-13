@@ -1,5 +1,5 @@
 {
-  "query_index": 9,
+  "query_index": 12,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -238,6 +238,53 @@
         {
           "company": "Flyability",
           "query": "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "queries": [
+        "geospatial or remote sensing analytics startup senior product manager remote",
+        "AI inspection or precision agriculture computer vision startup product manager hiring",
+        "senior product manager B2B SaaS startup remote Europe hiring"
+      ],
+      "usage": {
+        "input_tokens": 7043,
+        "output_tokens": 3939,
+        "searches": 13,
+        "seconds": 61,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Near Space Labs",
+          "query": "geospatial or remote sensing analytics startup senior product manager remote",
+          "new": false
+        },
+        {
+          "company": "Precision AI",
+          "query": "AI inspection or precision agriculture computer vision startup product manager hiring",
+          "new": true
+        },
+        {
+          "company": "Qase",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "pixx.io",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "Via",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "DriveNets",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
           "new": true
         }
       ]
