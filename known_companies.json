@@ -1258,5 +1258,65 @@
     "first_seen": "2026-07-31",
     "score": 9,
     "summary": "AI and satellite imagery platform that detects vegetation risks near power lines, sold to electric utilities to prevent outages and wildfires."
+  },
+  "warp.co": {
+    "name": "Warp",
+    "first_seen": "2026-10-14",
+    "score": 7,
+    "summary": "AI-native employee management platform (payroll, compliance, benefits, IT provisioning) sold to HR teams at high-growth companies."
+  },
+  "hireborderless.com": {
+    "name": "Borderless AI",
+    "first_seen": "2026-10-14",
+    "score": 5,
+    "summary": "Global HR platform (EOR/PEO) with an AI compliance copilot that helps companies hire and pay international employees/contractors without a foreign legal entity."
+  },
+  "freightmate.ai": {
+    "name": "Freightmate Ai",
+    "first_seen": "2026-10-14",
+    "score": 8,
+    "summary": "AI-native freight management system that automates back-office workflows (documentation, customs, AP invoices) for freight forwarders."
+  },
+  "riseworks.io": {
+    "name": "Rise",
+    "first_seen": "2026-10-14",
+    "score": 1,
+    "summary": "Global payroll, EOR/AOR, and crypto payments platform for companies paying distributed and Web3 teams."
+  },
+  "gloroots.com": {
+    "name": "Gloroots AI",
+    "first_seen": "2026-10-14",
+    "score": 2,
+    "summary": "Global Employer of Record / Contractor of Record platform handling international hiring, payroll and compliance, sold to HR teams expanding globally."
+  },
+  "gc.ai": {
+    "name": "GC AI",
+    "first_seen": "2026-10-14",
+    "score": 7,
+    "summary": "AI legal platform for in-house/general counsel teams to draft, review, research and automate contract and legal work."
+  },
+  "originbenefits.com": {
+    "name": "Origin",
+    "first_seen": "2026-10-14",
+    "score": 6,
+    "summary": "AI-powered global benefits intelligence platform (Cuido) that helps HR/benefits teams manage compliance, spend, and employee benefits across countries."
+  },
+  "paidhr.com": {
+    "name": "PaidHR",
+    "first_seen": "2026-10-14",
+    "score": 3,
+    "summary": "All-in-one HRMS platform with payroll, HR, time & attendance, performance management, and embedded financial wellness (earned wage access, loans) for African enterprises."
+  },
+  "novaworks.ai": {
+    "name": "Novaworks, Inc.",
+    "first_seen": "2026-10-14",
+    "score": 6,
+    "summary": "AI-native HCM operating system with agentic automation for HR transactions, built on ServiceNow, sold to enterprise HR/operations teams."
+  },
+  "zelt.app": {
+    "name": "Zelt",
+    "first_seen": "2026-10-14",
+    "score": 6,
+    "summary": "All-in-one HR and Finance SaaS platform (payroll, benefits, onboarding, IT, analytics) for mid-sized UK businesses."
   }
 }
