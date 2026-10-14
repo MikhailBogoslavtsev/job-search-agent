@@ -1,5 +1,5 @@
 {
-  "query_index": 12,
+  "query_index": 15,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -286,6 +286,48 @@
           "company": "DriveNets",
           "query": "senior product manager B2B SaaS startup remote Europe hiring",
           "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "queries": [
+        "head of product B2B SaaS Series B startup remote",
+        "YC startup B2B SaaS senior product manager hiring -fintech",
+        "lead product manager HR tech SaaS startup remote Europe"
+      ],
+      "usage": {
+        "input_tokens": 7035,
+        "output_tokens": 4514,
+        "searches": 21,
+        "seconds": 79,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Nebius",
+          "query": "head of product B2B SaaS Series B startup remote",
+          "new": true
+        },
+        {
+          "company": "Saphetor",
+          "query": "lead product manager HR tech SaaS startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "saas.group",
+          "query": "head of product B2B SaaS Series B startup remote",
+          "new": false
+        },
+        {
+          "company": "Vidalytics",
+          "query": "lead product manager HR tech SaaS startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "DriveNets",
+          "query": "lead product manager HR tech SaaS startup remote Europe",
+          "new": false
         }
       ]
     }
