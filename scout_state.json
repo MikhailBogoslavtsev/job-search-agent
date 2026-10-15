@@ -1,5 +1,5 @@
 {
-  "query_index": 15,
+  "query_index": 18,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -328,6 +328,48 @@
           "company": "DriveNets",
           "query": "lead product manager HR tech SaaS startup remote Europe",
           "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "queries": [
+        "senior PM devtools infrastructure startup remote hiring",
+        "senior product manager cybersecurity SaaS startup remote Europe",
+        "lead PM supply chain logistics SaaS startup hiring remote"
+      ],
+      "usage": {
+        "input_tokens": 7038,
+        "output_tokens": 4471,
+        "searches": 20,
+        "seconds": 81,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Restream",
+          "query": "senior product manager cybersecurity SaaS startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "Sand Technologies",
+          "query": "senior PM devtools infrastructure startup remote hiring",
+          "new": true
+        },
+        {
+          "company": "Saphetor",
+          "query": "senior product manager cybersecurity SaaS startup remote Europe",
+          "new": false
+        },
+        {
+          "company": "EverAI",
+          "query": "senior product manager cybersecurity SaaS startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "Mews",
+          "query": "senior product manager cybersecurity SaaS startup remote Europe",
+          "new": true
         }
       ]
     }
