@@ -1,5 +1,5 @@
 {
-  "query_index": 18,
+  "query_index": 21,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -370,6 +370,48 @@
           "company": "Mews",
           "query": "senior product manager cybersecurity SaaS startup remote Europe",
           "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "queries": [
+        "senior product manager legal tech SaaS startup remote",
+        "head of product climate tech energy SaaS startup remote Europe",
+        "senior PM vertical AI B2B SaaS startup hiring remote"
+      ],
+      "usage": {
+        "input_tokens": 7035,
+        "output_tokens": 2711,
+        "searches": 8,
+        "seconds": 40,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Enode",
+          "query": "head of product climate tech energy SaaS startup remote Europe",
+          "new": false
+        },
+        {
+          "company": "Cyberhawk",
+          "query": "head of product climate tech energy SaaS startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "Actionstep",
+          "query": "senior product manager legal tech SaaS startup remote",
+          "new": false
+        },
+        {
+          "company": "STP Informationstechnologie",
+          "query": "senior product manager legal tech SaaS startup remote",
+          "new": true
+        },
+        {
+          "company": "EverAI",
+          "query": "senior PM vertical AI B2B SaaS startup hiring remote",
+          "new": false
         }
       ]
     }
