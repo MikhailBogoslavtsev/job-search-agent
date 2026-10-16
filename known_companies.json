@@ -1318,5 +1318,65 @@
     "first_seen": "2026-10-14",
     "score": 6,
     "summary": "All-in-one HR and Finance SaaS platform (payroll, benefits, onboarding, IT, analytics) for mid-sized UK businesses."
+  },
+  "codesphere.com": {
+    "name": "Codesphere",
+    "first_seen": "2026-10-16",
+    "score": 6,
+    "summary": "A developer-centric cloud deployment/PaaS platform focused on digital sovereignty, sold to enterprises and public authorities in Germany/EU."
+  },
+  "warp.dev": {
+    "name": "Warp",
+    "first_seen": "2026-10-14",
+    "score": 7,
+    "summary": "AI-native employee management platform (payroll, compliance, benefits, IT provisioning) sold to HR teams at high-growth companies."
+  },
+  "devzero.io": {
+    "name": "DevZero",
+    "first_seen": "2026-10-16",
+    "score": 5,
+    "summary": "An autonomous Kubernetes/AI infrastructure optimization platform that rightsizes compute/GPU workloads to cut cloud costs, sold to engineering/DevOps teams."
+  },
+  "vcluster.com": {
+    "name": "vCluster",
+    "first_seen": "2026-10-16",
+    "score": 4,
+    "summary": "Open-source/commercial Kubernetes virtual clustering platform for platform engineers to enable multi-tenancy and reduce cloud costs, including AI infrastructure use cases."
+  },
+  "akuity.io": {
+    "name": "Akuity",
+    "first_seen": "2026-10-16",
+    "score": 5,
+    "summary": "Enterprise GitOps/Kubernetes software delivery platform (from creators of Argo CD/Kargo) sold to platform engineering and DevOps teams."
+  },
+  "qovery.com": {
+    "name": "Qovery",
+    "first_seen": "2026-10-16",
+    "score": 7,
+    "summary": "An agentic infrastructure control plane that lets AI coding agents execute policy-checked, audited operations on Kubernetes in a customer's own cloud, sold to platform/DevOps teams."
+  },
+  "kestra.io": {
+    "name": "Kestra",
+    "first_seen": "2026-10-16",
+    "score": 6,
+    "summary": "Open-source declarative orchestration platform for data, AI, and infrastructure workflows, sold to engineering teams via UI/YAML with AI agent capabilities."
+  },
+  "zeet.co": {
+    "name": "Zeet",
+    "first_seen": "2026-10-16",
+    "score": 4,
+    "summary": "DevOps/CI-CD platform for deploying and managing cloud infrastructure on Kubernetes, sold to engineering teams and DevOps leaders."
+  },
+  "daytona.io": {
+    "name": "Daytona",
+    "first_seen": "2026-10-16",
+    "score": 6,
+    "summary": "Devtools/infra platform providing secure, elastic sandboxed infrastructure for running AI-generated code, sold to developers and AI engineering teams."
+  },
+  "atmosly.com": {
+    "name": "Atmosly",
+    "first_seen": "2026-10-16",
+    "score": 6,
+    "summary": "AI-native Kubernetes platform combining internal developer platform, AI SRE, and DevOps automation sold to engineering/platform teams."
   }
 }
