@@ -1378,5 +1378,65 @@
     "first_seen": "2026-10-16",
     "score": 6,
     "summary": "AI-native Kubernetes platform combining internal developer platform, AI SRE, and DevOps automation sold to engineering/platform teams."
+  },
+  "sandbase.com": {
+    "name": "Sandbase",
+    "first_seen": "2026-10-19",
+    "score": 7,
+    "summary": "AI-based B2B SaaS/PaaS platform unifying data across the clean energy supply chain (generation to distribution) in MENA, sold to energy sector stakeholders and service providers."
+  },
+  "fusebox.energy": {
+    "name": "Fusebox",
+    "first_seen": "2026-10-19",
+    "score": 7,
+    "summary": "A hardware-agnostic energy operating system/platform for dispatch, portfolio orchestration, and TSO market integration, sold to BRPs, BSPs, utilities, traders, and aggregators managing PV, wind, BESS, and flexible loads."
+  },
+  "truxel.ai": {
+    "name": "Truxel",
+    "first_seen": "2026-10-19",
+    "score": 7,
+    "summary": "Nebula is a control and optimization software platform for flexible energy assets (batteries, renewables, EV charging, industrial loads), sold to energy asset owners and operators."
+  },
+  "metrisenergy.com": {
+    "name": "Metris",
+    "first_seen": "2026-10-19",
+    "score": 8,
+    "summary": "AI-native operating system for renewable energy owners/operators, unifying asset data for monitoring, automated O&M, and PPA billing for solar and BESS portfolios."
+  },
+  "scoop.solar": {
+    "name": "Scoop",
+    "first_seen": "2026-10-19",
+    "score": 8,
+    "summary": "A field operations SaaS platform ('Central Operations Hub') that unifies workflows, scheduling, documentation, and reporting for solar, wind, EV, and renewable energy field teams and O&M providers."
+  },
+  "delfos.energy": {
+    "name": "Delfos Energy",
+    "first_seen": "2026-10-19",
+    "score": 8,
+    "summary": "AI-powered asset performance management SaaS platform for renewable energy assets (wind, solar, BESS, hydro), sold to plant operators and asset owners."
+  },
+  "hyggle.energy": {
+    "name": "Hyggle",
+    "first_seen": "2026-10-19",
+    "score": 8,
+    "summary": "AI-native decision and orchestration platform (EDMOS) that optimizes multi-energy, hybrid and green energy systems for industrial companies, energy distributors, IPPs and utilities."
+  },
+  "cim.io": {
+    "name": "CIM",
+    "first_seen": "2026-10-19",
+    "score": 8,
+    "summary": "AI-driven building analytics/FDD SaaS platform (PEAK) that monitors commercial buildings to optimize efficiency, maintenance and sustainability, sold to property owners/operators and facility teams."
+  },
+  "optimoenergy.io": {
+    "name": "Optimo Energy",
+    "first_seen": "2026-10-19",
+    "score": 8,
+    "summary": "A fleet energy operating system (SaaS platform) that unifies charging, energy management and flexibility for electric bus/HGV/LCV fleets, sold to fleet operators and depot managers."
+  },
+  "tibo.energy": {
+    "name": "Tibo Energy",
+    "first_seen": "2026-10-19",
+    "score": 7,
+    "summary": "AI-driven energy management SaaS platform for commercial/industrial buildings, optimizing solar, storage, EV charging and grid congestion for C&I real estate customers."
   }
 }
