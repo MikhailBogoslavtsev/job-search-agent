@@ -1,5 +1,5 @@
 {
-  "query_index": 21,
+  "query_index": 24,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -411,6 +411,33 @@
         {
           "company": "EverAI",
           "query": "senior PM vertical AI B2B SaaS startup hiring remote",
+          "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "queries": [
+        "Product Lead B2B SaaS startup remote Europe hiring",
+        "Principal Product Manager B2B SaaS remote Europe",
+        "Director of Product SaaS startup remote Europe hiring"
+      ],
+      "usage": {
+        "input_tokens": 7036,
+        "output_tokens": 2170,
+        "searches": 12,
+        "seconds": 42,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Lattice",
+          "query": "Product Lead B2B SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "PandaDoc",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
           "new": false
         }
       ]
