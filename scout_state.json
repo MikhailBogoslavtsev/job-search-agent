@@ -1,5 +1,5 @@
 {
-  "query_index": 24,
+  "query_index": 27,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -438,6 +438,38 @@
         {
           "company": "PandaDoc",
           "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "queries": [
+        "Senior Product Owner SaaS platform remote Europe hiring",
+        "senior product manager AI agents platform startup remote Europe hiring",
+        "product lead agentic AI workflow automation B2B startup remote"
+      ],
+      "usage": {
+        "input_tokens": 7038,
+        "output_tokens": 3944,
+        "searches": 21,
+        "seconds": 74,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Matomo",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Actian",
+          "query": "senior product manager AI agents platform startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "pixx.io",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
           "new": false
         }
       ]
