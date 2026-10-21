@@ -1,5 +1,5 @@
 {
-  "query_index": 27,
+  "query_index": 1,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -471,6 +471,48 @@
           "company": "pixx.io",
           "query": "Senior Product Owner SaaS platform remote Europe hiring",
           "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "queries": [
+        "senior PM LLM developer platform startup remote Europe",
+        "head of product AI-native B2B SaaS Series A or B remote",
+        "senior product manager remote Europe industrial SaaS hiring"
+      ],
+      "usage": {
+        "input_tokens": 7034,
+        "output_tokens": 4278,
+        "searches": 15,
+        "seconds": 63,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Qase",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": false
+        },
+        {
+          "company": "Kpler",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": true
+        },
+        {
+          "company": "Dataiku",
+          "query": "senior PM LLM developer platform startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "GitLab",
+          "query": "senior PM LLM developer platform startup remote Europe",
+          "new": true
+        },
+        {
+          "company": "Archive",
+          "query": "head of product AI-native B2B SaaS Series A or B remote",
+          "new": true
         }
       ]
     }
