@@ -1438,5 +1438,65 @@
     "first_seen": "2026-10-19",
     "score": 7,
     "summary": "AI-driven energy management SaaS platform for commercial/industrial buildings, optimizing solar, storage, EV charging and grid congestion for C&I real estate customers."
+  },
+  "upguard.com": {
+    "name": "UpGuard",
+    "first_seen": "2026-10-21",
+    "score": 8,
+    "summary": "Cybersecurity SaaS platform providing Cyber Risk Posture Management with AI-driven security ratings and threat intelligence, sold to security teams."
+  },
+  "joblink.v2p.10001mb.com": {
+    "name": "UpGuard",
+    "first_seen": "2026-10-21",
+    "score": 8,
+    "summary": "Cybersecurity SaaS platform providing Cyber Risk Posture Management with AI-driven security ratings and threat intelligence, sold to security teams."
+  },
+  "n8n.io": {
+    "name": "n8n",
+    "first_seen": "2026-10-21",
+    "score": 7,
+    "summary": "Open-source workflow orchestration/automation platform with AI integration, sold to technical teams and enterprises for building and scaling automations."
+  },
+  "remotelyaijobs.com": {
+    "name": "n8n",
+    "first_seen": "2026-10-21",
+    "score": 7,
+    "summary": "Open-source workflow orchestration/automation platform with AI integration, sold to technical teams and enterprises for building and scaling automations."
+  },
+  "pencil.ai": {
+    "name": "Pencil",
+    "first_seen": "2026-10-21",
+    "score": 6,
+    "summary": "AI-native agentic platform for marketing teams that assembles and orchestrates multi-agent workflows from a brief to produce brand-safe ad campaigns."
+  },
+  "tasklio.liveblog365.com": {
+    "name": "Pencil",
+    "first_seen": "2026-10-21",
+    "score": 6,
+    "summary": "AI-native agentic platform for marketing teams that assembles and orchestrates multi-agent workflows from a brief to produce brand-safe ad campaigns."
+  },
+  "patchstack.com": {
+    "name": "Patchstack",
+    "first_seen": "2026-10-21",
+    "score": 7,
+    "summary": "Cybersecurity SaaS protecting WordPress sites and now JavaScript/AI-built apps for hosts, agencies, developers and vulnerability management."
+  },
+  "jobs.workable.com": {
+    "name": "Patchstack",
+    "first_seen": "2026-10-21",
+    "score": 7,
+    "summary": "Cybersecurity SaaS protecting WordPress sites and now JavaScript/AI-built apps for hosts, agencies, developers and vulnerability management."
+  },
+  "toggl.com": {
+    "name": "Toggl",
+    "first_seen": "2026-10-21",
+    "score": 6,
+    "summary": "B2B SaaS time tracking, planning and time-intelligence platform (Toggl Focus) sold to teams and businesses."
+  },
+  "bigremotejob.com": {
+    "name": "Toggl",
+    "first_seen": "2026-10-21",
+    "score": 6,
+    "summary": "B2B SaaS time tracking, planning and time-intelligence platform (Toggl Focus) sold to teams and businesses."
   }
 }
