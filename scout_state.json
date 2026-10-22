@@ -1,5 +1,5 @@
 {
-  "query_index": 1,
+  "query_index": 4,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -513,6 +513,33 @@
           "company": "Archive",
           "query": "head of product AI-native B2B SaaS Series A or B remote",
           "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "queries": [
+        "lead PM construction tech startup hiring remote",
+        "head of product manufacturing IoT startup Europe",
+        "YC startup industrial AI product manager"
+      ],
+      "usage": {
+        "input_tokens": 7018,
+        "output_tokens": 2470,
+        "searches": 12,
+        "seconds": 41,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Dili",
+          "query": "YC startup industrial AI product manager",
+          "new": false
+        },
+        {
+          "company": "Cerrion",
+          "query": "YC startup industrial AI product manager",
+          "new": false
         }
       ]
     }
