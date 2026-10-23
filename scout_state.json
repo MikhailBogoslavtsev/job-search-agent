@@ -1,5 +1,5 @@
 {
-  "query_index": 4,
+  "query_index": 7,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -540,6 +540,38 @@
           "company": "Cerrion",
           "query": "YC startup industrial AI product manager",
           "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "queries": [
+        "food traceability SaaS senior PM remote",
+        "physical operations AI startup product manager hiring",
+        "senior PM B2B SaaS Netherlands Germany remote"
+      ],
+      "usage": {
+        "input_tokens": 7024,
+        "output_tokens": 1515,
+        "searches": 7,
+        "seconds": 32,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "zvoove",
+          "query": "senior PM B2B SaaS Netherlands Germany remote",
+          "new": false
+        },
+        {
+          "company": "Scale AI",
+          "query": "physical operations AI startup product manager hiring",
+          "new": true
+        },
+        {
+          "company": "Physical Intelligence",
+          "query": "physical operations AI startup product manager hiring",
+          "new": true
         }
       ]
     }
