@@ -1498,5 +1498,53 @@
     "first_seen": "2026-10-21",
     "score": 6,
     "summary": "B2B SaaS time tracking, planning and time-intelligence platform (Toggl Focus) sold to teams and businesses."
+  },
+  "cargofy.com": {
+    "name": "Cargofy",
+    "first_seen": "2026-10-23",
+    "score": 9,
+    "summary": "AI-native operating system for global freight, using autonomous AI agents to automate procurement, dispatching, negotiations, and operations for carriers, shippers, and 3PLs."
+  },
+  "careers.cargofy.com": {
+    "name": "Cargofy",
+    "first_seen": "2026-10-23",
+    "score": 9,
+    "summary": "AI-native operating system for global freight, using autonomous AI agents to automate procurement, dispatching, negotiations, and operations for carriers, shippers, and 3PLs."
+  },
+  "moraware.com": {
+    "name": "Moraware",
+    "first_seen": "2026-10-23",
+    "score": 6,
+    "summary": "A profitable B2B SaaS platform (CounterGo, Systemize, Inventory) for countertop fabricators to manage quoting, scheduling, and operations."
+  },
+  "euler.com": {
+    "name": "EULER",
+    "first_seen": "2026-10-23",
+    "score": 6,
+    "summary": "AI-native Partner Relationship Management (PRM) SaaS platform for partnership teams, automating partner workflows and revenue tracking."
+  },
+  "jobleads.com": {
+    "name": "EULER",
+    "first_seen": "2026-10-23",
+    "score": 6,
+    "summary": "AI-native Partner Relationship Management (PRM) SaaS platform for partnership teams, automating partner workflows and revenue tracking."
+  },
+  "sweed.io": {
+    "name": "Sweed",
+    "first_seen": "2026-10-23",
+    "score": 3,
+    "summary": "An all-in-one cannabis retail SaaS platform (POS, eCommerce, marketing, analytics, inventory) sold to cannabis retailers."
+  },
+  "wantapply.com": {
+    "name": "Sweed",
+    "first_seen": "2026-10-23",
+    "score": 3,
+    "summary": "An all-in-one cannabis retail SaaS platform (POS, eCommerce, marketing, analytics, inventory) sold to cannabis retailers."
+  },
+  "vacantesdigitales.com": {
+    "name": "Skala",
+    "first_seen": "2026-10-23",
+    "score": 1,
+    "summary": "A job board listing for a Head of Product role at an unnamed startup offering finance, tax, legal, payroll and back-office SaaS for LATAM startups operating in the US."
   }
 }
