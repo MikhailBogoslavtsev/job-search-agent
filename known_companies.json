@@ -1546,5 +1546,41 @@
     "first_seen": "2026-10-23",
     "score": 1,
     "summary": "A job board listing for a Head of Product role at an unnamed startup offering finance, tax, legal, payroll and back-office SaaS for LATAM startups operating in the US."
+  },
+  "cloee.ai": {
+    "name": "CloEE",
+    "first_seen": "2026-10-26",
+    "score": 9,
+    "summary": "On-premise agentic industrial AI platform that unifies SCADA/MES/ERP data to give plant and manufacturing teams real-time OEE, downtime, energy, and quality insights, targeting heat treatment and discrete manufacturing."
+  },
+  "ifactoryapp.com": {
+    "name": "iFactory AI by Oxmaint",
+    "first_seen": "2026-10-26",
+    "score": 9,
+    "summary": "On-prem agentic AI plant-layer product unifying MES/historian/PLC/SCADA/ERP data for predictive maintenance, quality control and process monitoring, sold to plant IT, MES/SAP practitioners, quality leads and plant managers."
+  },
+  "aidentyx.com": {
+    "name": "Aidentyx",
+    "first_seen": "2026-10-26",
+    "score": 9,
+    "summary": "Agentic AI platform (PODO AI Framework) that unifies plant data and context for manufacturing/semiconductor teams, sold to maintenance, reliability and operations engineers."
+  },
+  "spector.ai": {
+    "name": "Spector.AI",
+    "first_seen": "2026-10-26",
+    "score": 9,
+    "summary": "AI Agentic Twin platform for industrial reliability and plant performance, sold to reliability/operations teams in oil & gas, chemicals, power and manufacturing."
+  },
+  "getnexus.ai": {
+    "name": "Nexus Intelligence",
+    "first_seen": "2026-10-26",
+    "score": 9,
+    "summary": "AI agent platform that builds a live process model of a factory and dispatches long-horizon agents to investigate production losses and recommend actions to process engineers and maintenance teams."
+  },
+  "intelligentshopfloor.com": {
+    "name": "Intelligent Shopfloor",
+    "first_seen": "2026-10-26",
+    "score": 8,
+    "summary": "Edge-deployed causal/agentic industrial AI platform connecting OT data (PLC/SCADA/IoT) to prescriptive maintenance and shopfloor workflows for manufacturing frontline workers."
   }
 }
