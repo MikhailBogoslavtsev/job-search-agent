@@ -1,5 +1,5 @@
 {
-  "query_index": 7,
+  "query_index": 10,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -571,6 +571,53 @@
         {
           "company": "Physical Intelligence",
           "query": "physical operations AI startup product manager hiring",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "queries": [
+        "site:ycombinator.com/jobs product manager industrial construction",
+        "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
+        "geospatial or remote sensing analytics startup senior product manager remote"
+      ],
+      "usage": {
+        "input_tokens": 7045,
+        "output_tokens": 1864,
+        "searches": 7,
+        "seconds": 29,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Near Space Labs",
+          "query": "geospatial or remote sensing analytics startup senior product manager remote",
+          "new": false
+        },
+        {
+          "company": "ImageSat International",
+          "query": "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
+          "new": true
+        },
+        {
+          "company": "Flylance (client platform, undisclosed end company)",
+          "query": "geospatial or remote sensing analytics startup senior product manager remote",
+          "new": true
+        },
+        {
+          "company": "Idox Group",
+          "query": "geospatial or remote sensing analytics startup senior product manager remote",
+          "new": true
+        },
+        {
+          "company": "Ooak Data",
+          "query": "site:ycombinator.com/jobs product manager industrial construction",
+          "new": false
+        },
+        {
+          "company": "Critical Software (Karvel)",
+          "query": "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
           "new": true
         }
       ]
