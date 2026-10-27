@@ -1,5 +1,5 @@
 {
-  "query_index": 10,
+  "query_index": 13,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -618,6 +618,48 @@
         {
           "company": "Critical Software (Karvel)",
           "query": "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "queries": [
+        "AI inspection or precision agriculture computer vision startup product manager hiring",
+        "senior product manager B2B SaaS startup remote Europe hiring",
+        "head of product B2B SaaS Series B startup remote"
+      ],
+      "usage": {
+        "input_tokens": 7038,
+        "output_tokens": 3899,
+        "searches": 15,
+        "seconds": 57,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Precision AI",
+          "query": "AI inspection or precision agriculture computer vision startup product manager hiring",
+          "new": false
+        },
+        {
+          "company": "VMRay",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "saas.group (Address Guard)",
+          "query": "head of product B2B SaaS Series B startup remote",
+          "new": false
+        },
+        {
+          "company": "Leadfeeder",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "DocPlanner",
+          "query": "senior product manager B2B SaaS startup remote Europe hiring",
           "new": true
         }
       ]
