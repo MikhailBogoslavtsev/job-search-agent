@@ -22,8 +22,8 @@ PM candidate profile for job matching:
 - Skills: 0-to-1 products, enterprise B2B discovery, cross-functional delivery, computer vision products
 - CV/drone angle: looking for companies applying drone/CV/aerial/satellite imagery tech in ANY domain (agriculture, infrastructure inspection, insurance, mining, utilities, environmental)
 - Industry scope: ANY B2B SaaS vertical is fair game (HR tech, martech, devtools/infra, legal tech, supply chain/logistics, cybersecurity, healthtech ops, climate/energy, real estate tech, vertical AI tools, industrial/construction) — not limited to construction or industrial
-- Location: Spain, remote preferred. Open to EOR (Deel/Remote). EU HQ ok. Northern Europe hybrid possible.
-- Target: Series A-C startups
+- Location: Spain, remote preferred. Open to EOR (Deel/Remote). EU HQ ok. Open to relocating: UK/London and EU hybrid roles are fine.
+- Target: any company stage, from startups to large established companies, including enterprise industrial software vendors (ERP, EAM, MES, field service, supply chain planning) building AI-native or agentic products for manufacturers
 - NOT: US on-site only, pure consumer apps, fintech (requires domain-specific regulatory/financial knowledge the candidate doesn't have)
 """
 
@@ -49,42 +49,54 @@ def normalize_company_name(name):
 
 
 SEARCH_QUERIES = [
+    # "startup" / "Series A-C" dropped from these queries 2026-10-27: any company
+    # stage is in scope now. The YC queries keep their startup slant on purpose.
     # Industrial / physical operations (his own background)
     "senior product manager remote Europe industrial SaaS hiring",
-    "lead PM construction tech startup hiring remote",
-    "head of product manufacturing IoT startup Europe",
+    "lead PM construction tech hiring remote",
+    "head of product manufacturing IoT Europe",
     "YC startup industrial AI product manager",
     "food traceability SaaS senior PM remote",
-    "physical operations AI startup product manager hiring",
+    "physical operations AI product manager hiring",
     "senior PM B2B SaaS Netherlands Germany remote",
     "site:ycombinator.com/jobs product manager industrial construction",
     # Imagery / CV / geospatial: trimmed from 10 queries to 3 on 2026-10-02.
     # They kept returning the same few companies already in seen_companies.json,
     # and most of his screens came from outside these domains.
-    "computer vision startup product manager drone, aerial or satellite imagery remote Europe",
-    "geospatial or remote sensing analytics startup senior product manager remote",
-    "AI inspection or precision agriculture computer vision startup product manager hiring",
+    "computer vision product manager drone, aerial or satellite imagery remote Europe",
+    "geospatial or remote sensing analytics senior product manager remote",
+    "AI inspection or precision agriculture computer vision product manager hiring",
     # B2B SaaS verticals
-    "senior product manager B2B SaaS startup remote Europe hiring",
-    "head of product B2B SaaS Series B startup remote",
+    "senior product manager B2B SaaS remote Europe hiring",
+    "head of product B2B SaaS remote",
     "YC startup B2B SaaS senior product manager hiring -fintech",
-    "lead product manager HR tech SaaS startup remote Europe",
-    "senior PM devtools infrastructure startup remote hiring",
-    "senior product manager cybersecurity SaaS startup remote Europe",
-    "lead PM supply chain logistics SaaS startup hiring remote",
-    "senior product manager legal tech SaaS startup remote",
-    "head of product climate tech energy SaaS startup remote Europe",
-    "senior PM vertical AI B2B SaaS startup hiring remote",
+    "lead product manager HR tech SaaS remote Europe",
+    "senior PM devtools infrastructure remote hiring",
+    "senior product manager cybersecurity SaaS remote Europe",
+    "lead PM supply chain logistics SaaS hiring remote",
+    "senior product manager legal tech SaaS remote",
+    "head of product climate tech energy SaaS remote Europe",
+    "senior PM vertical AI B2B SaaS hiring remote",
     # Title variants (his applications also include these titles)
-    "Product Lead B2B SaaS startup remote Europe hiring",
+    "Product Lead B2B SaaS remote Europe hiring",
     "Principal Product Manager B2B SaaS remote Europe",
-    "Director of Product SaaS startup remote Europe hiring",
+    "Director of Product SaaS remote Europe hiring",
     "Senior Product Owner SaaS platform remote Europe hiring",
     # AI platform / agents
-    "senior product manager AI agents platform startup remote Europe hiring",
-    "product lead agentic AI workflow automation B2B startup remote",
-    "senior PM LLM developer platform startup remote Europe",
-    "head of product AI-native B2B SaaS Series A or B remote",
+    "senior product manager AI agents platform remote Europe hiring",
+    "product lead agentic AI workflow automation B2B remote",
+    "senior PM LLM developer platform remote Europe",
+    "head of product AI-native B2B SaaS remote",
+    # Enterprise industrial software (added 2026-10-27, from the IFS application):
+    # established ERP / EAM / MES / field-service / supply-chain vendors building
+    # AI-native or agentic product lines.
+    "senior product manager manufacturing AI-native ERP software London OR Europe hiring",
+    "product manager industrial AI agents digital workers enterprise software Europe",
+    "senior product manager MES manufacturing execution software Europe hiring",
+    "senior product manager enterprise asset management EAM OR APM software AI Europe",
+    "senior product manager field service management software AI agents Europe",
+    "senior product manager supply chain planning software AI London OR Europe",
+    "principal product manager smart manufacturing industrial software Europe hiring",
 ]
 
 def load_seen():

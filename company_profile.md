@@ -18,8 +18,8 @@ healthtech ops, real estate tech, and vertical AI tools generally. Applying
 AI, computer vision, ML, imagery, sensor data or automation to real-world
 physical operations is still a strong plus, not a requirement. I care about
 product companies (SaaS / platforms), not services or consulting agencies.
-Startup-stage is more interesting than large corporates. I'm open to a wide
-range — err toward including a company rather than excluding it.
+Company stage does not matter: early startups and large established companies
+are both in scope. I'm open to a wide range — err toward including a company rather than excluding it.
 
 ## The two hard filters
 
@@ -48,6 +48,12 @@ fits.
   MES, ERP, sensors, CAD). Examples of the shape: Augury, Tractian, Cognite,
   Uptake, Sight Machine, Tulip Interfaces, MaintainX, Seeq, Samotics. See
   `augury_profile.md` for the full archetype and target cluster.
+- **Also include: established enterprise industrial software vendors (added
+  2026-10-27).** ERP, enterprise asset management (EAM/APM), MES, field service
+  management, PLM and supply chain planning vendors that sell to manufacturers
+  and asset-heavy industries and are building AI-native or agentic product
+  lines. A product team shipping AI into a manufacturing or operations
+  workflow is the signal.
 - **Specific area of strong interest: AI-driven supply chain planning and
   optimization platforms** (demand forecasting, inventory/network
   optimization, logistics planning, procurement optimization, etc.). Flag
@@ -58,9 +64,12 @@ fits.
   physical, real-world operation.
 - Sells B2B to field teams, operators, engineers, contractors, or industrial
   customers.
-- Startup stage (seed to Series C) rather than a large incumbent.
+- Any company stage, from seed startup to large established company. Stage
+  neither raises nor lowers the score (changed 2026-10-27; it used to favour
+  startups).
 - Product-led: a platform or SaaS product, ideally with some 0-to-1 surface.
-- Remote-friendly or European is a mild plus — but do NOT filter by country.
+- Remote-friendly or European (UK/London hybrid counts) is a mild plus — but do
+  NOT filter by country.
 - It can be consumer product also but less priority because most probably my domain will not fit
 
 ## Not a fit

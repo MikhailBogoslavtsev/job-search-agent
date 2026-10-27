@@ -37,30 +37,37 @@ CLAUDE_MODEL = "claude-sonnet-5"
 # operations personas — the intersection of physical-operations domain and
 # agentic AI. Included alongside the others, not prioritized above them.
 COMPANY_QUERIES = [
-    {"category": "company", "query": "startups turning drone or satellite imagery into operational decisions for construction and infrastructure field teams"},
+    {"category": "company", "query": "companies turning drone or satellite imagery into operational decisions for construction and infrastructure field teams"},
     {"category": "company", "query": "companies building computer vision products for industrial inspection of energy assets, utilities, mining sites and manufacturing plants"},
     {"category": "company", "query": "vertical SaaS companies digitizing physical field operations for contractors, surveyors and civil engineers"},
-    {"category": "company", "query": "European startups applying machine learning to physical operations — logistics, energy, agriculture, the built environment — with a product-led B2B SaaS model"},
-    {"category": "company", "query": "startups building AI agents or copilots embedded inside workflow software for engineering and operations teams"},
-    {"category": None, "query": "job posting for a senior or lead product manager at a remote-first European startup building a SaaS platform that turns imagery or sensor data into decisions for field teams"},
-    {"category": None, "query": "job posting for a head of product or director of product at a Series A to C startup applying AI to construction, infrastructure or industrial operations"},
+    {"category": "company", "query": "European companies applying machine learning to physical operations — logistics, energy, agriculture, the built environment — with a product-led B2B SaaS model"},
+    {"category": "company", "query": "companies building AI agents or copilots embedded inside workflow software for engineering and operations teams"},
+    {"category": None, "query": "job posting for a senior or lead product manager at a remote-first European company building a SaaS platform that turns imagery or sensor data into decisions for field teams"},
+    {"category": None, "query": "job posting for a head of product or director of product at a company applying AI to construction, infrastructure or industrial operations"},
     {"category": None, "query": "job posting for a product manager at a company hiring remotely across Europe, building ML products from geospatial, earth observation or camera data"},
-    {"category": "company", "query": "B2B SaaS startups building vertical software products for HR, legal, supply chain or logistics teams, payroll, benefits, or global employment teams not fintech"},
-    {"category": "company", "query": "startups building developer tools or infrastructure software sold to engineering teams"},
-    {"category": "company", "query": "climate tech or energy SaaS startups selling software products to operations teams, not fintech"},
-    {"category": None, "query": "job posting for a senior or lead product manager at a Series A to C B2B SaaS startup remote in Europe, any industry except fintech"},
-    {"category": None, "query": "job posting for a head of product at a remote-first B2B SaaS startup building a vertical software platform, not a fintech company"},
+    {"category": "company", "query": "B2B SaaS companies building vertical software products for HR, legal, supply chain or logistics teams, payroll, benefits, or global employment teams not fintech"},
+    {"category": "company", "query": "companies building developer tools or infrastructure software sold to engineering teams"},
+    {"category": "company", "query": "climate tech or energy SaaS companies selling software products to operations teams, not fintech"},
+    {"category": None, "query": "job posting for a senior or lead product manager at a B2B SaaS company remote in Europe, any industry except fintech"},
+    {"category": None, "query": "job posting for a head of product at a remote-first B2B SaaS company building a vertical software platform, not a fintech company"},
     # --- Augury cluster: industrial AI + agents/copilots for operations personas ---
-    {"category": "company", "query": "startups building industrial AI agents or copilots for manufacturing operations, reliability and maintenance teams — machine health, process health, predictive maintenance on live plant data"},
+    {"category": "company", "query": "companies building industrial AI agents or copilots for manufacturing operations, reliability and maintenance teams — machine health, process health, predictive maintenance on live plant data"},
     {"category": "company", "query": "companies building an industrial data platform that unifies fragmented operational sources — historians, CMMS, MES, ERP, sensors — and layers AI agents or copilots on top for plant engineers"},
     {"category": "company", "query": "vertical SaaS for frontline manufacturing operations and maintenance — CMMS, machine health, process optimization for process engineers, reliability engineers and plant managers — adding AI copilots"},
-    {"category": None, "query": "job posting for a product manager or head of product at an industrial AI startup building agents or copilots for manufacturing, predictive maintenance, machine health or plant operations, remote"},
+    {"category": None, "query": "job posting for a product manager or head of product at an industrial AI company building agents or copilots for manufacturing, predictive maintenance, machine health or plant operations, remote"},
     # --- New verticals cluster (2026-08-11): broadening beyond the physical-
     # operations / industrial-AI focus above into four additional shapes.
-    {"category": "company", "query": "startups building foundation models, coding agents, workflow automation or AI evaluation tooling for technical teams, not fintech — companies like Anthropic, OpenAI, Bolt.new, StackBlitz, n8n, Encord and Skild AI"},
-    {"category": "company", "query": "travel and OTA startups building flight or accommodation booking platforms and travel connectivity infrastructure, similar to Aviasales, ETG and Hopper"},
+    {"category": "company", "query": "companies building foundation models, coding agents, workflow automation or AI evaluation tooling for technical teams, not fintech — companies like Anthropic, OpenAI, Bolt.new, StackBlitz, n8n, Encord and Skild AI"},
+    {"category": "company", "query": "travel and OTA companies building flight or accommodation booking platforms and travel connectivity infrastructure, similar to Aviasales, ETG and Hopper"},
     {"category": "company", "query": "consumer marketplace and social apps in dating, delivery, music or edtech, not B2B SaaS — companies like Feeld, Raya, Glovo, Muse Group, Preply and TripleTen"},
-    {"category": "company", "query": "vertical B2B SaaS startups in document automation, procurement and spend management, translation, ecommerce platforms, vacation-rental property management, market research, time tracking or developer project management — companies like PandaDoc, Archlet, Smartcat, commercetools, Cint, Lodgify, Hostaway, Toggl and Linear"},
+    {"category": "company", "query": "vertical B2B SaaS companies in document automation, procurement and spend management, translation, ecommerce platforms, vacation-rental property management, market research, time tracking or developer project management — companies like PandaDoc, Archlet, Smartcat, commercetools, Cint, Lodgify, Hostaway, Toggl and Linear"},
+    # --- Enterprise industrial software cluster (2026-10-27, from the IFS
+    # application): large ERP / EAM / MES / field-service / supply-chain vendors
+    # putting AI agents into manufacturing workflows. See company_profile.md.
+    {"category": "company", "query": "established enterprise software vendors selling ERP, enterprise asset management, MES or field service management to manufacturers and asset-heavy industries, now building AI agents or digital workers into the product"},
+    {"category": "company", "query": "AI-driven supply chain planning, demand forecasting and inventory optimization software sold to manufacturers"},
+    {"category": "company", "query": "connected-worker, maintenance and field service software for plant and frontline industrial teams adding AI copilots"},
+    {"category": None, "query": "job posting for a senior product manager for manufacturing, asset management, field service or supply chain at an enterprise industrial software company building AI-native or agentic products, London, UK or Europe, hybrid or remote"},
 ]
 
 
