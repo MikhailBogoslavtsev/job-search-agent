@@ -1,5 +1,5 @@
 {
-  "query_index": 13,
+  "query_index": 16,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -661,6 +661,53 @@
           "company": "DocPlanner",
           "query": "senior product manager B2B SaaS startup remote Europe hiring",
           "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "queries": [
+        "YC startup B2B SaaS senior product manager hiring -fintech",
+        "lead product manager HR tech SaaS remote Europe",
+        "senior PM devtools infrastructure remote hiring"
+      ],
+      "usage": {
+        "input_tokens": 7101,
+        "output_tokens": 4251,
+        "searches": 16,
+        "seconds": 59,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Matillion",
+          "query": "lead product manager HR tech SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "CreatorIQ",
+          "query": "lead product manager HR tech SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Insights",
+          "query": "lead product manager HR tech SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Driftrock",
+          "query": "lead product manager HR tech SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Parakar Group",
+          "query": "lead product manager HR tech SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Dili",
+          "query": "YC startup B2B SaaS senior product manager hiring -fintech",
+          "new": false
         }
       ]
     }
