@@ -1582,5 +1582,47 @@
     "first_seen": "2026-10-26",
     "score": 8,
     "summary": "Edge-deployed causal/agentic industrial AI platform connecting OT data (PLC/SCADA/IoT) to prescriptive maintenance and shopfloor workflows for manufacturing frontline workers."
+  },
+  "automassist.ai": {
+    "name": "AutomAssist",
+    "first_seen": "2026-10-28",
+    "score": 9,
+    "summary": "AI agent platform unifying industrial documentation, CMMS/ERP/MES/SCADA data so plant technicians and engineers can get instant fault-to-fix answers from the shop floor."
+  },
+  "sightmachine.com": {
+    "name": "Sight Machine",
+    "first_seen": "2026-10-28",
+    "score": 10,
+    "summary": "Agent-powered AI platform that unifies raw manufacturing data (controls, historians, MES, ERP, documents) into a semantic layer and deploys agents to find output gains in factories, sold to plant managers and process engineers."
+  },
+  "twinedgeai.com": {
+    "name": "TwinEdge AI",
+    "first_seen": "2026-10-28",
+    "score": 9,
+    "summary": "AI-native CMMS/EAM and agentic data platform unifying SCADA, historians, GIS, ERP and IoT data for predictive maintenance, asset management, and capital planning in asset-heavy industries like water/wastewater and manufacturing."
+  },
+  "contextweaver.info": {
+    "name": "ContextWeaver",
+    "first_seen": "2026-10-28",
+    "score": 9,
+    "summary": "Builds a semantic and agent-application layer unifying SCADA, MES, ERP and CRM data to power AI agents for production planning, maintenance, quality and root-cause analysis in manufacturing plants."
+  },
+  "litmus.io": {
+    "name": "Litmus",
+    "first_seen": "2026-10-28",
+    "score": 9,
+    "summary": "Industrial Edge Data Platform that connects PLCs, SCADA, MES, historians and sensors, contextualizes OT data, and enables edge/cloud AI (predictive maintenance, quality analytics) for manufacturers."
+  },
+  "ergotech.com": {
+    "name": "ErgoTech Systems, Inc.",
+    "first_seen": "2026-10-28",
+    "score": 8,
+    "summary": "Industrial DataOps/AI platform (MIStudio) and semiconductor fab connectivity software (TransSECS) selling contextualized operational intelligence and agentic AI to manufacturers and semiconductor fabs."
+  },
+  "runb3.com": {
+    "name": "B3 Systems",
+    "first_seen": "2026-10-28",
+    "score": 9,
+    "summary": "AI-native industrial intelligence platform with agentic analytics that unifies shop-floor data (OT/IT, historians, CMMS, ERP) for manufacturers in forestry, pulp & paper, steel, automotive, mining, and heavy industry to drive real-time operational decisions."
   }
 }
