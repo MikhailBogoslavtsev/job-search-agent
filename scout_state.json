@@ -1,5 +1,5 @@
 {
-  "query_index": 16,
+  "query_index": 19,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -708,6 +708,38 @@
           "company": "Dili",
           "query": "YC startup B2B SaaS senior product manager hiring -fintech",
           "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "queries": [
+        "senior product manager cybersecurity SaaS remote Europe",
+        "lead PM supply chain logistics SaaS hiring remote",
+        "senior product manager legal tech SaaS remote"
+      ],
+      "usage": {
+        "input_tokens": 7098,
+        "output_tokens": 2842,
+        "searches": 13,
+        "seconds": 48,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Elastic",
+          "query": "senior product manager cybersecurity SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Zepo",
+          "query": "senior product manager cybersecurity SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Abusix",
+          "query": "senior product manager cybersecurity SaaS remote Europe",
+          "new": true
         }
       ]
     }
