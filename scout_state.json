@@ -1,5 +1,5 @@
 {
-  "query_index": 19,
+  "query_index": 22,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -739,6 +739,53 @@
         {
           "company": "Abusix",
           "query": "senior product manager cybersecurity SaaS remote Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "queries": [
+        "head of product climate tech energy SaaS remote Europe",
+        "senior PM vertical AI B2B SaaS hiring remote",
+        "Product Lead B2B SaaS remote Europe hiring"
+      ],
+      "usage": {
+        "input_tokens": 7102,
+        "output_tokens": 3223,
+        "searches": 9,
+        "seconds": 42,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Climate X",
+          "query": "head of product climate tech energy SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Mission Zero Technologies",
+          "query": "head of product climate tech energy SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Parakar",
+          "query": "head of product climate tech energy SaaS remote Europe",
+          "new": false
+        },
+        {
+          "company": "Teamworks",
+          "query": "senior PM vertical AI B2B SaaS hiring remote",
+          "new": true
+        },
+        {
+          "company": "ChefsList",
+          "query": "senior PM vertical AI B2B SaaS hiring remote",
+          "new": true
+        },
+        {
+          "company": "FunnelCockpit",
+          "query": "Product Lead B2B SaaS remote Europe hiring",
           "new": true
         }
       ]
