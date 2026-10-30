@@ -1624,5 +1624,53 @@
     "first_seen": "2026-10-28",
     "score": 9,
     "summary": "AI-native industrial intelligence platform with agentic analytics that unifies shop-floor data (OT/IT, historians, CMMS, ERP) for manufacturers in forestry, pulp & paper, steel, automotive, mining, and heavy industry to drive real-time operational decisions."
+  },
+  "oxmaint.com": {
+    "name": "Oxmaint",
+    "first_seen": "2026-10-30",
+    "score": 9,
+    "summary": "AI-native CMMS/EAM platform with predictive maintenance and reliability-centered maintenance for manufacturers, facilities, and industrial fleets, sold to maintenance/reliability teams."
+  },
+  "o3sigma.com": {
+    "name": "O3sigma",
+    "first_seen": "2026-10-30",
+    "score": 9,
+    "summary": "AI-native manufacturing operations platform (MES, knowledge graph, copilot agent 'Siggy') that unifies production, quality, and maintenance data for plant operators, engineers, and executives."
+  },
+  "rotomate.ai": {
+    "name": "Rotomate",
+    "first_seen": "2026-10-30",
+    "score": 9,
+    "summary": "AI-native condition monitoring and predictive maintenance platform that acts as an 'AI colleague' for reliability engineers, sold to industrial plants (Metsä Group, SSAB, Aurubis)."
+  },
+  "faqtis.com": {
+    "name": "Faqtis",
+    "first_seen": "2026-10-30",
+    "score": 9,
+    "summary": "Shop-floor IoT/OEE monitoring platform with AI copilot that connects to factory machines for real-time downtime, energy and asset-health insights, sold to mid-market manufacturers."
+  },
+  "quobo.co": {
+    "name": "Quobo",
+    "first_seen": "2026-10-30",
+    "score": 9,
+    "summary": "AI-native enterprise asset management platform with an AI assistant (Obo) for industrial automation, utilities, and plant maintenance operations."
+  },
+  "viaanix.com": {
+    "name": "Viaanix",
+    "first_seen": "2026-10-30",
+    "score": 8,
+    "summary": "Industrial IoT platform unifying asset management, CMMS, RTLS, workflow automation and edge/air-gapped AI for manufacturing, defense, oil & gas, and other physical-asset industries."
+  },
+  "delpheon.io": {
+    "name": "DelphEon Industrial OS",
+    "first_seen": "2026-10-30",
+    "score": 7,
+    "summary": "An industrial operating system/IIoT platform unifying machine, sensor, SCADA, MES, lab and ERP data for manufacturing plant teams, with operational AI for analysis and investigation."
+  },
+  "nextplus.io": {
+    "name": "Next Plus",
+    "first_seen": "2026-10-30",
+    "score": 9,
+    "summary": "AI-native manufacturing platform unifying MES, CMMS, historian, QMS and AI (plus an AI agent for production ops) sold to manufacturers in aerospace, pharma, defense and medical devices."
   }
 }
