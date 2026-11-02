@@ -913,9 +913,9 @@
   },
   "augury.com": {
     "name": "Augury",
-    "first_seen": "2026-09-16",
+    "first_seen": "2026-11-02",
     "score": 10,
-    "summary": "Industrial AI platform providing machine health monitoring, predictive maintenance, and agentic AI workflows for manufacturers' reliability and operations teams."
+    "summary": "Industrial AI platform providing machine health monitoring and agentic AI products (Operations Agent, Exploration Agent) for plant operations, reliability, and maintenance teams in manufacturing."
   },
   "talentpulse.66ghz.com": {
     "name": "Augury",
@@ -1672,5 +1672,77 @@
     "first_seen": "2026-10-30",
     "score": 9,
     "summary": "AI-native manufacturing platform unifying MES, CMMS, historian, QMS and AI (plus an AI agent for production ops) sold to manufacturers in aerospace, pharma, defense and medical devices."
+  },
+  "spotai.com": {
+    "name": "Spot AI",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "AI video platform turning cameras into autonomous agents/coworkers for manufacturing, construction, logistics and retail operations, with AI Ops Assistants deployed on production lines."
+  },
+  "jobs.spot.ai": {
+    "name": "Spot AI",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "AI video platform turning cameras into autonomous agents/coworkers for manufacturing, construction, logistics and retail operations, with AI Ops Assistants deployed on production lines."
+  },
+  "pelico.io": {
+    "name": "Pelico",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "AI-native manufacturing orchestration platform that unifies fragmented supply chain, production, and quality data into a live operational picture with AI agents for disruption management, sold to industrial manufacturers like Airbus, Boeing, Safran, Eaton, and Cartier."
+  },
+  "careers.pelico.io": {
+    "name": "Pelico",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "AI-native manufacturing orchestration platform that unifies fragmented supply chain, production, and quality data into a live operational picture with AI agents for disruption management, sold to industrial manufacturers like Airbus, Boeing, Safran, Eaton, and Cartier."
+  },
+  "axionray.com": {
+    "name": "Axion Ray",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "AI-native agentic platform for manufacturers that autonomously detects product quality issues, investigates root causes, and mines warranty/field data, sold to engineering and quality teams at automotive/aerospace enterprises."
+  },
+  "app.welcometothejungle.com": {
+    "name": "Axion Ray",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "AI-native agentic platform for manufacturers that autonomously detects product quality issues, investigates root causes, and mines warranty/field data, sold to engineering and quality teams at automotive/aerospace enterprises."
+  },
+  "intellisense.io": {
+    "name": "IntelliSense.io",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "Industrial AI Operating System with agentic AI copilots and edge optimization for mining, minerals and metals operators."
+  },
+  "careers-page.com": {
+    "name": "IntelliSense.io",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "Industrial AI Operating System with agentic AI copilots and edge optimization for mining, minerals and metals operators."
+  },
+  "careers.codvo.neio.ai": {
+    "name": "Codvo.ai (NeIO)",
+    "first_seen": "2026-11-02",
+    "score": 7,
+    "summary": "Builds AI-native predictive intelligence and agentic AI products for datacenters and critical industrial infrastructure, targeting reliability, maintenance and operations teams."
+  },
+  "wellfound.com": {
+    "name": "Augury",
+    "first_seen": "2026-11-02",
+    "score": 10,
+    "summary": "Industrial AI platform providing machine health monitoring and agentic AI products (Operations Agent, Exploration Agent) for plant operations, reliability, and maintenance teams in manufacturing."
+  },
+  "avathon.com": {
+    "name": "Avathon",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "Industrial AI platform providing agentic AI, digital twins, predictive maintenance and operational intelligence for energy, mining, manufacturing, and other heavy industries."
+  },
+  "trabajos.univision.com": {
+    "name": "Avathon",
+    "first_seen": "2026-11-02",
+    "score": 9,
+    "summary": "Industrial AI platform providing agentic AI, digital twins, predictive maintenance and operational intelligence for energy, mining, manufacturing, and other heavy industries."
   }
 }
