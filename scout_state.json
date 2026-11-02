@@ -1,5 +1,5 @@
 {
-  "query_index": 22,
+  "query_index": 25,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -786,6 +786,48 @@
         {
           "company": "FunnelCockpit",
           "query": "Product Lead B2B SaaS remote Europe hiring",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "queries": [
+        "Principal Product Manager B2B SaaS remote Europe",
+        "Director of Product SaaS remote Europe hiring",
+        "Senior Product Owner SaaS platform remote Europe hiring"
+      ],
+      "usage": {
+        "input_tokens": 7102,
+        "output_tokens": 4025,
+        "searches": 15,
+        "seconds": 58,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Insider",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": false
+        },
+        {
+          "company": "PandaDoc",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": false
+        },
+        {
+          "company": "Matomo",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "N-iX",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Wolters Kluwer",
+          "query": "Director of Product SaaS remote Europe hiring",
           "new": true
         }
       ]
