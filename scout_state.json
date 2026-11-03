@@ -1,5 +1,5 @@
 {
-  "query_index": 25,
+  "query_index": 28,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -828,6 +828,43 @@
         {
           "company": "Wolters Kluwer",
           "query": "Director of Product SaaS remote Europe hiring",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "queries": [
+        "senior product manager AI agents platform remote Europe hiring",
+        "product lead agentic AI workflow automation B2B remote",
+        "senior PM LLM developer platform remote Europe"
+      ],
+      "usage": {
+        "input_tokens": 7096,
+        "output_tokens": 3484,
+        "searches": 15,
+        "seconds": 44,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Hostaway",
+          "query": "senior product manager AI agents platform remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "Hostaway",
+          "query": "senior product manager AI agents platform remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "Wrike",
+          "query": "senior product manager AI agents platform remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "SmartRecruiters",
+          "query": "senior product manager AI agents platform remote Europe hiring",
           "new": true
         }
       ]
