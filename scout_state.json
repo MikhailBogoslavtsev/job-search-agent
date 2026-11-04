@@ -1,5 +1,5 @@
 {
-  "query_index": 28,
+  "query_index": 31,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -865,6 +865,38 @@
         {
           "company": "SmartRecruiters",
           "query": "senior product manager AI agents platform remote Europe hiring",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "queries": [
+        "head of product AI-native B2B SaaS remote",
+        "senior product manager manufacturing AI-native ERP software London OR Europe hiring",
+        "product manager industrial AI agents digital workers enterprise software Europe"
+      ],
+      "usage": {
+        "input_tokens": 7108,
+        "output_tokens": 2739,
+        "searches": 9,
+        "seconds": 39,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "IFS",
+          "query": "senior product manager manufacturing AI-native ERP software London OR Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Augury",
+          "query": "product manager industrial AI agents digital workers enterprise software Europe",
+          "new": true
+        },
+        {
+          "company": "TheLoops",
+          "query": "product manager industrial AI agents digital workers enterprise software Europe",
           "new": true
         }
       ]
