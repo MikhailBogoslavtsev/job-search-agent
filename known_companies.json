@@ -1744,5 +1744,59 @@
     "first_seen": "2026-11-02",
     "score": 9,
     "summary": "Industrial AI platform providing agentic AI, digital twins, predictive maintenance and operational intelligence for energy, mining, manufacturing, and other heavy industries."
+  },
+  "factory.com": {
+    "name": "Factory",
+    "first_seen": "2026-11-04",
+    "score": 5,
+    "summary": "AI coding agents ('Droids') that automate software development, testing, and deployment for startups and enterprises."
+  },
+  "idler.ai": {
+    "name": "idler",
+    "first_seen": "2026-11-04",
+    "score": 2,
+    "summary": "Builds bespoke evaluations, benchmarks, and RL training environments (e.g. business simulations) for frontier AI labs to train/measure their models."
+  },
+  "coder.com": {
+    "name": "Coder",
+    "first_seen": "2026-11-04",
+    "score": 6,
+    "summary": "Enterprise self-hosted cloud development environment platform that now provides infrastructure and governance for running AI coding agents at scale, sold to enterprise software development teams."
+  },
+  "cursor.com": {
+    "name": "Cursor",
+    "first_seen": "2026-11-04",
+    "score": 6,
+    "summary": "AI coding agent/IDE that helps developers write and ship code faster, sold to software engineering teams."
+  },
+  "openhands.dev": {
+    "name": "OpenHands",
+    "first_seen": "2026-11-04",
+    "score": 6,
+    "summary": "Open-source, model-agnostic platform for cloud coding agents that automates software engineering tasks, sold to platform/engineering teams."
+  },
+  "blitzy.com": {
+    "name": "Blitzy",
+    "first_seen": "2026-11-04",
+    "score": 6,
+    "summary": "AI-powered autonomous software development platform that reverse-engineers large codebases into knowledge graphs and orchestrates agents to build/modernize enterprise software, sold to Fortune 500 engineering teams."
+  },
+  "tessl.io": {
+    "name": "Tessl",
+    "first_seen": "2026-11-04",
+    "score": 5,
+    "summary": "An agent enablement platform that gives AI coding agents structured, versioned context so engineering teams can build reliable, reusable software automation ('software factories')."
+  },
+  "sim.ai": {
+    "name": "Sim",
+    "first_seen": "2026-11-04",
+    "score": 6,
+    "summary": "Open-source AI workspace/platform for building, deploying, and governing AI agents and workflows, used by companies like eXp Realty, Rivian and Volkswagen."
+  },
+  "augmentcode.com": {
+    "name": "Augment Code",
+    "first_seen": "2026-11-04",
+    "score": 5,
+    "summary": "AI coding platform with a context engine that indexes enterprise codebases to help developers ship faster, now part of Harness."
   }
 }
