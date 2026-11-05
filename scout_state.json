@@ -1,5 +1,5 @@
 {
-  "query_index": 31,
+  "query_index": 34,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -897,6 +897,48 @@
         {
           "company": "TheLoops",
           "query": "product manager industrial AI agents digital workers enterprise software Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "queries": [
+        "senior product manager MES manufacturing execution software Europe hiring",
+        "senior product manager enterprise asset management EAM OR APM software AI Europe",
+        "senior product manager field service management software AI agents Europe"
+      ],
+      "usage": {
+        "input_tokens": 7105,
+        "output_tokens": 3814,
+        "searches": 11,
+        "seconds": 48,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Vimachem",
+          "query": "senior product manager MES manufacturing execution software Europe hiring",
+          "new": true
+        },
+        {
+          "company": "IFS (Copperleaf)",
+          "query": "senior product manager enterprise asset management EAM OR APM software AI Europe",
+          "new": false
+        },
+        {
+          "company": "IFS",
+          "query": "senior product manager enterprise asset management EAM OR APM software AI Europe",
+          "new": false
+        },
+        {
+          "company": "IFS",
+          "query": "senior product manager enterprise asset management EAM OR APM software AI Europe",
+          "new": false
+        },
+        {
+          "company": "SAP",
+          "query": "senior product manager field service management software AI agents Europe",
           "new": true
         }
       ]
