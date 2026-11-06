@@ -1798,5 +1798,65 @@
     "first_seen": "2026-11-04",
     "score": 5,
     "summary": "AI coding platform with a context engine that indexes enterprise codebases to help developers ship faster, now part of Harness."
+  },
+  "onarrival.com": {
+    "name": "OnArrival",
+    "first_seen": "2026-11-06",
+    "score": 3,
+    "summary": "Embedded travel-booking infrastructure (flights, hotels, buses) with APIs/SDKs that fintech apps, banks and card companies embed under their own brand."
+  },
+  "travelswitch.com": {
+    "name": "TravelSwitch",
+    "first_seen": "2026-11-06",
+    "score": 5,
+    "summary": "A B2B travel commerce marketplace/platform connecting travel suppliers and buyers with booking, distribution, payments, and AI-driven conversational booking tools."
+  },
+  "tripklik.com": {
+    "name": "Tripklik",
+    "first_seen": "2026-11-06",
+    "score": 4,
+    "summary": "A B2B SaaS travel technology platform for travel agencies offering flight/hotel booking, payments, B2B/B2C portals, and APIs."
+  },
+  "travelport.com": {
+    "name": "Travelport",
+    "first_seen": "2026-11-06",
+    "score": 6,
+    "summary": "A global distribution system (GDS) and B2B travel retail platform connecting airlines, hotels, and travel sellers via cloud-native APIs."
+  },
+  "orx.travel": {
+    "name": "ORX Travel",
+    "first_seen": "2026-11-06",
+    "score": 4,
+    "summary": "White-label B2B travel booking platform for travel agencies, giving them branded booking portals with GDS/NDC inventory access."
+  },
+  "airbooking.com": {
+    "name": "AirBooking",
+    "first_seen": "2026-11-06",
+    "score": 6,
+    "summary": "AI-assisted, governed corporate travel booking and distribution platform (policy engine, NDC distribution, AI avatar) sold to corporates, TMCs, and airlines."
+  },
+  "travelmean.com": {
+    "name": "TravelMean",
+    "first_seen": "2026-11-06",
+    "score": 4,
+    "summary": "Travel technology platform offering hotel booking, packaging, and distribution software for travel agencies/providers in Turkey."
+  },
+  "xeni.com": {
+    "name": "Xeni",
+    "first_seen": "2026-11-06",
+    "score": 3,
+    "summary": "API-first travel booking infrastructure and white-label platform with blockchain/web3 and fintech features, sold to travel businesses building booking apps."
+  },
+  "goontrip.com": {
+    "name": "GoOnTrip",
+    "first_seen": "2026-11-06",
+    "score": 2,
+    "summary": "A consumer-facing travel planning and booking app/marketplace aggregating flights, hotels, tours, and related services, with some B2B angle for travel agencies and suppliers."
+  },
+  "traveloka.com": {
+    "name": "Traveloka",
+    "first_seen": "2026-11-06",
+    "score": 1,
+    "summary": "Consumer travel booking app (flights, hotels, activities, insurance) for Southeast Asian travelers."
   }
 }
