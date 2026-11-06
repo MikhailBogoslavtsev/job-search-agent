@@ -1,5 +1,5 @@
 {
-  "query_index": 34,
+  "query_index": 1,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -939,6 +939,53 @@
         {
           "company": "SAP",
           "query": "senior product manager field service management software AI agents Europe",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "queries": [
+        "senior product manager supply chain planning software AI London OR Europe",
+        "principal product manager smart manufacturing industrial software Europe hiring",
+        "senior product manager remote Europe industrial SaaS hiring"
+      ],
+      "usage": {
+        "input_tokens": 7105,
+        "output_tokens": 3241,
+        "searches": 8,
+        "seconds": 42,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "IFS",
+          "query": "principal product manager smart manufacturing industrial software Europe hiring",
+          "new": false
+        },
+        {
+          "company": "IFS",
+          "query": "senior product manager supply chain planning software AI London OR Europe",
+          "new": false
+        },
+        {
+          "company": "Pigment",
+          "query": "senior product manager supply chain planning software AI London OR Europe",
+          "new": true
+        },
+        {
+          "company": "Geomiq",
+          "query": "senior product manager supply chain planning software AI London OR Europe",
+          "new": true
+        },
+        {
+          "company": "Qase",
+          "query": "senior product manager remote Europe industrial SaaS hiring",
+          "new": false
+        },
+        {
+          "company": "Mondra",
+          "query": "senior product manager supply chain planning software AI London OR Europe",
           "new": true
         }
       ]
