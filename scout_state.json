@@ -1,5 +1,5 @@
 {
-  "query_index": 1,
+  "query_index": 4,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -987,6 +987,43 @@
           "company": "Mondra",
           "query": "senior product manager supply chain planning software AI London OR Europe",
           "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "queries": [
+        "lead PM construction tech hiring remote",
+        "head of product manufacturing IoT Europe",
+        "YC startup industrial AI product manager"
+      ],
+      "usage": {
+        "input_tokens": 7082,
+        "output_tokens": 2797,
+        "searches": 9,
+        "seconds": 35,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "BauWatch Group",
+          "query": "head of product manufacturing IoT Europe",
+          "new": true
+        },
+        {
+          "company": "Augury",
+          "query": "YC startup industrial AI product manager",
+          "new": false
+        },
+        {
+          "company": "Cerrion",
+          "query": "YC startup industrial AI product manager",
+          "new": false
+        },
+        {
+          "company": "dili",
+          "query": "YC startup industrial AI product manager",
+          "new": false
         }
       ]
     }
