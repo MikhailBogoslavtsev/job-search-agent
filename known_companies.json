@@ -1858,5 +1858,65 @@
     "first_seen": "2026-11-06",
     "score": 1,
     "summary": "Consumer travel booking app (flights, hotels, activities, insurance) for Southeast Asian travelers."
+  },
+  "feedapp.com": {
+    "name": "Feed",
+    "first_seen": "2026-11-09",
+    "score": 1,
+    "summary": "Consumer social commerce / delivery app for discovering artisanal food makers, not a B2B SaaS product."
+  },
+  "smule.com": {
+    "name": "Smule, Inc.",
+    "first_seen": "2026-11-09",
+    "score": 1,
+    "summary": "Consumer social music-making mobile apps (karaoke/singing), not a B2B SaaS product."
+  },
+  "about.glovoapp.com": {
+    "name": "Glovo",
+    "first_seen": "2026-11-09",
+    "score": 2,
+    "summary": "Consumer multi-category delivery app (food, grocery, retail) connecting customers, businesses, and couriers across Europe, Central Asia and Africa."
+  },
+  "josieapp.com": {
+    "name": "Josie",
+    "first_seen": "2026-11-09",
+    "score": 1,
+    "summary": "A consumer music discovery platform connecting listeners with curators/influencers for personal music recommendations."
+  },
+  "hily.com": {
+    "name": "Hily Dating App",
+    "first_seen": "2026-11-09",
+    "score": 1,
+    "summary": "A consumer dating app/platform for individuals seeking matches, not a B2B offering."
+  },
+  "mtch.com": {
+    "name": "Match Group",
+    "first_seen": "2026-11-09",
+    "score": 1,
+    "summary": "Consumer dating app portfolio (Tinder, Hinge, Match.com) connecting individuals for relationships, not a B2B offering."
+  },
+  "pressplay.me": {
+    "name": "Press Play",
+    "first_seen": "2026-11-09",
+    "score": 0,
+    "summary": "A B2C music social/dating app for discovering artists and connecting music lovers, not a B2B SaaS product."
+  },
+  "streamusic.com": {
+    "name": "Stream Live",
+    "first_seen": "2026-11-09",
+    "score": 1,
+    "summary": "A consumer-facing live concert streaming and entertainment app/platform, not a B2B SaaS product."
+  },
+  "meetthemusicapp.com": {
+    "name": "Meet The Music",
+    "first_seen": "2026-11-09",
+    "score": 0,
+    "summary": "A consumer music-based dating app connecting people who listen to the same songs on Spotify."
+  },
+  "flucks.app": {
+    "name": "Flucks",
+    "first_seen": "2026-11-09",
+    "score": 0,
+    "summary": "A consumer mobile dating app that matches people based on music taste and listening habits."
   }
 }
