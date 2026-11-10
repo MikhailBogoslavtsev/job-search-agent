@@ -1,5 +1,5 @@
 {
-  "query_index": 4,
+  "query_index": 7,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1023,6 +1023,48 @@
         {
           "company": "dili",
           "query": "YC startup industrial AI product manager",
+          "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "queries": [
+        "food traceability SaaS senior PM remote",
+        "physical operations AI product manager hiring",
+        "senior PM B2B SaaS Netherlands Germany remote"
+      ],
+      "usage": {
+        "input_tokens": 7090,
+        "output_tokens": 3051,
+        "searches": 11,
+        "seconds": 41,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Scale AI",
+          "query": "physical operations AI product manager hiring",
+          "new": false
+        },
+        {
+          "company": "Homebound",
+          "query": "physical operations AI product manager hiring",
+          "new": true
+        },
+        {
+          "company": "Arm",
+          "query": "physical operations AI product manager hiring",
+          "new": true
+        },
+        {
+          "company": "Spot AI",
+          "query": "physical operations AI product manager hiring",
+          "new": true
+        },
+        {
+          "company": "zvoove",
+          "query": "senior PM B2B SaaS Netherlands Germany remote",
           "new": false
         }
       ]
