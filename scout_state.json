@@ -1,5 +1,5 @@
 {
-  "query_index": 7,
+  "query_index": 10,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1066,6 +1066,48 @@
           "company": "zvoove",
           "query": "senior PM B2B SaaS Netherlands Germany remote",
           "new": false
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "queries": [
+        "site:ycombinator.com/jobs product manager industrial construction",
+        "computer vision product manager drone, aerial or satellite imagery remote Europe",
+        "geospatial or remote sensing analytics senior product manager remote"
+      ],
+      "usage": {
+        "input_tokens": 7109,
+        "output_tokens": 3411,
+        "searches": 10,
+        "seconds": 42,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Near Space Labs",
+          "query": "geospatial or remote sensing analytics senior product manager remote",
+          "new": false
+        },
+        {
+          "company": "Planet Labs",
+          "query": "geospatial or remote sensing analytics senior product manager remote",
+          "new": false
+        },
+        {
+          "company": "Cotality (formerly CoreLogic)",
+          "query": "geospatial or remote sensing analytics senior product manager remote",
+          "new": true
+        },
+        {
+          "company": "Flylance (client project - geospatial intelligence platform)",
+          "query": "geospatial or remote sensing analytics senior product manager remote",
+          "new": false
+        },
+        {
+          "company": "Vouch",
+          "query": "site:ycombinator.com/jobs product manager industrial construction",
+          "new": true
         }
       ]
     }
