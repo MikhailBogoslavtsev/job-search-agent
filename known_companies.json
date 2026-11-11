@@ -1918,5 +1918,59 @@
     "first_seen": "2026-11-09",
     "score": 0,
     "summary": "A consumer mobile dating app that matches people based on music taste and listening habits."
+  },
+  "pandadoc.com": {
+    "name": "PandaDoc",
+    "first_seen": "2026-11-11",
+    "score": 6,
+    "summary": "A B2B SaaS platform for document creation, e-signature, contract management, and deal rooms for sales and business teams."
+  },
+  "lodgify.com": {
+    "name": "Lodgify",
+    "first_seen": "2026-11-11",
+    "score": 4,
+    "summary": "SaaS platform for independent vacation rental hosts to build booking websites, manage channels, and automate guest communication."
+  },
+  "conga.com": {
+    "name": "Conga",
+    "first_seen": "2026-11-11",
+    "score": 6,
+    "summary": "Enterprise B2B SaaS platform for CPQ, contract lifecycle management, billing, and document automation, sold to large commercial/sales/legal operations teams."
+  },
+  "tradeshift.com": {
+    "name": "Tradeshift",
+    "first_seen": "2026-11-11",
+    "score": 2,
+    "summary": "AP automation, e-invoicing and procurement platform for large/mid-sized companies, handling invoice processing and supplier network compliance."
+  },
+  "smily.com": {
+    "name": "Smily (formerly BookingSync)",
+    "first_seen": "2026-11-11",
+    "score": 5,
+    "summary": "SaaS property management and channel management platform for vacation rental managers, with AI-driven automation features."
+  },
+  "legito.com": {
+    "name": "Legito",
+    "first_seen": "2026-11-11",
+    "score": 6,
+    "summary": "No-code document lifecycle automation and CLM platform with AI template authoring, sold to legal, compliance, HR, procurement and operations teams."
+  },
+  "agiloft.com": {
+    "name": "Agiloft",
+    "first_seen": "2026-11-11",
+    "score": 7,
+    "summary": "AI-powered contract lifecycle management (CLM) no-code platform for legal, procurement, and sales operations teams."
+  },
+  "hostify.com": {
+    "name": "Hostify",
+    "first_seen": "2026-11-11",
+    "score": 5,
+    "summary": "An all-in-one PMS and channel manager SaaS platform for vacation rental and Airbnb property managers to automate booking, guest communication and operations."
+  },
+  "rentalready.com": {
+    "name": "RentalReady",
+    "first_seen": "2026-11-11",
+    "score": 3,
+    "summary": "A property management SaaS platform for vacation rentals, boutique hotels, and aparthotels, used by property managers for channel management, guest communication, and operations."
   }
 }
