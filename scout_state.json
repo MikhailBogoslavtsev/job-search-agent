@@ -1,5 +1,5 @@
 {
-  "query_index": 10,
+  "query_index": 13,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1107,6 +1107,48 @@
         {
           "company": "Vouch",
           "query": "site:ycombinator.com/jobs product manager industrial construction",
+          "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "queries": [
+        "AI inspection or precision agriculture computer vision product manager hiring",
+        "senior product manager B2B SaaS remote Europe hiring",
+        "head of product B2B SaaS remote"
+      ],
+      "usage": {
+        "input_tokens": 7097,
+        "output_tokens": 3656,
+        "searches": 14,
+        "seconds": 50,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Qase",
+          "query": "senior product manager B2B SaaS remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "Insider",
+          "query": "senior product manager B2B SaaS remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "Ideals",
+          "query": "senior product manager B2B SaaS remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "saas.group",
+          "query": "head of product B2B SaaS remote",
+          "new": false
+        },
+        {
+          "company": "Syngenta",
+          "query": "AI inspection or precision agriculture computer vision product manager hiring",
           "new": true
         }
       ]
