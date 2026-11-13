@@ -1,5 +1,5 @@
 {
-  "query_index": 13,
+  "query_index": 16,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1150,6 +1150,33 @@
           "company": "Syngenta",
           "query": "AI inspection or precision agriculture computer vision product manager hiring",
           "new": true
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "queries": [
+        "YC startup B2B SaaS senior product manager hiring -fintech",
+        "lead product manager HR tech SaaS remote Europe",
+        "senior PM devtools infrastructure remote hiring"
+      ],
+      "usage": {
+        "input_tokens": 7101,
+        "output_tokens": 2693,
+        "searches": 14,
+        "seconds": 47,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Checkly",
+          "query": "senior PM devtools infrastructure remote hiring",
+          "new": true
+        },
+        {
+          "company": "Insider",
+          "query": "lead product manager HR tech SaaS remote Europe",
+          "new": false
         }
       ]
     }
