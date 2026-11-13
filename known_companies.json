@@ -1972,5 +1972,53 @@
     "first_seen": "2026-11-11",
     "score": 3,
     "summary": "A property management SaaS platform for vacation rentals, boutique hotels, and aparthotels, used by property managers for channel management, guest communication, and operations."
+  },
+  "ifs.com": {
+    "name": "IFS",
+    "first_seen": "2026-11-13",
+    "score": 9,
+    "summary": "Enterprise software vendor building AI-powered ERP, EAM, FSM, and SCM platforms (IFS Cloud) for manufacturers, asset-heavy industries, and service operations."
+  },
+  "poka.io": {
+    "name": "Poka Inc.",
+    "first_seen": "2026-11-13",
+    "score": 9,
+    "summary": "Industrial AI platform for connected frontline work (work instructions, skills/training, digital forms, issue management, AI agents) sold to manufacturers and plant operators, now part of IFS."
+  },
+  "ultimo.com": {
+    "name": "Ultimo",
+    "first_seen": "2026-11-13",
+    "score": 9,
+    "summary": "AI-enabled enterprise asset management (EAM/CMMS) platform with agentic 'Digital Workers' for maintenance, operations, safety, fleet and inventory, sold to industrial/plant operations teams."
+  },
+  "aptean.com": {
+    "name": "Aptean",
+    "first_seen": "2026-11-13",
+    "score": 8,
+    "summary": "Enterprise software vendor (ERP, WMS, EAM, TMS, MES, PLM) with an AI-native unified data platform for manufacturers and distributors across food, apparel, logistics and more."
+  },
+  "verdantis.com": {
+    "name": "Verdantis",
+    "first_seen": "2026-11-13",
+    "score": 8,
+    "summary": "AI-native Enterprise Asset Management platform (MRO360) for spare parts management, demand forecasting, predictive maintenance and industrial master data management, sold to asset-intensive industries like oil & energy, chemicals, metals & mining and manufacturing."
+  },
+  "workheld.com": {
+    "name": "Workheld",
+    "first_seen": "2026-11-13",
+    "score": 8,
+    "summary": "AI-powered CMMS/FSM SaaS platform with shopfloor AI agents and SAP/ERP integration for maintenance, field service, and manufacturing teams."
+  },
+  "aveva.com": {
+    "name": "AVEVA",
+    "first_seen": "2026-11-13",
+    "score": 8,
+    "summary": "Established industrial software vendor providing CAD/CAM, EAM, MES, SCADA and engineering/operations platforms to energy, manufacturing and infrastructure enterprises."
+  },
+  "connexatech.com": {
+    "name": "Connexa Technologies",
+    "first_seen": "2026-11-13",
+    "score": 7,
+    "summary": "AI-native ERP and industrial IoT suite (NEXA AI) for manufacturers and service enterprises, covering planning, production, quality, maintenance and predictive analytics."
   }
 }
