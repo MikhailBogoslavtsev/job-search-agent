@@ -99,6 +99,46 @@ SEARCH_QUERIES = [
     "principal product manager smart manufacturing industrial software Europe hiring",
 ]
 
+# Customer-discovery track (added 2026-11-15). Every run takes ONE query from
+# this list (its own rotation, "discovery_index" in scout_state.json) plus two
+# from SEARCH_QUERIES above. It looks for PM roles at product companies whose
+# posting explicitly stresses talking to customers and doing product
+# discovery. Results from these queries use DISCOVERY_RULES (see prompt):
+# mid-level "Product Manager" titles are allowed and no industry is excluded
+# (fintech and consumer included).
+DISCOVERY_QUERIES = [
+    'product manager "customer discovery" product company hiring remote Europe',
+    'product manager job "talk to customers" every week hiring remote',
+    'senior product manager continuous discovery customer interviews hiring Europe',
+    'product manager "user interviews" "close to customers" startup hiring remote',
+    'lead product manager product discovery customer research hiring remote Europe',
+    'head of product customer-obsessed hands-on discovery hiring remote',
+    'product manager "customer conversations" problem discovery job opening',
+    'product manager discovery-heavy role spend time with customers hiring London OR Berlin OR Amsterdam OR Madrid',
+    'site:jobs.ashbyhq.com product manager "customer discovery"',
+    'site:boards.greenhouse.io product manager "customer interviews"',
+    'site:jobs.lever.co product manager "talk to customers"',
+    'site:ycombinator.com/jobs product manager talk to users customer discovery',
+]
+
+DISCOVERY_RULES = """
+Rules for results surfaced by the CUSTOMER-DISCOVERY query (they replace the
+role-level and industry rules of the profile above for that query only):
+- Role: any Product Manager title from mid-level "Product Manager" up to
+  Head of Product (Senior/Lead/Staff/Principal/Group PM, Product Lead, Director
+  included). Skip Associate/Junior/intern roles.
+- Industry: ANY industry, B2B or consumer, fintech included.
+- Must be a PRODUCT company (builds and sells its own software/product). Skip
+  agencies, consultancies, outsourcing/dev shops and staffing firms.
+- The job posting itself must explicitly stress customer discovery: e.g.
+  talking to customers/users regularly, running customer or user interviews,
+  continuous discovery, being "customer-obsessed", spending time with
+  customers in the field. A generic "understand customer needs" line is NOT
+  enough — skip the role if discovery isn't a highlighted requirement.
+- Put a short quote or close paraphrase of that requirement from the posting
+  in the "discovery" field.
+"""
+
 def load_seen():
     if os.path.exists(SEEN_FILE):
         with open(SEEN_FILE, "r") as f:
@@ -147,13 +187,18 @@ def log_run(state, queries, raw_results, sent_results, stats=None):
     state["run_log"] = log[-LOG_MAX_RUNS:]
     save_state(state)
 
-def get_next_queries(state, n=3):
+def get_next_queries(state, n=2):
     idx = state.get("query_index", 0) % len(SEARCH_QUERIES)
     queries = SEARCH_QUERIES[idx:idx+n]
     if len(queries) < n:
         queries += SEARCH_QUERIES[:n-len(queries)]
     state["query_index"] = (idx + n) % len(SEARCH_QUERIES)
     return queries
+
+def get_next_discovery_query(state):
+    idx = state.get("discovery_index", 0) % len(DISCOVERY_QUERIES)
+    state["discovery_index"] = (idx + 1) % len(DISCOVERY_QUERIES)
+    return DISCOVERY_QUERIES[idx]
 
 CLOSED_LISTING_SIGNALS = [
     "no longer accepting applications",
@@ -213,22 +258,27 @@ def send_telegram(message):
 # every result back into context on each round; this stops it from running on.
 SCOUT_DEADLINE_SECONDS = 240
 
-def run_claude_scout(queries, seen_companies):
+def run_claude_scout(queries, discovery_query, seen_companies):
     prompt = f"""
-You are a job scout. Search the web and find companies hiring Senior/Lead/Staff PM or Head of Product.
+You are a job scout. Search the web and find companies hiring Product Managers.
 
 {PROFILE}
 
 Search using ONLY these 3 queries:
 {chr(10).join(f'- {q}' for q in queries)}
+- [CUSTOMER-DISCOVERY] {discovery_query}
 
+For results from the first two queries, follow the profile above:
+Senior/Lead/Staff PM or Head of Product, no fintech, no pure consumer apps.
+{DISCOVERY_RULES}
 Budget: run ONE web search per query, at most 5 searches in total. Do not
 retry a query or re-search it with different wording, and do not narrate
 between searches. If a query returns only job boards or aggregator pages,
 move on and work with what you have. Answer as soon as you have 3-6 results.
 
 Find 3-6 real companies actively hiring PM roles that match the candidate.
-Do NOT include fintech companies.
+Try to include at least one result from the CUSTOMER-DISCOVERY query if it
+finds a qualifying role.
 
 Skip these already known companies: {', '.join(seen_companies[:5]) if seen_companies else 'none'}
 
@@ -241,8 +291,10 @@ guess "confirmed" to sound more useful.
 
 YOU MUST respond with ONLY a valid JSON array. No text before or after. No markdown. No explanation.
 
-Format ("query" = the exact one of the 3 queries above that surfaced this result):
-[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country","status":"confirmed|unconfirmed","query":"the query text"}}]
+Format ("query" = the exact one of the 3 queries above that surfaced this result,
+without the [CUSTOMER-DISCOVERY] tag; "discovery" = the customer-discovery
+requirement quoted from the posting, or "" if the posting doesn't stress it):
+[{{"company":"Name","role":"Role title","product":"Product in 5 words","why":"One sentence why it fits","url":"https://careers-url-or-empty","location":"Remote/City/Country","status":"confirmed|unconfirmed","query":"the query text","discovery":""}}]
 
 Return [] if nothing found. JSON only.
 """
@@ -378,12 +430,13 @@ def main():
     seen = load_seen()
     state = load_state()
 
-    queries = get_next_queries(state, n=3)
+    queries = get_next_queries(state, n=2)
+    discovery_query = get_next_discovery_query(state)
     print(f"Known companies: {len(seen)}")
-    print(f"This week's queries: {queries}")
+    print(f"This run's queries: {queries} + discovery: {discovery_query}")
 
     try:
-        results, stats = run_claude_scout(queries, seen)
+        results, stats = run_claude_scout(queries, discovery_query, seen)
     except Exception as e:
         print(f"Scout error: {e}")
         send_telegram(f"⚠️ Scout error (queries not advanced): {html.escape(str(e))}")
@@ -409,13 +462,14 @@ def main():
         deduped.append(r)
     raw_results = results
     results = deduped
-    log_run(state, queries, raw_results, results, stats)
+    all_queries = queries + [discovery_query]
+    log_run(state, all_queries, raw_results, results, stats)
 
     if stats.get("hit_deadline"):
         send_telegram(
             f"⏱ <b>AI Scout — hit the {SCOUT_DEADLINE_SECONDS}s limit</b>\n"
             f"{stats['searches']} searches, {stats['input_tokens']:,} input tokens. "
-            f"Queries skipped this round: {html.escape('; '.join(queries))}"
+            f"Queries skipped this round: {html.escape('; '.join(all_queries))}"
         )
 
     if not results:
@@ -451,6 +505,8 @@ def main():
         msg += f"📌 {r['role']}\n"
         msg += f"🏭 {r['product']}\n"
         msg += f"✅ {r['why']}\n"
+        if r.get("discovery"):
+            msg += f"🗣 <i>Discovery: {html.escape(r['discovery'])}</i>\n"
         msg += f"📍 {r['location']}\n"
         if r.get("url"):
             msg += f"🔗 {r['url']}\n"

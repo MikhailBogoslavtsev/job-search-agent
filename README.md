@@ -88,8 +88,11 @@ Design choices worth calling out:
 
 The LLM path is the expensive one, so it's the one with a budget:
 
-- **3 rotating search queries per run**, drawn from a bank of 32 and cycled
-  via persisted state (`scout_state.json`) — not 20 queries every week.
+- **3 rotating search queries per run**: 2 drawn from the general bank and 1
+  from a separate customer-discovery bank (PM roles at product companies
+  whose posting explicitly stresses talking to customers / product
+  discovery — mid-level PM and any industry allowed for that track), each
+  cycled via persisted state (`scout_state.json`) — not 20 queries every week.
 - **Capped output tokens** (2000) and a **mid-tier model** (Sonnet, not
   Opus) — discovery doesn't need the largest model, it needs decent judgment
   over search results.
