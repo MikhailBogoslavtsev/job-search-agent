@@ -2020,5 +2020,59 @@
     "first_seen": "2026-11-13",
     "score": 7,
     "summary": "AI-native ERP and industrial IoT suite (NEXA AI) for manufacturers and service enterprises, covering planning, production, quality, maintenance and predictive analytics."
+  },
+  "sensiumai.com": {
+    "name": "Sensium AI",
+    "first_seen": "2026-11-16",
+    "score": 8,
+    "summary": "AI decision/automation layer above ERP providing demand forecasting, inventory optimization, and a natural-language planning copilot for mid-market manufacturers and distributors."
+  },
+  "harumi.io": {
+    "name": "Harumi",
+    "first_seen": "2026-11-16",
+    "score": 9,
+    "summary": "AI-powered production planning, S&OP and inventory optimization platform for large manufacturers (metallurgy, chemicals, automotive), using operations research and AI agents."
+  },
+  "plantryx.com": {
+    "name": "Plantryx",
+    "first_seen": "2026-11-16",
+    "score": 8,
+    "summary": "AI-native supply chain planning platform for demand/supply planning and inventory optimization, sold to mid-market manufacturers, distributors and consumer brands."
+  },
+  "verusen.com": {
+    "name": "Verusen AI",
+    "first_seen": "2026-11-16",
+    "score": 9,
+    "summary": "AI-powered MRO inventory and supply chain optimization SaaS platform that unifies disparate materials data for manufacturers to improve inventory, spend, and risk decisions."
+  },
+  "flowlity.com": {
+    "name": "Flowlity",
+    "first_seen": "2026-11-16",
+    "score": 9,
+    "summary": "AI-powered supply chain planning SaaS (demand forecasting, inventory/supply optimization, agentic AI copilot) sold to manufacturers and retailers like Danone and Saint Gobain."
+  },
+  "mentana.ai": {
+    "name": "Mentana",
+    "first_seen": "2026-11-16",
+    "score": 9,
+    "summary": "AI orchestration/agentic platform for enterprise supply chains that plugs into ERP/POS/warehouse systems for demand forecasting, procurement planning, and inventory management for retailers and manufacturers."
+  },
+  "foreplenish.com": {
+    "name": "Foreplenish AI",
+    "first_seen": "2026-11-16",
+    "score": 8,
+    "summary": "AI-powered supply chain suite for manufacturers that monitors disruptions, plans operations, and autonomously executes decisions to improve resilience and reduce planning inefficiencies."
+  },
+  "minedxai.com": {
+    "name": "Mined XAI",
+    "first_seen": "2026-11-16",
+    "score": 8,
+    "summary": "Explainable AI decision intelligence platform for demand forecasting, inventory optimization, and item master integrity, sold to distribution, manufacturing, and CPG companies."
+  },
+  "3scsolution.com": {
+    "name": "3SC",
+    "first_seen": "2026-11-16",
+    "score": 7,
+    "summary": "AI/ML-driven supply chain planning, execution, and orchestration platform sold to global enterprises (e.g. Whirlpool, PepsiCo, Philips) for demand planning, S&OP, and logistics optimization."
   }
 }
