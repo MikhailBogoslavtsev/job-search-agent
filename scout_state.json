@@ -1,5 +1,5 @@
 {
-  "query_index": 16,
+  "query_index": 18,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1179,6 +1179,23 @@
           "new": false
         }
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "queries": [
+        "senior product manager cybersecurity SaaS remote Europe",
+        "lead PM supply chain logistics SaaS hiring remote",
+        "product manager \"customer discovery\" product company hiring remote Europe"
+      ],
+      "usage": {
+        "input_tokens": 7622,
+        "output_tokens": 0,
+        "searches": 18,
+        "seconds": 251,
+        "hit_deadline": true
+      },
+      "raw": []
     }
-  ]
+  ],
+  "discovery_index": 1
 }
