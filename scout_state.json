@@ -1,5 +1,5 @@
 {
-  "query_index": 18,
+  "query_index": 20,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1195,7 +1195,54 @@
         "hit_deadline": true
       },
       "raw": []
+    },
+    {
+      "date": "2026-11-17",
+      "queries": [
+        "senior product manager legal tech SaaS remote",
+        "head of product climate tech energy SaaS remote Europe",
+        "product manager job \"talk to customers\" every week hiring remote"
+      ],
+      "usage": {
+        "input_tokens": 7613,
+        "output_tokens": 3897,
+        "searches": 10,
+        "seconds": 45,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Clio",
+          "query": "senior product manager legal tech SaaS remote",
+          "new": true
+        },
+        {
+          "company": "Rocket Lawyer",
+          "query": "senior product manager legal tech SaaS remote",
+          "new": true
+        },
+        {
+          "company": "saas.group",
+          "query": "head of product climate tech energy SaaS remote Europe",
+          "new": false
+        },
+        {
+          "company": "Kaluza",
+          "query": "head of product climate tech energy SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Checkr",
+          "query": "product manager job \"talk to customers\" every week hiring remote",
+          "new": true
+        },
+        {
+          "company": "Cosuno",
+          "query": "product manager job \"talk to customers\" every week hiring remote",
+          "new": true
+        }
+      ]
     }
   ],
-  "discovery_index": 1
+  "discovery_index": 2
 }
