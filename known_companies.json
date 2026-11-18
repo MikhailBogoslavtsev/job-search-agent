@@ -2074,5 +2074,47 @@
     "first_seen": "2026-11-16",
     "score": 7,
     "summary": "AI/ML-driven supply chain planning, execution, and orchestration platform sold to global enterprises (e.g. Whirlpool, PepsiCo, Philips) for demand planning, S&OP, and logistics optimization."
+  },
+  "vsight.io": {
+    "name": "VSight",
+    "first_seen": "2026-11-18",
+    "score": 8,
+    "summary": "AI-powered connected-worker platform (AR remote assistance, digital work instructions, industrial AI copilot) for manufacturing, maintenance, and field service teams."
+  },
+  "roo.ai": {
+    "name": "ROO.AI",
+    "first_seen": "2026-11-18",
+    "score": 9,
+    "summary": "A Frontline AI connected-worker platform with visual workflows, AI copilots and bots for inspections, maintenance, quality and safety, sold to manufacturing and industrial operations teams."
+  },
+  "augmentir.ai": {
+    "name": "Augmentir",
+    "first_seen": "2026-11-18",
+    "score": 9,
+    "summary": "AI-native connected worker platform with agentic AI, digital work instructions and workforce intelligence for frontline industrial operations in manufacturing, energy, and construction."
+  },
+  "coskip.com": {
+    "name": "CoSkip",
+    "first_seen": "2026-11-18",
+    "score": 8,
+    "summary": "AI copilot platform (voice, visual analysis, AR-guided support, predictive maintenance) for field technicians and operations teams in industrial, utilities, construction, and service organizations."
+  },
+  "inskill.ai": {
+    "name": "InSkill",
+    "first_seen": "2026-11-18",
+    "score": 9,
+    "summary": "AI copilot platform that lets industrial OEMs and factories build generative-AI assistants from manuals, IoT data, and tribal knowledge for frontline technicians and field workers."
+  },
+  "metistech.io": {
+    "name": "Metis",
+    "first_seen": "2026-11-18",
+    "score": 9,
+    "summary": "AI copilot ('Jack') for plant maintenance technicians that troubleshoots faults, reads PLC code, and captures tribal knowledge for manufacturing teams."
+  },
+  "contextere.com": {
+    "name": "Contextere",
+    "first_seen": "2026-11-18",
+    "score": 8,
+    "summary": "AI-powered insight engine and copilot (Madison / Blue Collar Co-Pilot) delivering real-time contextual guidance to frontline industrial workers for maintenance, repair, and installation tasks, sold to aerospace/defense, energy, mining, and manufacturing enterprises."
   }
 }
