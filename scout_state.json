@@ -1,5 +1,5 @@
 {
-  "query_index": 20,
+  "query_index": 22,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1242,7 +1242,44 @@
           "new": true
         }
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "queries": [
+        "senior PM vertical AI B2B SaaS hiring remote",
+        "Product Lead B2B SaaS remote Europe hiring",
+        "senior product manager continuous discovery customer interviews hiring Europe"
+      ],
+      "usage": {
+        "input_tokens": 7625,
+        "output_tokens": 3900,
+        "searches": 13,
+        "seconds": 48,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "WeMaintain",
+          "query": "senior product manager continuous discovery customer interviews hiring Europe",
+          "new": true
+        },
+        {
+          "company": "CoreView",
+          "query": "senior product manager continuous discovery customer interviews hiring Europe",
+          "new": true
+        },
+        {
+          "company": "Zyte",
+          "query": "Product Lead B2B SaaS remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "GMS (Global Message Services)",
+          "query": "Product Lead B2B SaaS remote Europe hiring",
+          "new": true
+        }
+      ]
     }
   ],
-  "discovery_index": 2
+  "discovery_index": 3
 }
