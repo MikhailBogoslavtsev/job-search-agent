@@ -1,5 +1,5 @@
 {
-  "query_index": 22,
+  "query_index": 24,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1279,7 +1279,54 @@
           "new": true
         }
       ]
+    },
+    {
+      "date": "2026-11-19",
+      "queries": [
+        "Principal Product Manager B2B SaaS remote Europe",
+        "Director of Product SaaS remote Europe hiring",
+        "product manager \"user interviews\" \"close to customers\" startup hiring remote"
+      ],
+      "usage": {
+        "input_tokens": 7621,
+        "output_tokens": 3046,
+        "searches": 5,
+        "seconds": 27,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "IP Fabric",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "Printify",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": true
+        },
+        {
+          "company": "PandaDoc",
+          "query": "Principal Product Manager B2B SaaS remote Europe",
+          "new": false
+        },
+        {
+          "company": "Unit4",
+          "query": "Director of Product SaaS remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Weaviate",
+          "query": "Director of Product SaaS remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "Decile Group (VC Lab)",
+          "query": "product manager \"user interviews\" \"close to customers\" startup hiring remote",
+          "new": true
+        }
+      ]
     }
   ],
-  "discovery_index": 3
+  "discovery_index": 4
 }
