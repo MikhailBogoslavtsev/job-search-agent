@@ -1975,9 +1975,9 @@
   },
   "ifs.com": {
     "name": "IFS",
-    "first_seen": "2026-11-13",
+    "first_seen": "2026-11-20",
     "score": 9,
-    "summary": "Enterprise software vendor building AI-powered ERP, EAM, FSM, and SCM platforms (IFS Cloud) for manufacturers, asset-heavy industries, and service operations."
+    "summary": "Established enterprise software vendor building IFS.ai Logistics, an AI-native, agent-first supply chain/logistics optimization and simulation product sold to enterprise operations teams."
   },
   "poka.io": {
     "name": "Poka Inc.",
@@ -2116,5 +2116,47 @@
     "first_seen": "2026-11-18",
     "score": 8,
     "summary": "AI-powered insight engine and copilot (Madison / Blue Collar Co-Pilot) delivering real-time contextual guidance to frontline industrial workers for maintenance, repair, and installation tasks, sold to aerospace/defense, energy, mining, and manufacturing enterprises."
+  },
+  "jobs.smartrecruiters.com": {
+    "name": "IFS",
+    "first_seen": "2026-11-20",
+    "score": 8,
+    "summary": "Established enterprise software vendor (ERP/EAM/field service) building AI-native manufacturing products for industrial operations customers."
+  },
+  "workinproduct.eu": {
+    "name": "IFS",
+    "first_seen": "2026-11-20",
+    "score": 8,
+    "summary": "Enterprise software vendor (ERP/EAM/supply chain) building AI-native, agent-first logistics optimization products for enterprise customers."
+  },
+  "hirify.me": {
+    "name": "Hirify",
+    "first_seen": "2026-11-20",
+    "score": 2,
+    "summary": "This is a job board/recruiting platform listing (Hirify Global) for a product manager role at an unnamed AI manufacturing software company, not a company page itself."
+  },
+  "flowfuse.com": {
+    "name": "FlowFuse",
+    "first_seen": "2026-11-20",
+    "score": 9,
+    "summary": "Enterprise low-code industrial platform built on Node-RED that unifies edge/cloud deployment, industrial data contextualization, and AI/agentic workflows for factories, energy grids, and supply chains."
+  },
+  "job-boards.greenhouse.io": {
+    "name": "FlowFuse",
+    "first_seen": "2026-11-20",
+    "score": 9,
+    "summary": "Enterprise low-code industrial platform built on Node-RED that unifies edge/cloud deployment, industrial data contextualization, and AI/agentic workflows for factories, energy grids, and supply chains."
+  },
+  "haystackapp.io": {
+    "name": "IFS",
+    "first_seen": "2026-11-20",
+    "score": 7,
+    "summary": "Enterprise software vendor (ERP/EAM/manufacturing solutions) building AI-native product lines for industrial and manufacturing customers; this listing is for a Senior Product Manager role on their AI-native Manufacturing product."
+  },
+  "builtinlondon.uk": {
+    "name": "IFS",
+    "first_seen": "2026-11-20",
+    "score": 9,
+    "summary": "Established enterprise software vendor building IFS.ai Logistics, an AI-native, agent-first supply chain/logistics optimization and simulation product sold to enterprise operations teams."
   }
 }
