@@ -1,5 +1,5 @@
 {
-  "query_index": 24,
+  "query_index": 26,
   "run_log": [
     {
       "date": "2026-10-02",
@@ -1326,7 +1326,49 @@
           "new": true
         }
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "queries": [
+        "Senior Product Owner SaaS platform remote Europe hiring",
+        "senior product manager AI agents platform remote Europe hiring",
+        "lead product manager product discovery customer research hiring remote Europe"
+      ],
+      "usage": {
+        "input_tokens": 7623,
+        "output_tokens": 4780,
+        "searches": 23,
+        "seconds": 67,
+        "hit_deadline": false
+      },
+      "raw": [
+        {
+          "company": "Hostaway",
+          "query": "senior product manager AI agents platform remote Europe hiring",
+          "new": false
+        },
+        {
+          "company": "GMS",
+          "query": "lead product manager product discovery customer research hiring remote Europe",
+          "new": false
+        },
+        {
+          "company": "duvo.ai",
+          "query": "senior product manager AI agents platform remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "JobLeads",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
+          "new": true
+        },
+        {
+          "company": "N-iX",
+          "query": "Senior Product Owner SaaS platform remote Europe hiring",
+          "new": false
+        }
+      ]
     }
   ],
-  "discovery_index": 4
+  "discovery_index": 5
 }
